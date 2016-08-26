@@ -21,7 +21,7 @@ For general help using DataSync in headless/command-line mode run:
 
 To run a job execute the following command, replacing <..> with the appropriate values (flags explained below):
 
-    java -jar <DATASYNC_JAR> -c <CONFIG.json FILE> -f <FILE TO PUBLISH> -h <HAS HEADER ROW> -i <DATASET ID> -m <PUBLISH METHOD> -pf <PUBLISH VIA FTP> -pf <PUBLISH VIA HTTP> -cf <FTP CONTROL.json FILE>
+    java -jar <DATASYNC_JAR> -c <CONFIG.json FILE> -f <FILE TO PUBLISH> -h <HAS HEADER ROW> -i <DATASET ID> -m <PUBLISH METHOD> -pf <PUBLISH VIA FTP> -ph <PUBLISH VIA HTTP> -cf <FTP CONTROL.json FILE>
 
 
 Explanation of flags:
@@ -83,7 +83,7 @@ Explanation of flags:
       <td style='text-align: left;'>-cf</td>
       <td style='text-align: left;'>--pathToControlFile</td>
       <td style='text-align: left;'>/Users/home/control.json</td>
-      <td style='text-align: left;'>Specifies a <a href='http://socrata.github.io/datasync/resources/ftp-control-config.html'>control file></a> that configures HTTP and &#8216;replace via FTP&#8217; jobs.  Only required when --publishViaHttp or --publishViaFTP is set to <code>true</code>. When this flag is set the --fileToPublishHasHeaderRow and --publishMethod flags are overridden by the settings in the supplied control file.</td>
+      <td style='text-align: left;'>Specifies a <a href='http://socrata.github.io/datasync/resources/control-config.html'>control file></a> that configures HTTP and &#8216;replace via FTP&#8217; jobs.  Only required when --publishViaHttp or --publishViaFTP is set to <code>true</code>. When this flag is set the --fileToPublishHasHeaderRow and --publishMethod flags are overridden by the settings in the supplied control file.</td>
     </tr>
     <tr>
       <td style='text-align: left;'>-t <code>*</code></td>
