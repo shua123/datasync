@@ -1,0 +1,342 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Using Map Fields Dialog &mdash; DataSync Historical Documentation 1.6 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="DataSync Historical Documentation 1.6 documentation" href="../index.html"/>
+        <link rel="next" title="DataSync Library SDK" href="datasync-library-sdk.html"/>
+        <link rel="prev" title="Setup Port Job Headless" href="setup-port-job-headless.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> DataSync Historical Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quick-start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup-standard-job.html">Setup Standard Job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup-standard-job-headless.html">Setup Standard Job Headless</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup-port-job.html">Setup Port Job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup-port-job-headless.html">Setup Port Job Headless</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using Map Fields Dialog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mapping-items-in-the-csv-to-fields-in-the-dataset">Mapping items in the CSV to fields in the dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#synthetic-locations">Synthetic locations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#advanced-options">Advanced options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datasync-library-sdk.html">DataSync Library SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling-on-windows-eclipse.html">Compiling on Windows with Eclipse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling-with-maven.html">Compiling with Maven</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../resources/checking-log.html">Checking log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/conditions-restrictions.html">Conditions Restrictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/control-config.html">Control Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/faq-common-problems.html">FAQ Common Problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/network-considerations.html">Network Considerations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/preferences-config.html">Preferences Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/schedule-job.html">Schedule a Job</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">DataSync Historical Documentation</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Using Map Fields Dialog</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/guides/using-map-fields-dialog.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="using-map-fields-dialog">
+<h1>Using Map Fields Dialog<a class="headerlink" href="#using-map-fields-dialog" title="Permalink to this headline">¶</a></h1>
+<p>This guide covers the advanced features of the Map Fields dialog</p>
+<div class="figure" id="id1">
+<img alt="Map Fields Dialog" src="../_images/map_fields.png" />
+<p class="caption"><span class="caption-text">Map Fields Dialog</span></p>
+</div>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The Map Fields dialog controls how the items in your CSV map to fields
+in your dataset. By default, DataSync will automatically analyze the
+shape of your CSV and the associated dataset. Once analyzed, it will
+attempt to automatically map your fields in the CSV to your fields in
+the dataset. While most of the times this is sufficient, sometimes
+DataSync will need a little more information before it&#8217;s ready to upload
+the file. This is where this dialog comes in.</p>
+<p>As you change options in the dialog, DataSync will provide immediate,
+real time feedback around how it views your CSV. For example, toggling
+the &#8220;has header row&#8221; option in the UI will immediately reflect the fact
+that the first row in the CSV will be imported as data, rather than as a
+header.</p>
+<div class="figure" id="id2">
+<img alt="Header row before and after" src="../_images/header_row_before_after.png" />
+<p class="caption"><span class="caption-text">Header row before and after</span></p>
+</div>
+<p>Similarly, changing the &#8220;separator&#8221; under advanced options will reflect
+the fact that there are new columns which you can map.</p>
+<div class="figure" id="id3">
+<img alt="Using different separator" src="../_images/different_separator.png" />
+<p class="caption"><span class="caption-text">Using different separator</span></p>
+</div>
+<p>DataSync will also automatically validate that your configuration is
+correct <em>before</em> the upload takes place. When you click on &#8220;OK&#8221; DataSync
+will validate all of the fields and ensure that their values are valid
+for the given fields. If not, you&#8217;ll be presented with an error message
+that should help you quickly identify and fix the issue:</p>
+<div class="figure" id="id4">
+<img alt="Sample Error" src="../_images/sample_error.png" />
+<p class="caption"><span class="caption-text">Sample Error</span></p>
+</div>
+<p>Once validated, this dialog generates the same <a class="reference external" href="../resources/control-config.html">control
+file</a> that you may
+have used to load data via the command line. Because of this, any saved
+job can also be run as a scheduled job in headless mode.</p>
+<p>While the default settings will typically be sufficient, every once in a
+while you will need to take additional steps load your CSV. The
+following sections detail how you can use the more advanced features of
+this UI to successfully upload your CSV.</p>
+</div>
+<div class="section" id="mapping-items-in-the-csv-to-fields-in-the-dataset">
+<h2>Mapping items in the CSV to fields in the dataset<a class="headerlink" href="#mapping-items-in-the-csv-to-fields-in-the-dataset" title="Permalink to this headline">¶</a></h2>
+<p>To map items in the CSV to fields in your dataset, simply click the
+dropdown and select the dataset field to which the column in the CSV
+should map.</p>
+<div class="figure" id="id5">
+<img alt="Select field" src="../_images/select_field.png" />
+<p class="caption"><span class="caption-text">Select field</span></p>
+</div>
+<p>If you don&#8217;t want to include this column in the upload, simply select
+&#8220;Ignore this field&#8221;</p>
+<div class="figure" id="id6">
+<img alt="Ignore field" src="../_images/ignore_field.png" />
+<p class="caption"><span class="caption-text">Ignore field</span></p>
+</div>
+<p>As mentioned above, the UI will show you a preview of your data inline.
+The top row is your header, while the bottom row is your data.</p>
+<div class="figure" id="id7">
+<img alt="Inline Preview" src="../_images/inline.png" />
+<p class="caption"><span class="caption-text">Inline Preview</span></p>
+</div>
+<p>We recommend checking this prior to upload to ensure that all data is
+uploaded. Common mistakes include having the &#8220;has header row&#8221; set when
+there is no header row in the dataset.</p>
+<div class="figure" id="id8">
+<img alt="Header row before and after" src="../_images/header_row_before_after.png" />
+<p class="caption"><span class="caption-text">Header row before and after</span></p>
+</div>
+</div>
+<div class="section" id="synthetic-locations">
+<h2>Synthetic locations<a class="headerlink" href="#synthetic-locations" title="Permalink to this headline">¶</a></h2>
+<p>When creating a dataset, you can choose to create a location column from
+components in the original file. For example, you may have a latitude
+and longitude stored in separate columns that you want to visualize as a
+single point on a map. To do so, you’ll need to create a single
+“location” column whose components consist of the values of each of
+these columns. To map these individual components in DataSync, simply
+click on the &#8220;Add synthetic columns&#8221; link in the bottom left to get the
+synthetic columns dialog:</p>
+<div class="figure" id="id9">
+<img alt="Synthetic Columns" src="../_images/synthetic_columns.png" />
+<p class="caption"><span class="caption-text">Synthetic Columns</span></p>
+</div>
+<p>Select the location field in the top dropdown and then map the items in
+your CSV to the components of your location component.</p>
+<p>Once set, you&#8217;ll see the following when you click the &#8220;Manage Synthetic
+Columns&#8221; link</p>
+<div class="figure" id="id10">
+<img alt="Show Synthetic Columns Pane" src="../_images/show_synthetic_columns.png" />
+<p class="caption"><span class="caption-text">Show Synthetic Columns Pane</span></p>
+</div>
+<p>To manage or remove the column, simply click either the manage or remove
+link. To add another synthetic location, simply click &#8220;add&#8221; and follow
+the above steps</p>
+</div>
+<div class="section" id="advanced-options">
+<h2>Advanced options<a class="headerlink" href="#advanced-options" title="Permalink to this headline">¶</a></h2>
+<p>All other options available in the Control File can be found under the
+Advanced Options panel.</p>
+<div class="figure" id="id11">
+<img alt="Advanced Options" src="../_images/advanced_options.png" />
+<p class="caption"><span class="caption-text">Advanced Options</span></p>
+</div>
+<p>Authoritative documentation on the accepted values can be found in the
+<a class="reference external" href="../resources/control-config.html">Control file
+configuration</a>
+page</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="datasync-library-sdk.html" class="btn btn-neutral float-right" title="DataSync Library SDK" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="setup-port-job-headless.html" class="btn btn-neutral" title="Setup Port Job Headless" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Socrata.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.6',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,6 +1,6 @@
-==================
+=============================================
 Quick Start
-==================
+=============================================
 
 This quick start guide provides an overview of how to use DataSync to
 sync a local CSV with a dataset.
@@ -9,7 +9,7 @@ sync a local CSV with a dataset.
 the dataset with the contents of the CSV. For a more in depth guide of
 using DataSync, including information on how to use DataSync to update
 and append information to a dataset, please see `setting up a standard
-job <setup-standard-job.html>`__.
+job <../guides/setup-standard-job.html>`__.
 
 .. raw:: html
 
@@ -70,16 +70,6 @@ Select the CSV or TSV file on your local machine or networked folder
 that you wish to publish by clicking the “Browse...” button and browsing
 to find the CSV or TSV file.
 
-**Does the CSV/TSV Have a Header Row ?**
-
-If the CSV contains a header row, keep "File to publish contains header
-row" checked. The header row should contain the `API Field
-Names <../resources/faq-common-problems#how-do-i-find-the-api-field-names-for-my-columns.html>`__)
-of the columns in your dataset. If the CSV does not contain a header
-row, uncheck "File to publish contains header row". In this case, the
-control file must contain the list of columns, in the order in which
-they appear in the CSV.
-
 **Obtain and Enter the Dataset ID ...**
 
 You will need the identifier of the dataset (dataset ID) that you want
@@ -96,24 +86,50 @@ Enter your dataset's ID into the Dataset ID field.
 
 **Choose the Publish Method ...**
 
-Leave the default option "replace via HTTP" selected This option will:
+Select the 'Publish method' by selecting one of the following options:
 
--  gracefully handles network failures
--  minimizes the amount of data sent by only sending the changes since
-   the last update, rather than the complete dataset
--  can reliably handle very large files (1 million+ rows)
--  allows configuration of the way the CSV/TSV file is read and
-   processed through the use of a `control
-   file <../resources/control-config.html>`__
+-  ``replace``: Replaces the dataset with the data in the CSV/TSV file.
+-  ``upsert``: Updates any rows that already exist and inserts rows
+   which do not. Ideal if you have a dataset that requires very frequent
+   updates or in cases where doing a complete replace is problematic.
 
-**Create a control file** A control file is needed to help DataSync
-interpret the data within the CSV. In most cases simply clicking the
-'Generate/Edit' button to generate a control file with the default
-configuration will be sufficient for the job to run successfully.
+*IMPORTANT NOTE: For updating to work properly you must set a Row
+Identifier for the dataset. If a Row Identifier is not set then DataSync
+will not be able to determine what rows to update and all rows in the
+CSV/TSV file will be appended to the dataset. `Learn more about Row
+Identifiers and how to establish
+them <http://dev.socrata.com/docs/row-identifiers.html>`__.*
 
-For more detailed information on establishing configuration in the
-Control file refer to `Control file
-configuration <../resources/control-config.html>`__.
+-  ``delete``: Delete all rows matching Row Identifiers given in CSV/TSV
+   file. The CSV/TSV should only contain a single column listing the Row
+   Identifiers to delete.
+
+**Tell us how to import your file ...**
+
+Click the "Map fields" button to launch the screen where you'll map the
+items in your CSV to the items in your dataset
+
+.. figure:: ../images/map_fields.png
+   :alt: Map Fields
+
+   Map Fields
+You can use this dialog to map the columns in your CSV (shown with
+previews in the left column) to the fields in your dataset (selected
+with the dropdowns) on the right hand side. This dialog will
+automatically attempt to detect the names in your CSV and align them
+with the names of your dataset. Because of this, most of the time you'll
+simply need to double check the values and hit "OK." If that's not the
+case though, you can use the boxes on the right to select the dataset
+field names and then hit OK. The dialog will check the values of the CSV
+to make sure that they are valid and if they are will generate a
+`control
+file <../resources/control-file-config.html>`__
+automatically for you under the covers. If not, you'll quickly get an
+error message with instructions as to how to fix the error.
+
+For more information on the advanced capabilities of this dialog, please
+see the `Using the Map Fields
+Dialog </guides/using-map-fields-dialog.html>`__
 
 Step 5: Run the job
 ~~~~~~~~~~~~~~~~~~~
@@ -147,10 +163,3 @@ done with standard tools such as the Windows Task Scheduler or Cron.
 
 `Read the documentation for how to schedule a saved
 job <../resources/schedule-job.html>`__.
-
-Additional information
-~~~~~~~~~~~~~~~~~~~~~~
-
-To take advantage of DataSync's more advanced features, please see
-`setting up a standard
-job <setup-standard-job.html>`__.

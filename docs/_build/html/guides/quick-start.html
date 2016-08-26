@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Quick Start &mdash; DataSync Historical Documentation pre-1.6 documentation</title>
+  <title>Quick Start &mdash; DataSync Historical Documentation 1.6 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="DataSync Historical Documentation pre-1.6 documentation" href="../index.html"/>
+    <link rel="top" title="DataSync Historical Documentation 1.6 documentation" href="../index.html"/>
         <link rel="next" title="Setup Standard Job" href="setup-standard-job.html"/>
         <link rel="prev" title="Welcome to (Unofficial) Socrata DataSync Historical documentation!" href="../index.html"/> 
 
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                pre-1.6
+                1.6
               </div>
             
           
@@ -90,13 +90,13 @@
 <li class="toctree-l2"><a class="reference internal" href="#step-4-enter-job-details">Step 4: Enter job details</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#step-5-run-the-job">Step 5: Run the job</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#step-6-save-the-job-for-later-use">Step 6: Save the job for later use</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#additional-information">Additional information</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="setup-standard-job.html">Setup Standard Job</a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup-standard-job-headless.html">Setup Standard Job Headless</a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup-port-job.html">Setup Port Job</a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup-port-job-headless.html">Setup Port Job Headless</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using-map-fields-dialog.html">Using Map Fields Dialog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datasync-library-sdk.html">DataSync Library SDK</a></li>
 <li class="toctree-l1"><a class="reference internal" href="compiling-on-windows-eclipse.html">Compiling on Windows with Eclipse</a></li>
 <li class="toctree-l1"><a class="reference internal" href="compiling-with-maven.html">Compiling with Maven</a></li>
@@ -161,7 +161,7 @@ sync a local CSV with a dataset.</p>
 <p><strong>NOTICE:</strong> The steps in this guide will replace the entire contents of
 the dataset with the contents of the CSV. For a more in depth guide of
 using DataSync, including information on how to use DataSync to update
-and append information to a dataset, please see <a class="reference external" href="setup-standard-job.html">setting up a standard
+and append information to a dataset, please see <a class="reference external" href="../guides/setup-standard-job.html">setting up a standard
 job</a>.</p>
 <div class="well"><p>We have a video tutorial for using DataSync available here.</p>
 </div><div class="section" id="step-1-download-datasync">
@@ -205,14 +205,6 @@ have questions.</p>
 <p>Select the CSV or TSV file on your local machine or networked folder
 that you wish to publish by clicking the “Browse...” button and browsing
 to find the CSV or TSV file.</p>
-<p><strong>Does the CSV/TSV Have a Header Row ?</strong></p>
-<p>If the CSV contains a header row, keep &#8220;File to publish contains header
-row&#8221; checked. The header row should contain the <a class="reference external" href="../resources/faq-common-problems#how-do-i-find-the-api-field-names-for-my-columns.html">API Field
-Names</a>)
-of the columns in your dataset. If the CSV does not contain a header
-row, uncheck &#8220;File to publish contains header row&#8221;. In this case, the
-control file must contain the list of columns, in the order in which
-they appear in the CSV.</p>
 <p><strong>Obtain and Enter the Dataset ID ...</strong></p>
 <p>You will need the identifier of the dataset (dataset ID) that you want
 to update. To obtain the dataset ID navigate to the dataset in your web
@@ -223,23 +215,47 @@ a dataset:</p>
 <p>The dataset ID is: m985-ywaw</p>
 <p>Enter your dataset&#8217;s ID into the Dataset ID field.</p>
 <p><strong>Choose the Publish Method ...</strong></p>
-<p>Leave the default option &#8220;replace via HTTP&#8221; selected This option will:</p>
+<p>Select the &#8216;Publish method&#8217; by selecting one of the following options:</p>
 <ul class="simple">
-<li>gracefully handles network failures</li>
-<li>minimizes the amount of data sent by only sending the changes since
-the last update, rather than the complete dataset</li>
-<li>can reliably handle very large files (1 million+ rows)</li>
-<li>allows configuration of the way the CSV/TSV file is read and
-processed through the use of a <a class="reference external" href="../resources/control-config.html">control
-file</a></li>
+<li><code class="docutils literal"><span class="pre">replace</span></code>: Replaces the dataset with the data in the CSV/TSV file.</li>
+<li><code class="docutils literal"><span class="pre">upsert</span></code>: Updates any rows that already exist and inserts rows
+which do not. Ideal if you have a dataset that requires very frequent
+updates or in cases where doing a complete replace is problematic.</li>
 </ul>
-<p><strong>Create a control file</strong> A control file is needed to help DataSync
-interpret the data within the CSV. In most cases simply clicking the
-&#8216;Generate/Edit&#8217; button to generate a control file with the default
-configuration will be sufficient for the job to run successfully.</p>
-<p>For more detailed information on establishing configuration in the
-Control file refer to <a class="reference external" href="../resources/control-config.html">Control file
-configuration</a>.</p>
+<p><em>IMPORTANT NOTE: For updating to work properly you must set a Row
+Identifier for the dataset. If a Row Identifier is not set then DataSync
+will not be able to determine what rows to update and all rows in the
+CSV/TSV file will be appended to the dataset. `Learn more about Row
+Identifiers and how to establish
+them &lt;http://dev.socrata.com/docs/row-identifiers.html&gt;`__.</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">delete</span></code>: Delete all rows matching Row Identifiers given in CSV/TSV
+file. The CSV/TSV should only contain a single column listing the Row
+Identifiers to delete.</li>
+</ul>
+<p><strong>Tell us how to import your file ...</strong></p>
+<p>Click the &#8220;Map fields&#8221; button to launch the screen where you&#8217;ll map the
+items in your CSV to the items in your dataset</p>
+<div class="figure" id="id1">
+<img alt="Map Fields" src="../_images/map_fields.png" />
+<p class="caption"><span class="caption-text">Map Fields</span></p>
+</div>
+<p>You can use this dialog to map the columns in your CSV (shown with
+previews in the left column) to the fields in your dataset (selected
+with the dropdowns) on the right hand side. This dialog will
+automatically attempt to detect the names in your CSV and align them
+with the names of your dataset. Because of this, most of the time you&#8217;ll
+simply need to double check the values and hit &#8220;OK.&#8221; If that&#8217;s not the
+case though, you can use the boxes on the right to select the dataset
+field names and then hit OK. The dialog will check the values of the CSV
+to make sure that they are valid and if they are will generate a
+<a class="reference external" href="../resources/control-file-config.html">control
+file</a>
+automatically for you under the covers. If not, you&#8217;ll quickly get an
+error message with instructions as to how to fix the error.</p>
+<p>For more information on the advanced capabilities of this dialog, please
+see the <a class="reference external" href="/guides/using-map-fields-dialog.html">Using the Map Fields
+Dialog</a></p>
 </div>
 <div class="section" id="step-5-run-the-job">
 <h2>Step 5: Run the job<a class="headerlink" href="#step-5-run-the-job" title="Permalink to this headline">¶</a></h2>
@@ -266,12 +282,6 @@ Failure to do so may cause issues when jobs are run using the scheduler.</p>
 automatically at a specified interval (i.e once per day). This can be
 done with standard tools such as the Windows Task Scheduler or Cron.</p>
 <p><a class="reference external" href="../resources/schedule-job.html">Read the documentation for how to schedule a saved
-job</a>.</p>
-</div>
-<div class="section" id="additional-information">
-<h2>Additional information<a class="headerlink" href="#additional-information" title="Permalink to this headline">¶</a></h2>
-<p>To take advantage of DataSync&#8217;s more advanced features, please see
-<a class="reference external" href="setup-standard-job.html">setting up a standard
 job</a>.</p>
 </div>
 </div>
@@ -317,7 +327,7 @@ job</a>.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'pre-1.6',
+            VERSION:'1.6',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
