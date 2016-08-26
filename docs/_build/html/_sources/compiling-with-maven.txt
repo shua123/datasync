@@ -1,3 +1,7 @@
+=====================
+Compiling with Maven
+=====================
+
 DataSync uses Maven for building and package management. For more
 information: `What is
 Maven? <http://maven.apache.org/what-is-maven.html>`__

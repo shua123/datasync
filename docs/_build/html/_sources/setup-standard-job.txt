@@ -1,3 +1,7 @@
+=====================
+Setup Standard Job
+=====================
+
 This guide covers how to set up a job using Socrata DataSync's UI.
 Alternatively, `DataSync can also be run from the command line in
 headless

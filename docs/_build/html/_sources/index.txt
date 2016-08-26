@@ -3,20 +3,21 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to DataSync Historical Documentation's documentation!
-=============================================================
+Welcome to (Unofficial) Socrata DataSync Historical documentation!
+===============================================================================
 
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
+   quick-start
+   setup-standard-job
+   setup-standard-job-headless
+   setup-port-job
+   setup-port-job-headless
+   datasync-library-sdk
+   compiling-on-windows-eclipse
+   compiling-with-maven
+   
+This is unofficial historical documentation for Socrata DataSync converted from the gh-pages branch of https://github.com/socrata/datasync as of commit ac8c6640f68bb8e52d05f9397a569ab4176e8e3e. It covers approximately versions 1.5 to 1.5.4.

@@ -1,3 +1,7 @@
+=====================
+DataSync Library SDK
+=====================
+
 DataSync 1.5.3 and higher can be used as a Java library/SDK. This guide
 documents how to do this as well as provides example code. If you are
 new to DataSync you should first read about using DataSync in `GUI
