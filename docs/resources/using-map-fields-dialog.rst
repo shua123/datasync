@@ -47,15 +47,36 @@ that should help you quickly identify and fix the issue:
 
    Sample Error
 Once validated, this dialog generates the same `control
-file <../resources/control-config.html>`__ that you may
-have used to load data via the command line. Because of this, any saved
-job can also be run as a scheduled job in headless mode.
+file <../resources/control-config.html>`__ that you
+may have used to load data via the command line. Because of this, any
+saved job can also be run as a scheduled job in headless mode.
 
 While the default settings will typically be sufficient, every once in a
 while you will need to take additional steps load your CSV. The
 following sections detail how you can use the more advanced features of
 this UI to successfully upload your CSV.
 
+Selecting Set Aside Errors
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: ../images/set_aside_error.png
+   :alt: Selecting Set Aside Errors
+
+   Selecting Set Aside Errors
+If you're using DataSync to update your data and you selected "Set Aside
+Errors" from the user interface (or indicated this in your control
+file), you'll see another status - "Completed with Problems".
+
+For jobs that have "Completed with Problems", navigating to
+(yourdomain)/admin/jobs brings you to a page with more information on
+when the job failed and more descriptive details about the failure. This
+page will also have a download link for a CSV of the specific rows that
+failed.
+
+.. figure:: ../images/job_detail.png
+   :alt: Job Detail
+
+   Job Detail
 Mapping items in the CSV to fields in the dataset
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

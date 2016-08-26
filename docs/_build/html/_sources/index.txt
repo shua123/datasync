@@ -17,7 +17,6 @@ Contents:
    guides/setup-standard-job-headless
    guides/setup-port-job
    guides/setup-port-job-headless
-   guides/using-map-fields-dialog
    guides/datasync-library-sdk
    guides/compiling-on-windows-eclipse
    guides/compiling-with-maven
@@ -26,6 +25,7 @@ Contents:
    :maxdepth: 1
    :caption: Resources
 
+   resources/using-map-fields-dialog
    resources/checking-log
    resources/conditions-restrictions
    resources/control-config
@@ -36,4 +36,4 @@ Contents:
 
 
    
-This is unofficial historical documentation for Socrata DataSync converted from the gh-pages branch of https://github.com/socrata/datasync as of commit 564eb097fa38667f122cc30688a896d487585ae5. It covers Socrata DataSync version 1.6.
+This is unofficial historical documentation for Socrata DataSync converted from the gh-pages branch of https://github.com/socrata/datasync as of commit f7869a97d8007acff7f17f039b13555e895bd380. It covers Socrata DataSync version 1.7.

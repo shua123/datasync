@@ -6,18 +6,24 @@ This guide covers how to schedule a Socrata DataSync job to run
 automatically at some specified interval (i.e. once per day) using
 either the Windows Task Scheduler or Crontab.
 
-Using the Windows Task Scheduler
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Using the Windows Task Scheduler**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Step 1: Copy the command from DataSync
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Step 1: Save Socrata .sij file
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. figure:: ../images/save_job.png
+   :alt: Save Job
+
+   Save Job
 After you save or open a job with DataSync the text field called
 "Command to execute with scheduler" is automatically populated with the
 command to run the given job. Simply click the "Copy to clipboard"
-button to copy the command to the clipboard. You can also click on the
-text field (which will automatically highlight the entire command) and
-then press Ctrl+C to copy the command to the clipboard.
+button to copy the command to the clipboard. You can alYou can also
+click on the text field (which will automatically highlight the entire
+command) and then press Ctrl+C to copy the command to the clipboard.
+Additionally, you can save the Socrata Integration Job (.sij) file to a
+directory of your choice and call that from within Task Scheduler.
 
 Step 2: Create a new task using the Windows Task Scheduler
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -39,10 +45,16 @@ program “java” with the following arguments. Simply click “Yes”.
 
 You may want to test run the task by finding the task you just created
 in the task library and right-clicking it and selecting "Run". Make sure
-the dataset was updated as you expect.
+the dataset was updated as you expect. **Remember** each job runs at its
+own frequency, meaning that there needs to be a business conversation
+with the data owners about how frequent each dataset should be updated.
 
-Using Crontab (Mac or Linux)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. figure:: ../images/task_scheduler.png
+   :alt: Task Scheduler
+
+   Task Scheduler
+**Using Crontab (Mac or Linux)**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A good introduction to using Crontab (Crontab is included with
 essentially any Linux distro) can be found here:

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Schedule a Job &mdash; DataSync Historical Documentation 1.6 documentation</title>
+  <title>Schedule a Job &mdash; DataSync Historical Documentation 1.7 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="DataSync Historical Documentation 1.6 documentation" href="../index.html"/>
+    <link rel="top" title="DataSync Historical Documentation 1.7 documentation" href="../index.html"/>
         <link rel="prev" title="Preferences Config" href="preferences-config.html"/> 
 
   
@@ -59,7 +59,7 @@
             
             
               <div class="version">
-                1.6
+                1.7
               </div>
             
           
@@ -87,13 +87,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../guides/setup-standard-job-headless.html">Setup Standard Job Headless</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/setup-port-job.html">Setup Port Job</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/setup-port-job-headless.html">Setup Port Job Headless</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/using-map-fields-dialog.html">Using Map Fields Dialog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/datasync-library-sdk.html">DataSync Library SDK</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/compiling-on-windows-eclipse.html">Compiling on Windows with Eclipse</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/compiling-with-maven.html">Compiling with Maven</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="using-map-fields-dialog.html">Using Map Fields Dialog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="checking-log.html">Checking log</a></li>
 <li class="toctree-l1"><a class="reference internal" href="conditions-restrictions.html">Conditions Restrictions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="control-config.html">Control Config</a></li>
@@ -101,12 +101,12 @@
 <li class="toctree-l1"><a class="reference internal" href="network-considerations.html">Network Considerations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="preferences-config.html">Preferences Config</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Schedule a Job</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#using-the-windows-task-scheduler">Using the Windows Task Scheduler</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#step-1-copy-the-command-from-datasync">Step 1: Copy the command from DataSync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-the-windows-task-scheduler"><strong>Using the Windows Task Scheduler</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#step-1-save-socrata-sij-file">Step 1: Save Socrata .sij file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#step-2-create-a-new-task-using-the-windows-task-scheduler">Step 2: Create a new task using the Windows Task Scheduler</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#using-crontab-mac-or-linux">Using Crontab (Mac or Linux)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-crontab-mac-or-linux"><strong>Using Crontab (Mac or Linux)</strong></a></li>
 </ul>
 </li>
 </ul>
@@ -159,15 +159,21 @@
 automatically at some specified interval (i.e. once per day) using
 either the Windows Task Scheduler or Crontab.</p>
 <div class="section" id="using-the-windows-task-scheduler">
-<h2>Using the Windows Task Scheduler<a class="headerlink" href="#using-the-windows-task-scheduler" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="step-1-copy-the-command-from-datasync">
-<h3>Step 1: Copy the command from DataSync<a class="headerlink" href="#step-1-copy-the-command-from-datasync" title="Permalink to this headline">¶</a></h3>
+<h2><strong>Using the Windows Task Scheduler</strong><a class="headerlink" href="#using-the-windows-task-scheduler" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="step-1-save-socrata-sij-file">
+<h3>Step 1: Save Socrata .sij file<a class="headerlink" href="#step-1-save-socrata-sij-file" title="Permalink to this headline">¶</a></h3>
+<div class="figure" id="id1">
+<img alt="Save Job" src="../_images/save_job.png" />
+<p class="caption"><span class="caption-text">Save Job</span></p>
+</div>
 <p>After you save or open a job with DataSync the text field called
 &#8220;Command to execute with scheduler&#8221; is automatically populated with the
 command to run the given job. Simply click the &#8220;Copy to clipboard&#8221;
-button to copy the command to the clipboard. You can also click on the
-text field (which will automatically highlight the entire command) and
-then press Ctrl+C to copy the command to the clipboard.</p>
+button to copy the command to the clipboard. You can alYou can also
+click on the text field (which will automatically highlight the entire
+command) and then press Ctrl+C to copy the command to the clipboard.
+Additionally, you can save the Socrata Integration Job (.sij) file to a
+directory of your choice and call that from within Task Scheduler.</p>
 </div>
 <div class="section" id="step-2-create-a-new-task-using-the-windows-task-scheduler">
 <h3>Step 2: Create a new task using the Windows Task Scheduler<a class="headerlink" href="#step-2-create-a-new-task-using-the-windows-task-scheduler" title="Permalink to this headline">¶</a></h3>
@@ -187,11 +193,17 @@ You will probably get a message asking you if you want to run the
 program “java” with the following arguments. Simply click “Yes”.</p>
 <p>You may want to test run the task by finding the task you just created
 in the task library and right-clicking it and selecting &#8220;Run&#8221;. Make sure
-the dataset was updated as you expect.</p>
+the dataset was updated as you expect. <strong>Remember</strong> each job runs at its
+own frequency, meaning that there needs to be a business conversation
+with the data owners about how frequent each dataset should be updated.</p>
+<div class="figure" id="id2">
+<img alt="Task Scheduler" src="../_images/task_scheduler.png" />
+<p class="caption"><span class="caption-text">Task Scheduler</span></p>
+</div>
 </div>
 </div>
 <div class="section" id="using-crontab-mac-or-linux">
-<h2>Using Crontab (Mac or Linux)<a class="headerlink" href="#using-crontab-mac-or-linux" title="Permalink to this headline">¶</a></h2>
+<h2><strong>Using Crontab (Mac or Linux)</strong><a class="headerlink" href="#using-crontab-mac-or-linux" title="Permalink to this headline">¶</a></h2>
 <p>A good introduction to using Crontab (Crontab is included with
 essentially any Linux distro) can be found here:
 <a class="reference external" href="http://kvz.io/blog/2007/07/29/schedule-tasks-on-linux-using-crontab/">http://kvz.io/blog/2007/07/29/schedule-tasks-on-linux-using-crontab/</a></p>
@@ -247,7 +259,7 @@ your Crontab content might look like:</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'1.6',
+            VERSION:'1.7',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

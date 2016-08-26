@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Network Considerations &mdash; DataSync Historical Documentation 1.6 documentation</title>
+  <title>Network Considerations &mdash; DataSync Historical Documentation 1.7 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="DataSync Historical Documentation 1.6 documentation" href="../index.html"/>
+    <link rel="top" title="DataSync Historical Documentation 1.7 documentation" href="../index.html"/>
         <link rel="next" title="Preferences Config" href="preferences-config.html"/>
         <link rel="prev" title="FAQ Common Problems" href="faq-common-problems.html"/> 
 
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                1.6
+                1.7
               </div>
             
           
@@ -88,13 +88,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../guides/setup-standard-job-headless.html">Setup Standard Job Headless</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/setup-port-job.html">Setup Port Job</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/setup-port-job-headless.html">Setup Port Job Headless</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guides/using-map-fields-dialog.html">Using Map Fields Dialog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/datasync-library-sdk.html">DataSync Library SDK</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/compiling-on-windows-eclipse.html">Compiling on Windows with Eclipse</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/compiling-with-maven.html">Compiling with Maven</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="using-map-fields-dialog.html">Using Map Fields Dialog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="checking-log.html">Checking log</a></li>
 <li class="toctree-l1"><a class="reference internal" href="conditions-restrictions.html">Conditions Restrictions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="control-config.html">Control Config</a></li>
@@ -160,7 +160,7 @@ method you choose. When using the latest upload methods (HTTP rather
 than FTP or SODA2) the standard ports 80 and 443 will be used. Although
 we strongly recommend using the HTTP methods, if you are using
 DataSync&#8217;s FTP methods, ports 22222 and 3131-3141 need to be open, in
-addition to ports 80 and 443. If you have configured <a class="reference external" href="preferences-config.html#error-notification-auto-email-setup">email
+addition to ports 80 and 443. If you have configured <a class="reference external" href="../resources/preferences-config.html#error-notification-auto-email-setup">email
 notifications</a>,
 the SMTP and SSL ports need to be open.</p>
 <p>NOTE: Because network setups can vary wildly, this does not attempt to
@@ -181,12 +181,12 @@ traffic.</p>
 <p>Per port access, as noted above, DataSync requires usage of ports 80
 (for http) and 443 (for https). If you are using FTP methods, port 22222
 (for control connection) and ports 3131 to 3141 (for data transferral)
-are also required. If you have configured <a class="reference external" href="preferences-config.html#error-notification-auto-email-setup">email
+are also required. If you have configured <a class="reference external" href="../resources/preferences-config.html#error-notification-auto-email-setup">email
 notifications</a>,
 the SMTP and SSL ports need to be open.</p>
 <p>Per domain access, if using HTTP or Soda2 methods, DataSync communicates
 exclusively with the domain you provide in your
-<a class="reference external" href="preferences-config.html">configuration</a>.
+<a class="reference external" href="../resources/preferences-config.html">configuration</a>.
 If using FTP methods, DataSync will also need to reach Socrata&#8217;s ftp
 server. If you are using email notification, DataSync makes requests to
 the domain for the outgoing mail server. These domains should be
@@ -203,7 +203,7 @@ the amount of data that needs to be sent to only the changes made
 since the last update. This data is chunked currently to 4MB blocks.</li>
 <li>If using the Soda2 method, DataSync will attempt to transfer the
 entire file to publish in one chunk. This can create a long-lived
-connection which some firewalls do not allow. <a class="reference external" href="preferences-config.html#chunking-configuration">Chunking can be
+connection which some firewalls do not allow. <a class="reference external" href="../resources/preferences-config.html#chunking-configuration">Chunking can be
 configured</a>
 using the Soda2 method though.</li>
 <li>If using the FTP method, DataSync will compress the file to publish
@@ -221,7 +221,7 @@ sends ssl requests, the proxy server must be set up to correctly handle
 encrypted traffic, i.e. that it is a &#8220;transparent proxy&#8221; - ask your IT
 deparment to confirm this.</p>
 <p>DataSync must be configured to route its requests through the proxy. At
-minimum, <a class="reference external" href="preferences-config.html">this
+minimum, <a class="reference external" href="../resources/preferences-config.html">this
 configuration</a>
 requires the hostname and port and if the proxy server is authenticated,
 your proxy username and password as well.</p>
@@ -288,7 +288,7 @@ information:</p>
 <ul class="simple">
 <li>Whether you can browse the internet in a browser.</li>
 <li>Whether you can browse to the domain you provided in your
-<a class="reference external" href="preferences-config.html">configuration</a>
+<a class="reference external" href="../resources/preferences-config.html">configuration</a>
 in a browser.</li>
 <li>Whether DataSync can run at all - even if it produces errors.</li>
 <li>Assuming DataSync can run, a screenshot or text file of the errors
@@ -342,7 +342,7 @@ while attempting to run your DataSync job.</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'1.6',
+            VERSION:'1.7',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

@@ -129,7 +129,7 @@ error message with instructions as to how to fix the error.
 
 For more information on the advanced capabilities of this dialog, please
 see the `Using the Map Fields
-Dialog </guides/using-map-fields-dialog.html>`__
+Dialog <../guides/using-map-fields-dialog.html>`__
 
 Step 5: Run the job
 ~~~~~~~~~~~~~~~~~~~

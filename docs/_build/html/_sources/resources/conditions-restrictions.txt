@@ -17,7 +17,7 @@ data is added until all the following conditions are met:
 -  All columns specified in the header must be present in the dataset.
 -  All values can be interpreted as the appropriate type.
 -  If ``syntheticLocation`` is provided in the `control
-   file <ftp-control-config.html>`__, the
+   file <control-config.html>`__, the
    name of the column that is constructed must not conflict with one
    already in the CSV. You can use the ``ignoreColumns`` option to
    ignore the one in the CSV.
