@@ -19,11 +19,11 @@ Step 1: Save Socrata .sij file
 After you save or open a job with DataSync the text field called
 "Command to execute with scheduler" is automatically populated with the
 command to run the given job. Simply click the "Copy to clipboard"
-button to copy the command to the clipboard. You can alYou can also
-click on the text field (which will automatically highlight the entire
-command) and then press Ctrl+C to copy the command to the clipboard.
-Additionally, you can save the Socrata Integration Job (.sij) file to a
-directory of your choice and call that from within Task Scheduler.
+button to copy the command to the clipboard. You can also click on the
+text field (which will automatically highlight the entire command) and
+then press Ctrl+C to copy the command to the clipboard. Additionally,
+you can save the Socrata Integration Job (.sij) file to a directory of
+your choice and call that from within Task Scheduler.
 
 Step 2: Create a new task using the Windows Task Scheduler
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

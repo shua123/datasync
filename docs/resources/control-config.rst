@@ -442,10 +442,8 @@ columns
 JSON list of column names. If null then the first line of the CSV after
 any skipped records is used. If specified, it must be an array of
 strings and must not contain nulls. Note that the column names, whether
-provided in “columns” or in the first row of the CSV, must match the
-`API field
-names <../resources/faq-common-problems#how-do-i-find-the-api-field-names-for-my-columns.html>`__,
-not the display name of the columns.
+provided in “columns” or in the first row of the CSV, must match the API
+field names, not the display name of the columns.
 
 .. raw:: html
 
@@ -580,11 +578,9 @@ floatingTimestampFormat
 
 Specifies how Floating Timestamps (“Date & Time” columns) are
 interpreted. Typical values are "ISO8601" or "yyyy-MM-dd". Any
-`joda-formated
-string <http://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html>`__
-is acceptable. If you want to allow multiple formats to be accepted,
-then you can specify a list of values rather than a single value (e.g.
-["ISO8601", "MM.dd.yyyy"]).
+joda-formated string is acceptable. If you want to allow multiple
+formats to be accepted, then you can specify a list of values rather
+than a single value (e.g. ["ISO8601", "MM.dd.yyyy"]).
 
 .. raw:: html
 
@@ -621,10 +617,9 @@ timezone
 Specifies the timezones for FixedTimestamps (“Date & Time (with
 timezone)” columns). This only has an effect if the timestamp format
 does not specify a time zone. Typical values are "UTC" or "US/Pacific".
-A list of accepted names is at
-http://joda-time.sourceforge.net/timezones.html. *Please avoid the
-3-letter variants as these are ambiguous (e.g. MST is both Mountain
-Standard Time and Malaysia Standard Time)*.
+A list of accepted names is available at this Joda documentation page.
+*Please avoid the 3-letter variants as these are ambiguous (e.g. MST is
+both Mountain Standard Time and Malaysia Standard Time)*.
 
 .. raw:: html
 
@@ -641,8 +636,29 @@ syntheticLocations
        <td>
 
 Allows transformation of multiple columns into one or more Location
-columns during insert. See See the `Location column and geocoding
-configuration <#location-geocoding>`__ section for an example.
+columns during insert. See See the Location column and geocoding
+configuration section for an example.
+
+.. raw:: html
+
+   </td>
+     </tr>
+   <tr>
+       <td>
+
+setAsideErrors
+
+.. raw:: html
+
+   </td>
+       <td>
+
+When set to true, bad data will be ignored, allowing the job to complete
+while setting aside any rows that contain errors. As with other upload
+jobs, the status of the job can be monitored in the job status page. If
+the upload job completed (with partial success), a link to the CSV with
+bad data will be available in the job details page to download and
+inspect.
 
 .. raw:: html
 

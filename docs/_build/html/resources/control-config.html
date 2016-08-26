@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Control Config &mdash; DataSync Historical Documentation 1.7 documentation</title>
+  <title>Control Config &mdash; DataSync Historical Documentation 1.7.2 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="DataSync Historical Documentation 1.7 documentation" href="../index.html"/>
+    <link rel="top" title="DataSync Historical Documentation 1.7.2 documentation" href="../index.html"/>
         <link rel="next" title="FAQ Common Problems" href="faq-common-problems.html"/>
         <link rel="prev" title="Conditions Restrictions" href="conditions-restrictions.html"/> 
 
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                1.7
+                1.7.2
               </div>
             
           
@@ -448,10 +448,8 @@ backslash.</p>
     <td><p>JSON list of column names. If null then the first line of the CSV after
 any skipped records is used. If specified, it must be an array of
 strings and must not contain nulls. Note that the column names, whether
-provided in “columns” or in the first row of the CSV, must match the
-<a class="reference external" href="../resources/faq-common-problems#how-do-i-find-the-api-field-names-for-my-columns.html">API field
-names</a>,
-not the display name of the columns.</p>
+provided in “columns” or in the first row of the CSV, must match the API
+field names, not the display name of the columns.</p>
 </td>
   </tr>
 <tr>
@@ -516,11 +514,9 @@ as NULL. If false, it will be treated as the empty string.</p>
 </td>
     <td><p>Specifies how Floating Timestamps (“Date &amp; Time” columns) are
 interpreted. Typical values are &#8220;ISO8601&#8221; or &#8220;yyyy-MM-dd&#8221;. Any
-<a class="reference external" href="http://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html">joda-formated
-string</a>
-is acceptable. If you want to allow multiple formats to be accepted,
-then you can specify a list of values rather than a single value (e.g.
-[&#8220;ISO8601&#8221;, &#8220;MM.dd.yyyy&#8221;]).</p>
+joda-formated string is acceptable. If you want to allow multiple
+formats to be accepted, then you can specify a list of values rather
+than a single value (e.g. [&#8220;ISO8601&#8221;, &#8220;MM.dd.yyyy&#8221;]).</p>
 </td>
   </tr>
 <tr>
@@ -537,18 +533,28 @@ named by the <code class="docutils literal"><span class="pre">timezone</span></c
     <td><p>Specifies the timezones for FixedTimestamps (“Date &amp; Time (with
 timezone)” columns). This only has an effect if the timestamp format
 does not specify a time zone. Typical values are &#8220;UTC&#8221; or &#8220;US/Pacific&#8221;.
-A list of accepted names is at
-<a class="reference external" href="http://joda-time.sourceforge.net/timezones.html">http://joda-time.sourceforge.net/timezones.html</a>. <em>Please avoid the
-3-letter variants as these are ambiguous (e.g. MST is both Mountain
-Standard Time and Malaysia Standard Time)</em>.</p>
+A list of accepted names is available at this Joda documentation page.
+<em>Please avoid the 3-letter variants as these are ambiguous (e.g. MST is
+both Mountain Standard Time and Malaysia Standard Time)</em>.</p>
 </td>
   </tr>
 <tr>
     <td><p>syntheticLocations</p>
 </td>
     <td><p>Allows transformation of multiple columns into one or more Location
-columns during insert. See See the <a class="reference external" href="#location-geocoding">Location column and geocoding
-configuration</a> section for an example.</p>
+columns during insert. See See the Location column and geocoding
+configuration section for an example.</p>
+</td>
+  </tr>
+<tr>
+    <td><p>setAsideErrors</p>
+</td>
+    <td><p>When set to true, bad data will be ignored, allowing the job to complete
+while setting aside any rows that contain errors. As with other upload
+jobs, the status of the job can be monitored in the job status page. If
+the upload job completed (with partial success), a link to the CSV with
+bad data will be available in the job details page to download and
+inspect.</p>
 </td>
   </tr>
 <tr>
@@ -632,7 +638,7 @@ example, see below.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'1.7',
+            VERSION:'1.7.2',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

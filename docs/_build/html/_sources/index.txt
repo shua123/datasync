@@ -36,4 +36,4 @@ Contents:
 
 
    
-This is unofficial historical documentation for Socrata DataSync converted from the gh-pages branch of https://github.com/socrata/datasync as of commit f7869a97d8007acff7f17f039b13555e895bd380. It covers Socrata DataSync version 1.7.
+This is unofficial historical documentation for Socrata DataSync converted from the gh-pages branch of https://github.com/socrata/datasync as of commit f8e8c8b15efcbb573c5ca240a81ac0978b7da306. It covers Socrata DataSync version 1.7.2.
