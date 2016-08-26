@@ -1,0 +1,300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Step 1: Download DataSync &#8212; DataSync Historical Documentation pre-1.6 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     'pre-1.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="DataSync Historical Documentation pre-1.6 documentation" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>This guide covers how to set up a job using Socrata DataSync&#8217;s UI.
+Alternatively, <a class="reference external" href="{{%20site.root%20}}/guides/setup-standard-job-headless.html">DataSync can also be run from the command line in
+headless
+mode</a>.</p>
+<div class="section" id="step-1-download-datasync">
+<h1>Step 1: Download DataSync<a class="headerlink" href="#step-1-download-datasync" title="Permalink to this headline">¶</a></h1>
+<p>Navigate to the DataSync <a class="reference external" href="https://github.com/socrata/datasync/releases">download
+page</a>, and download the
+latest version.</p>
+</div>
+<div class="section" id="step-2-launching-datasync">
+<h1>Step 2: Launching DataSync<a class="headerlink" href="#step-2-launching-datasync" title="Permalink to this headline">¶</a></h1>
+<p>Launch DataSync navigating to the folder containing the Datasync JAR
+file that you downloaded previously and either double-click the jar or
+run the following command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">java</span> <span class="o">-</span><span class="n">jar</span> <span class="o">&lt;</span><span class="n">DATASYNC_JAR</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-3-enter-authentication-details">
+<h1>Step 3: Enter authentication details<a class="headerlink" href="#step-3-enter-authentication-details" title="Permalink to this headline">¶</a></h1>
+<p>Enter your authentication details at the bottom left of DataSync
+(domain, username, password, and app token). The domain is the root
+domain of your data site and must begin with <a class="reference external" href="https://">https://</a> (i.e.
+<a class="reference external" href="https://opendata.socrata.com">https://opendata.socrata.com</a>). The username and password are those of a
+Socrata account that has a Publisher role. Enter your App token. If you
+do not yet have an app token, please see <a class="reference external" href="http://dev.socrata.com/docs/app-tokens.html">how to obtain an App
+token</a>. The username,
+password and application token will be saved as part of the job
+configuration. We recommend creating a dedicated Socrata account (with a
+Publisher role or Owner permissions to specific datasets) to use with
+DataSync rather than tying DataSync to a particular person’s account.</p>
+<p><strong>NOTICE:</strong> DataSync stores the authentication details unencrypted in
+the Registry on Windows platforms (in the following location:
+HKEY_CURRENT_USER) and in analogous locations on Mac and Linux. If you
+are concerned about this as a potential security issue you may want to
+look into alternative publishing methods. Please contact support if you
+have questions.</p>
+</div>
+<div class="section" id="step-4-enter-job-details">
+<h1>Step 4: Enter job details<a class="headerlink" href="#step-4-enter-job-details" title="Permalink to this headline">¶</a></h1>
+<p>Upon opening the program a new &#8216;Untitled job&#8217; appears in a tab. You can
+have any number of jobs open and each will be in their own tab.</p>
+<p><strong>Choose the CSV or TSV File to Publish</strong></p>
+<p>Select the CSV or TSV file on your local machine or networked folder
+that you wish to publish by clicking the “Browse...” button and browsing
+to find the CSV or TSV file.</p>
+<p><strong>Does the CSV/TSV Have a Header Row ?</strong></p>
+<p>If so, keep &#8220;File to publish contains header row&#8221; checked. If not,
+uncheck &#8220;File to publish contains header row&#8221;.</p>
+<ul class="simple">
+<li><em>Header naming</em></li>
+</ul>
+<p>Header rows should contain the <a class="reference external" href="{{%20site.root%20}}/resources/faq-common-problems#how-do-i-find-the-api-field-names-for-my-columns.html">API field
+names</a>
+of each column. Please note these may differ from the display names
+shown in your browser.</p>
+<ul class="simple">
+<li><em>Column order</em></li>
+</ul>
+<p>Columns can safely be reorderd as long as header information is
+provided. Header information can either be supplied within the CSV/TSV
+file or through use of the control file (see below). If header
+information is missing and you are publishing via Soda2, the order of
+the columns in the CSV/TSV must exactly match that of Socrata dataset.
+Note that header information is a requirement if you are publishing by
+either FTP or HTTP.</p>
+<ul class="simple">
+<li><em>Column inclusion/exclusion</em></li>
+</ul>
+<p>If using Soda2, you needn&#8217;t supply all of the columnns. If using FTP or
+HTTP, the ability to exclude columns from the CSV/TSV file is based on
+whether the Socrata dataset has a <a class="reference external" href="http://dev.socrata.com/docs/row-identifiers.html">row
+identifier</a> set. If
+so, you may omit any columns but the identifier. If not, all columns
+must be provided.</p>
+<p>If using Soda2, you may include extraneous columns; these will be
+ignored. If using FTP or HTTP, you may include extraneous columns, but
+these must be ignored by listing them in the &#8216;ignoreColumns&#8217; option of
+the control file.</p>
+<p><strong>Enter the Dataset ID ...</strong></p>
+<p>You will need the identifier of the dataset (i.e. <a class="reference external" href="{{%20site.root%20}}/resources/faq-common-problems.html#what-is-the-id-of-my-dataset">the dataset
+ID</a>)
+that you want to update. Enter your dataset&#8217;s ID into the Dataset ID
+field.</p>
+<p><strong>Choose the Publish Method ...</strong></p>
+<p>Select the &#8216;Publish method&#8217; by selecting one of the following options:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">replace</span></code>: Replaces the dataset with the data in the CSV/TSV file.</li>
+<li><code class="docutils literal"><span class="pre">upsert</span></code>: Updates any rows that already exist and inserts rows
+which do not. Ideal if you have a dataset that requires very frequent
+updates or in cases where doing a complete replace is problematic.</li>
+</ul>
+<p><em>IMPORTANT NOTE: For updating to work properly you must set a Row
+Identifier for the dataset. If a Row Identifier is not set then DataSync
+will not be able to determine what rows to update and all rows in the
+CSV/TSV file will be appended to the dataset. `Learn more about Row
+Identifiers and how to establish
+them &lt;http://dev.socrata.com/docs/row-identifiers.html&gt;`__.</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">append</span></code>: Same as upsert. Deprecated.</li>
+<li><code class="docutils literal"><span class="pre">delete</span></code>: Delete all rows matching Row Identifiers given in CSV/TSV
+file. The CSV/TSV should only contain a single column listing the Row
+Identifiers to delete.</li>
+</ul>
+<p><em>IMPORTANT NOTE: delete will not work unless the dataset has a Row
+Identifier established.</em></p>
+<p>DataSync offers three ways to upload your data</p>
+<ol class="arabic simple">
+<li>via HTTP: <em>This option is available only in DataSync versions 1.5 and
+higher.</em> This is the preferred option because it...<ul>
+<li>gracefully handles network failures</li>
+<li>minimizes the amount of data sent by only sending the changes
+since the last update, rather than the complete dataset</li>
+<li>can reliably handle very large files (1 million+ rows)</li>
+<li>allows configuration of the way the CSV/TSV file is read and
+processed through the use of a <a class="reference external" href="{{%20site.root%20}}/resources/control-config.html">control
+file</a></li>
+</ul>
+</li>
+<li>via FTP (only available for <code class="docutils literal"><span class="pre">replace</span></code>): This functions in much the
+same way as the HTTP variant, with 2 notable differences:<ul>
+<li>the entire CSV/TSV file will transfered</li>
+<li>if you are running DataSync behind a firewall it must be
+configured to allow FTP traffic through ports 22222 (for the
+control connection) and all ports within the range of 3131 to 3141
+(for data connection)</li>
+</ul>
+</li>
+<li>via Soda2: <em>Deprecated.</em> This method is not recommended because of
+its inefficiencies and file size limitations (&lt; 5 MB).</li>
+</ol>
+<p><strong>Control File Configuration (needed for replace via FTP or HTTP)</strong></p>
+<p>When using replace via FTP or HTTP you must supply or generate a control
+file. In many cases simply clicking the &#8216;Generate/Edit&#8217; button and using
+the default configuration will be sufficient for the job to run
+successfully. Do not click &#8216;Generate/Edit&#8217; if you want to use a Control
+file that is saved as a file, instead click &#8216;Browse...&#8217; and select the
+file. The cases where you will need to modify the Control file content
+include, but are not limited to:</p>
+<ul class="simple">
+<li>If your CSV contains date/time data in a format other than:
+<a class="reference external" href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601</a>, MM/dd/yyyy,
+MM/dd/yy, or dd-MMM-yyyy (e.g. &#8220;2014-04-22&#8221;, &#8220;2014-04-22T05:44:38&#8221;,
+&#8220;04/22/2014&#8221;, &#8220;4/22/2014&#8221;, &#8220;4/22/14&#8221;, and &#8220;22-Apr-2014&#8221; would all be
+fine).</li>
+<li>The Socrata dataset has a Location column that will be populated from
+existing columns (e.g. address, city, state, zipcode).</li>
+<li>The Socrata dataset has a Location column and you are not using
+Socrata&#8217;s geocoding (i.e. you are providing the latitude/longitude
+coordinates in the CSV/TSV file).</li>
+<li>If you wish to set the timezone of the dates being imported.</li>
+</ul>
+<p>For more detailed information on establishing configuration in the
+Control file refer to <a class="reference external" href="{{%20site.root%20}}/resources/control-config.html">Control file
+configuration</a></p>
+</div>
+<div class="section" id="step-5-run-the-job-and-optionally-save-it">
+<h1>Step 5: Run the job and optionally save it<a class="headerlink" href="#step-5-run-the-job-and-optionally-save-it" title="Permalink to this headline">¶</a></h1>
+<p>You can run your job by clicking the “Run Job Now” button. A loading
+spinner will appear as the job runs. The length of the job will depend
+on the size of the CSV / TSV uploaded. Once complete, a popup will
+indicate if the job was successful or notify you of any errors.</p>
+<p>If the job was successful you can save the job to a file on the computer
+by clicking “Save Job” and selecting a location to save the file on your
+computer (job files are saved as .sij files). When saving your job we
+recommend choosing a filename that does not contain spaces (e.g.
+&#8216;my_job.sij&#8217;, do not use a name like &#8216;my job.sij&#8217;). After saving the
+file the &#8216;<em>Command to execute with scheduler</em>&#8216; field is populated with
+the command to run the given job. Customers can use this field to run
+DataSync from the command line on a scheduled basis. You can later open
+a previously saved job by going to File -&gt; Open and finding the job file
+you saved previously.</p>
+<p><strong>NOTE:</strong> You should always close DataSync after you are finished.
+Failure to do so may cause issues when jobs are run using the scheduler.</p>
+<div class="well"><p>When running jobs in the UI DataSync does not display detailed logging
+information. To view detailed logging information you will need to run
+DataSync from the command line. To do so, copy the &#8216;Command to execute
+with scheduler&#8217; (click &#8216;Copy to clipboard&#8217; next to the textbox) and run
+that command in your Terminal/Command Prompt. The terminal will output
+detailed logging information as the job runs.</p>
+</div></div>
+<div class="section" id="step-6-scheduling-your-jobs-to-run-at-a-specified-interval">
+<h1>Step 6: Scheduling your jobs to run at a specified interval<a class="headerlink" href="#step-6-scheduling-your-jobs-to-run-at-a-specified-interval" title="Permalink to this headline">¶</a></h1>
+<p>To automate updating a dataset you must schedule the DataSync job to run
+automatically at a specified interval (i.e once per day). This can be
+done with standard tools such as the Windows Task Scheduler or Cron.</p>
+<p><a class="reference external" href="{{%20site.root%20}}/resources/schedule-job.html">Read the documentation for how to schedule a saved
+job</a>.</p>
+</div>
+<div class="section" id="additional-configuration">
+<h1>Additional configuration<a class="headerlink" href="#additional-configuration" title="Permalink to this headline">¶</a></h1>
+<p>To take advantage of job logging, automatic email error notification,
+proxy support or file chunking (for publishing large files) in DataSync
+refer to the <a class="reference external" href="{{%20site.root%20}}/resources/preferences-config.html">preferences configuration
+documentation</a>.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Step 1: Download DataSync</a></li>
+<li><a class="reference internal" href="#step-2-launching-datasync">Step 2: Launching DataSync</a></li>
+<li><a class="reference internal" href="#step-3-enter-authentication-details">Step 3: Enter authentication details</a></li>
+<li><a class="reference internal" href="#step-4-enter-job-details">Step 4: Enter job details</a></li>
+<li><a class="reference internal" href="#step-5-run-the-job-and-optionally-save-it">Step 5: Run the job and optionally save it</a></li>
+<li><a class="reference internal" href="#step-6-scheduling-your-jobs-to-run-at-a-specified-interval">Step 6: Scheduling your jobs to run at a specified interval</a></li>
+<li><a class="reference internal" href="#additional-configuration">Additional configuration</a></li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/setup-standard-job.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Socrata.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="_sources/setup-standard-job.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

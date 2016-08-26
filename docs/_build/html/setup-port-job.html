@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Step 1: Download DataSync &#8212; DataSync Historical Documentation pre-1.6 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     'pre-1.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="DataSync Historical Documentation pre-1.6 documentation" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>Port jobs are used for copying datasets that are already on the Socrata
+platform. Port jobs allow users with publishing rights to copy both
+dataset schemas (metadata and columns) and data (rows). This guide shows
+how to setup and run a Port Job using the graphical user interface.</p>
+<div class="section" id="step-1-download-datasync">
+<h1>Step 1: Download DataSync<a class="headerlink" href="#step-1-download-datasync" title="Permalink to this headline">¶</a></h1>
+<p>Navigate to the DataSync <a class="reference external" href="https://github.com/socrata/datasync/releases">download
+page</a>, and download the
+latest version.</p>
+</div>
+<div class="section" id="step-2-launching-datasync">
+<h1>Step 2: Launching DataSync<a class="headerlink" href="#step-2-launching-datasync" title="Permalink to this headline">¶</a></h1>
+<p>Launch DataSync navigating to the folder containing the Datasync JAR
+file that you downloaded previously and either double-click the jar or
+run the following command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">java</span> <span class="o">-</span><span class="n">jar</span> <span class="o">&lt;</span><span class="n">DATASYNC_JAR</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-3-create-a-new-port-job">
+<h1>Step 3: Create a new Port Job.<a class="headerlink" href="#step-3-create-a-new-port-job" title="Permalink to this headline">¶</a></h1>
+<p>In the DataSync UI go to <code class="docutils literal"><span class="pre">File</span> <span class="pre">-&gt;</span> <span class="pre">New...</span> <span class="pre">-&gt;</span> <span class="pre">Port</span> <span class="pre">Job</span></code>. This will open
+up a new Port Job.</p>
+</div>
+<div class="section" id="step-4-enter-authentication-details">
+<h1>Step 4: Enter authentication details<a class="headerlink" href="#step-4-enter-authentication-details" title="Permalink to this headline">¶</a></h1>
+<p>Enter your authentication details at the bottom left of DataSync
+(domain, username, password, and app token). The domain is the root
+domain of your data site and must begin with <a class="reference external" href="https://">https://</a> (i.e.
+<a class="reference external" href="https://data.cityofchicago.org">https://data.cityofchicago.org</a>). The username and password are those of
+a Socrata account that has a Publisher role. Enter your App token. If
+you do not yet have an app token, please see <a class="reference external" href="http://dev.socrata.com/docs/app-tokens.html">how to obtain an App
+token</a>. The username,
+password and application token will be saved as part of the job
+configuration. We recommend creating a dedicated Socrata account (with a
+Publisher role or Owner permissions to specific datasets) to use with
+DataSync rather than tying DataSync to a particular person’s account.</p>
+<p><strong>NOTICE:</strong> DataSync stores the authentication details unencrypted in
+the Registry on Windows platforms (in the following location:
+HKEY_CURRENT_USER) and in analogous locations on Mac and Linux. If you
+are concerned about this as a potential security issue you may want to
+look into alternative publishing methods. Please contact support if you
+have questions.</p>
+</div>
+<div class="section" id="step-5-configure-the-port-job">
+<h1>Step 5: Configure the Port Job.<a class="headerlink" href="#step-5-configure-the-port-job" title="Permalink to this headline">¶</a></h1>
+<p>The configurable options to run a Port Job are:</p>
+<ul class="simple">
+<li><em>Port Method</em>: Choose one of the following:</li>
+</ul>
+<ol class="arabic simple">
+<li><code class="docutils literal"><span class="pre">Copy</span> <span class="pre">schema</span> <span class="pre">only</span></code>: This will copy the metadata and columns of the
+source dataset into a new dataset. No row data is copied over.</li>
+<li><code class="docutils literal"><span class="pre">Copy</span> <span class="pre">schema</span> <span class="pre">and</span> <span class="pre">data</span></code>: This copies both the metadata/column info
+and all row data, effectively making a duplicate of the source
+dataset.</li>
+<li><code class="docutils literal"><span class="pre">Copy</span> <span class="pre">data</span> <span class="pre">only</span></code>: This copies the row data from the source dataset
+into the destination dataset. The effect on the destination dataset
+is determined by the <code class="docutils literal"><span class="pre">Publish</span> <span class="pre">Method</span></code> option below. Please note,
+this option will only succeed if the schemas of the source and
+destination dataset agree.</li>
+</ol>
+<ul class="simple">
+<li><em>Source Domain</em>: The domain to which the source dataset belongs.</li>
+<li><em>Source Dataset ID</em>: The <a class="reference external" href="http://socrata.github.io/datasync/resources/fac-common-problems.html#what-is-the-id-of-my-dataset">dataset
+identifier</a>
+of the source dataset.</li>
+<li><em>Destination Domain</em>: The domain where the source dataset will be
+copied to</li>
+<li><em>Destination Dataset ID</em>: The <a class="reference external" href="http://socrata.github.io/datasync/resources/fac-common-problems.html#what-is-the-id-of-my-dataset">dataset
+identifier</a>
+of the destination dataset. This is only needed if selecting
+<code class="docutils literal"><span class="pre">Copy</span> <span class="pre">data</span> <span class="pre">only</span></code> as the PortMethod.</li>
+<li><em>Publish Method</em>: Only relevant if selecting <code class="docutils literal"><span class="pre">Copy</span> <span class="pre">data</span> <span class="pre">only</span></code> as
+the PortMethod. Choose one of the following:</li>
+</ul>
+<ol class="arabic simple">
+<li><code class="docutils literal"><span class="pre">upsert</span></code>: This will upsert the data from the source dataset into
+the destination dataset, updating rows that exist already, inserting
+those that do not.</li>
+<li><code class="docutils literal"><span class="pre">replace</span></code>: This will replace the data in the destination dataset
+with that in the source dataset.</li>
+</ol>
+<ul class="simple">
+<li><em>Publish Destination Dataset</em>: Only relevant if copying the schema
+via <code class="docutils literal"><span class="pre">Copy</span> <span class="pre">schema</span> <span class="pre">only</span></code> or <code class="docutils literal"><span class="pre">Copy</span> <span class="pre">schema</span> <span class="pre">and</span> <span class="pre">data</span></code> as the
+PortMethod. Choose one of the following:</li>
+</ul>
+<ol class="arabic simple">
+<li><code class="docutils literal"><span class="pre">Yes</span></code>: This will publish the destination dataset to complete the
+Port Job.</li>
+<li><code class="docutils literal"><span class="pre">No</span></code>, create a working copy: This will leave the destination
+dataset as a working copy.</li>
+</ol>
+</div>
+<div class="section" id="step-6-run-save-and-schedule-the-job">
+<h1>Step 6: Run, save and schedule the Job.<a class="headerlink" href="#step-6-run-save-and-schedule-the-job" title="Permalink to this headline">¶</a></h1>
+<p>Once your job is setup, you can run it like any other job. For more
+details, please see steps 4 and 5 of the <a class="reference external" href="{{%20site.root%20}}/guides/setup-standard-job.html">Setting up a Standard Job
+(GUI)</a> Guide.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Step 1: Download DataSync</a></li>
+<li><a class="reference internal" href="#step-2-launching-datasync">Step 2: Launching DataSync</a></li>
+<li><a class="reference internal" href="#step-3-create-a-new-port-job">Step 3: Create a new Port Job.</a></li>
+<li><a class="reference internal" href="#step-4-enter-authentication-details">Step 4: Enter authentication details</a></li>
+<li><a class="reference internal" href="#step-5-configure-the-port-job">Step 5: Configure the Port Job.</a></li>
+<li><a class="reference internal" href="#step-6-run-save-and-schedule-the-job">Step 6: Run, save and schedule the Job.</a></li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/setup-port-job.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Socrata.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="_sources/setup-port-job.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

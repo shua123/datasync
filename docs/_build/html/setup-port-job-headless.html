@@ -1,0 +1,303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Step 1: Setup your configuration &#8212; DataSync Historical Documentation pre-1.6 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     'pre-1.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="DataSync Historical Documentation pre-1.6 documentation" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>Port jobs are used for copying datasets that are already on the Socrata
+platform. Port jobs allow users with publishing rights to copy both
+dataset schemas (metadata and columns) and data (rows). This guide shows
+how to setup and run a Port Job using the command line interface.</p>
+<div class="section" id="step-1-setup-your-configuration">
+<h1>Step 1: Setup your configuration<a class="headerlink" href="#step-1-setup-your-configuration" title="Permalink to this headline">¶</a></h1>
+<p>Information about your domain, username, password and app token is
+required for all DataSync jobs. Note that the user running the job must
+have publisher rights on the dataset. A number of other global settings,
+such as logging and emailing preferences can also be configured. Please
+refer to the <a class="reference external" href="{{%20site.root%20}}/resources/preferences-config.html">configuration
+guide</a> to
+establish your credentials and preferences.</p>
+</div>
+<div class="section" id="step-2-configure-job-details">
+<h1>Step 2: Configure job details<a class="headerlink" href="#step-2-configure-job-details" title="Permalink to this headline">¶</a></h1>
+<p>For general help using DataSync in headless/command-line mode run:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">java</span> <span class="o">-</span><span class="n">jar</span> <span class="o">&lt;</span><span class="n">DATASYNC_JAR</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">help</span>
+</pre></div>
+</div>
+<p>To run a job execute the following command, replacing <code class="docutils literal"><span class="pre">&lt;..&gt;</span></code> with the
+appropriate values (flags explained below):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">java</span> <span class="o">-</span><span class="n">jar</span> <span class="o">&lt;</span><span class="n">DATASYNC_JAR</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">c</span> <span class="o">&lt;</span><span class="n">CONFIG</span> <span class="n">FILE</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">t</span> <span class="n">PortJob</span> <span class="o">-</span><span class="n">pm</span> <span class="n">copy_all</span> <span class="o">-</span><span class="n">pd1</span> <span class="o">&lt;</span><span class="n">SOURCE</span> <span class="n">DOMAIN</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">pi1</span> <span class="o">&lt;</span><span class="n">SOURCE</span> <span class="n">DATASET</span> <span class="n">ID</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">pd2</span> <span class="o">&lt;</span><span class="n">DESTINATION</span> <span class="n">DOMAIN</span><span class="o">&gt;</span>  <span class="o">-</span><span class="n">pdt</span> <span class="o">&lt;</span><span class="n">TITLE</span> <span class="n">OF</span> <span class="n">NEW</span> <span class="n">DATASET</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">pp</span> <span class="n">true</span>
+</pre></div>
+</div>
+<p>Explanation of flags: <code class="docutils literal"><span class="pre">*</span></code> = required flag</p>
+<table>
+  <thead>
+    <tr>
+      <th><p>Flag - Short Name</p>
+</th>
+      <th><p>Flag - Long Name</p>
+</th>
+      <th><p>Example Values</p>
+</th>
+      <th><p>Description</p>
+</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style='text-align: left;'><p>-t *</p>
+</td>
+      <td style='text-align: left;'><p>&#8211;jobType</p>
+</td>
+      <td style='text-align: left;'><p>PortJob</p>
+</td>
+      <td style='text-align: left;'><p>Specifies the type of job to run.</p>
+</td>
+    </tr>
+    <tr>
+      <td style='text-align: left;'><p>-c</p>
+</td>
+      <td style='text-align: left;'><p>&#8211;config</p>
+</td>
+      <td style='text-align: left;'><p>/Users/home/config.json</p>
+</td>
+      <td style='text-align: left;'><p>Points to the config.json file you created in Step 1, if you chose to do
+so.</p>
+</td>
+    </tr>
+    <tr>
+      <td style='text-align: left;'><p>-pm *</p>
+</td>
+      <td style='text-align: left;'><p>&#8211;portMethod</p>
+</td>
+      <td style='text-align: left;'><p>copy_all</p>
+</td>
+      <td style='text-align: left;'><p>One of copy_all, copy_schema or copy_data</p>
+</td>
+    </tr>
+    <tr>
+      <td style='text-align: left;'><p>&#8211;pd1 *</p>
+</td>
+      <td style='text-align: left;'><p>&#8211;sourceDomain</p>
+</td>
+      <td style='text-align: left;'><p><a class="reference external" href="https://opendata.socrata.com">https://opendata.socrata.com</a></p>
+</td>
+      <td style='text-align: left;'><p>The scheme and domain to which the source dataset belongs.</p>
+</td>
+    </tr>
+    <tr>
+      <td style='text-align: left;'><p>-pi1 *</p>
+</td>
+      <td style='text-align: left;'><p>&#8211;sourceDatasetId</p>
+</td>
+      <td style='text-align: left;'><p>m985-ywaw</p>
+</td>
+      <td style='text-align: left;'><p>The dataset identifier of the source dataset.</p>
+</td>
+    </tr>
+    <tr>
+      <td style='text-align: left;'><p>&#8211;pd2 *</p>
+</td>
+      <td style='text-align: left;'><p>&#8211;destinationDomain</p>
+</td>
+      <td style='text-align: left;'><p><a class="reference external" href="https://opendata.socrata.com">https://opendata.socrata.com</a></p>
+</td>
+      <td style='text-align: left;'><p>The scheme and domain where the destination dataset should be copied.</p>
+</td>
+    </tr>
+    <tr>
+      <td style='text-align: left;'><p>-pi2</p>
+</td>
+      <td style='text-align: left;'><p>&#8211;destinationDatasetId</p>
+</td>
+      <td style='text-align: left;'><p>ax36-bgg2</p>
+</td>
+      <td style='text-align: left;'><p>The dataset identifier of the destination dataset.; only relevant if
+choosing copy_data for the &#8211;portMethod</p>
+</td>
+    </tr>
+    <tr>
+      <td style='text-align: left;'><p>-pdt</p>
+</td>
+      <td style='text-align: left;'><p>&#8211;destinationDatasetTitle</p>
+</td>
+      <td style='text-align: left;'><p>&#8220;Crimes 2014&#8221;</p>
+</td>
+      <td style='text-align: left;'><p>The title to give the destination dataset; only relevant if the
+destination set is being created by either choosing copy_all or
+copy_schema for the &#8211;portMethod</p>
+</td>
+    </tr>
+    <tr>
+      <td style='text-align: left;'><p>-pp</p>
+</td>
+      <td style='text-align: left;'><p>&#8211;publishDestinationDataset</p>
+</td>
+      <td style='text-align: left;'><p>true</p>
+</td>
+      <td style='text-align: left;'><p>Set this to true to have the destination dataset published before the
+Port Job completes; only relevant if the destination set is being
+created by either choosing copy_all or copy_schema for the portMethod.
+If false, the destination dataset will be left as a working copy (false
+is the default value)</p>
+</td>
+    </tr>
+    <tr>
+      <td style='text-align: left;'><p>-ppm</p>
+</td>
+      <td style='text-align: left;'><p>&#8211;portPublishMethod</p>
+</td>
+      <td style='text-align: left;'><p>replace</p>
+</td>
+      <td style='text-align: left;'><p>Specifies the publish method to use (replace or upsert). For details on
+the publishing methods refer to Step 5 of the Setup a Port Job (GUI)</p>
+</td>
+    </tr>
+  </tbody>
+</table></div>
+<div class="section" id="step-3-job-output">
+<h1>Step 3: Job output<a class="headerlink" href="#step-3-job-output" title="Permalink to this headline">¶</a></h1>
+<p>Information about the status of the job will be output to STDOUT. If the
+job runs successfully a ‘Success’ message will be output to STDOUT, the
+destination dataset id will be printed out and the program will exit
+with a normal status code (0). If there was a problem running the job a
+detailed error message will be output to STDERR and the program will
+exit with an error status code (1). You can capture the exit code to
+configure error handling logic within your ETL process.</p>
+</div>
+<div class="section" id="complete-example-job">
+<h1>Complete example job<a class="headerlink" href="#complete-example-job" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-default"><div class="highlight"><pre><span></span>java -jar &lt;DATASYNC_JAR&gt; -c config.json -t PortJob -pm copy_schema -pd1 https://opendata.socrata.com -pi1 97wa-y6ff -pd2 https://opendata.socrata.com -pdt ‘Port Job Test Title’ -pp true
+</pre></div>
+</div>
+<p>config.json contents:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;domain&quot;</span><span class="p">:</span> <span class="s2">&quot;https://opendata.socrata.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;publisher@socrata.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;secret_password&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;appToken&quot;</span><span class="p">:</span> <span class="s2">&quot;fPsJQRDYN9KqZOgEZWyjoa1SG&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Running a previously saved job file (.spj file)</strong></p>
+<p>Simply run:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">java</span> <span class="o">-</span><span class="n">jar</span> <span class="o">&lt;</span><span class="n">DATASYNC_JAR</span><span class="o">&gt;</span> <span class="o">&lt;.</span><span class="n">spj</span> <span class="n">FILE</span> <span class="n">TO</span> <span class="n">RUN</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>For example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">java</span> <span class="o">-</span><span class="n">jar</span> <span class="o">&lt;</span><span class="n">DATASYNC_JAR</span><span class="o">&gt;</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">john</span><span class="o">/</span><span class="n">Desktop</span><span class="o">/</span><span class="n">business_licenses</span><span class="o">.</span><span class="n">spj</span>
+</pre></div>
+</div>
+<p><strong>NOTE:</strong> you can also create an .spj file directly (rather than saving
+a job using the DataSync UI) which stores the job details in JSON
+format. Here is an example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;portMethod&quot;</span><span class="p">:</span> <span class="s2">&quot;copy_all&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;sourceSiteDomain&quot;</span><span class="p">:</span> <span class="s2">&quot;https://louis.demo.socrata.com&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;sourceSetID&quot;</span><span class="p">:</span> <span class="s2">&quot;w8e5-buaa&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;sinkSiteDomain&quot;</span><span class="p">:</span> <span class="s2">&quot;https://louis.demo.socrata.com&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;sinkSetID&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;publishMethod&quot;</span><span class="p">:</span> <span class="s2">&quot;upsert&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;publishDataset&quot;</span><span class="p">:</span> <span class="s2">&quot;publish&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;portResult&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;jobFilename&quot;</span><span class="p">:</span> <span class="s2">&quot;job_saved_v0.3.spj&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;fileVersionUID&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s2">&quot;pathToSavedJobFile&quot;</span><span class="p">:</span> <span class="s2">&quot;/home/louis/Socrata/Github/datasync/src/test/resources/job_saved_v0.3.spj&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Step 1: Setup your configuration</a></li>
+<li><a class="reference internal" href="#step-2-configure-job-details">Step 2: Configure job details</a></li>
+<li><a class="reference internal" href="#step-3-job-output">Step 3: Job output</a></li>
+<li><a class="reference internal" href="#complete-example-job">Complete example job</a></li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/setup-port-job-headless.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Socrata.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="_sources/setup-port-job-headless.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

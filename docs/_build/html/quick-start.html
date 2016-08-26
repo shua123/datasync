@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Step 1: Download DataSync &#8212; DataSync Historical Documentation pre-1.6 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     'pre-1.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="DataSync Historical Documentation pre-1.6 documentation" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>This quick start guide provides an overview of how to use DataSync to
+sync a local CSV with a dataset.</p>
+<p><strong>NOTICE:</strong> The steps in this guide will replace the entire contents of
+the dataset with the contents of the CSV. For a more in depth guide of
+using DataSync, including information on how to use DataSync to update
+and append information to a dataset, please see <a class="reference external" href="{{%20site.root%20}}/guides/setup-standard-job.html">setting up a standard
+job</a>.</p>
+<div class="well"><p>We have a video tutorial for using DataSync available here.</p>
+</div><div class="section" id="step-1-download-datasync">
+<h1>Step 1: Download DataSync<a class="headerlink" href="#step-1-download-datasync" title="Permalink to this headline">¶</a></h1>
+<p>Navigate to the DataSync <a class="reference external" href="https://github.com/socrata/datasync/releases">download
+page</a>, and download the
+latest version.</p>
+</div>
+<div class="section" id="step-2-launching-datasync">
+<h1>Step 2: Launching DataSync<a class="headerlink" href="#step-2-launching-datasync" title="Permalink to this headline">¶</a></h1>
+<p>Launch DataSync navigating to the folder containing the Datasync JAR
+file that you downloaded previously and either double-click the jar or
+run the following command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">java</span> <span class="o">-</span><span class="n">jar</span> <span class="o">&lt;</span><span class="n">DATASYNC_JAR</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-3-enter-authentication-details">
+<h1>Step 3: Enter authentication details<a class="headerlink" href="#step-3-enter-authentication-details" title="Permalink to this headline">¶</a></h1>
+<p>Enter your authentication details (domain, username, password, and app
+token) at the bottom left of DataSync. The domain is the root domain of
+your data site and must begin with <a class="reference external" href="https://">https://</a> (i.e.
+<a class="reference external" href="https://opendata.socrata.com">https://opendata.socrata.com</a>). The username and password are those of a
+Socrata account that has a Publisher role. Enter your App token. If you
+do not yet have an app token, please see <a class="reference external" href="http://dev.socrata.com/docs/app-tokens.html">how to obtain an App
+token</a>. The username,
+password and application token will be saved as part of the job
+configuration. We recommend creating a dedicated Socrata account (with a
+Publisher role or Owner permissions to specific datasets) to use with
+DataSync rather than tying DataSync to a particular person’s account.</p>
+<p><strong>NOTICE:</strong> DataSync stores the authentication details unencrypted in
+the Registry on Windows platforms (in the following location:
+HKEY_CURRENT_USER) and in analogous locations on Mac and Linux. If you
+are concerned about this as a potential security issue you may want to
+look into alternative publishing methods. Please contact support if you
+have questions.</p>
+</div>
+<div class="section" id="step-4-enter-job-details">
+<h1>Step 4: Enter job details<a class="headerlink" href="#step-4-enter-job-details" title="Permalink to this headline">¶</a></h1>
+<p><strong>Choose the CSV or TSV File to Publish</strong></p>
+<p>Select the CSV or TSV file on your local machine or networked folder
+that you wish to publish by clicking the “Browse...” button and browsing
+to find the CSV or TSV file.</p>
+<p><strong>Does the CSV/TSV Have a Header Row ?</strong></p>
+<p>If the CSV contains a header row, keep &#8220;File to publish contains header
+row&#8221; checked. The header row should contain the <a class="reference external" href="{{%20site.root%20}}/resources/faq-common-problems#how-do-i-find-the-api-field-names-for-my-columns.html">API Field
+Names</a>)
+of the columns in your dataset. If the CSV does not contain a header
+row, uncheck &#8220;File to publish contains header row&#8221;. In this case, the
+control file must contain the list of columns, in the order in which
+they appear in the CSV.</p>
+<p><strong>Obtain and Enter the Dataset ID ...</strong></p>
+<p>You will need the identifier of the dataset (dataset ID) that you want
+to update. To obtain the dataset ID navigate to the dataset in your web
+browser and inspect the address bar. The dataset ID can be found at end
+of the URL in the form (xxxx-xxxx). For example for the following URL to
+a dataset:</p>
+<p><a class="reference external" href="https://data.seattle.gov/Public-Safety/Fire-911/m985-ywaw">https://data.seattle.gov/Public-Safety/Fire-911/m985-ywaw</a></p>
+<p>The dataset ID is: m985-ywaw</p>
+<p>Enter your dataset&#8217;s ID into the Dataset ID field.</p>
+<p><strong>Choose the Publish Method ...</strong></p>
+<p>Leave the default option &#8220;replace via HTTP&#8221; selected This option will:</p>
+<ul class="simple">
+<li>gracefully handles network failures</li>
+<li>minimizes the amount of data sent by only sending the changes since
+the last update, rather than the complete dataset</li>
+<li>can reliably handle very large files (1 million+ rows)</li>
+<li>allows configuration of the way the CSV/TSV file is read and
+processed through the use of a <a class="reference external" href="{{%20site.root%20}}/resources/control-config.html">control
+file</a></li>
+</ul>
+<p><strong>Create a control file</strong> A control file is needed to help DataSync
+interpret the data within the CSV. In most cases simply clicking the
+&#8216;Generate/Edit&#8217; button to generate a control file with the default
+configuration will be sufficient for the job to run successfully.</p>
+<p>For more detailed information on establishing configuration in the
+Control file refer to <a class="reference external" href="{{%20site.root%20}}/resources/control-config.html">Control file
+configuration</a>.</p>
+</div>
+<div class="section" id="step-5-run-the-job">
+<h1>Step 5: Run the job<a class="headerlink" href="#step-5-run-the-job" title="Permalink to this headline">¶</a></h1>
+<p>Run the job by clicking the “Run Job Now” button. A loading spinner will
+appear as the job runs. The length of the job will depend on the size of
+the CSV / TSV uploaded. Once complete, a popup will indicate if the job
+was successful or notify you of any errors.</p>
+</div>
+<div class="section" id="step-6-save-the-job-for-later-use">
+<h1>Step 6: Save the job for later use<a class="headerlink" href="#step-6-save-the-job-for-later-use" title="Permalink to this headline">¶</a></h1>
+<p>If the job was successful you can save the job to a file on the computer
+by clicking “Save Job” and selecting a location to save the file on your
+computer (job files are saved as .sij files). When saving your job we
+recommend choosing a filename that does not contain spaces (e.g.
+&#8216;my_job.sij&#8217;, do not use a name like &#8216;my job.sij&#8217;).</p>
+<p>After saving the file the &#8216;<em>Command to execute with scheduler</em>&#8216; field
+is populated with the command to run the given job. Customers can use
+this field to run DataSync from the command line on a scheduled basis.
+You can later open a previously saved job by going to File -&gt; Open and
+finding the job file you saved previously.</p>
+<p><strong>NOTE:</strong> You should always close DataSync after you are finished.
+Failure to do so may cause issues when jobs are run using the scheduler.</p>
+<p>To automate updating a dataset you must schedule the DataSync job to run
+automatically at a specified interval (i.e once per day). This can be
+done with standard tools such as the Windows Task Scheduler or Cron.</p>
+<p><a class="reference external" href="{{%20site.root%20}}/resources/schedule-job.html">Read the documentation for how to schedule a saved
+job</a>.</p>
+</div>
+<div class="section" id="additional-information">
+<h1>Additional information<a class="headerlink" href="#additional-information" title="Permalink to this headline">¶</a></h1>
+<p>To take advantage of DataSync&#8217;s more advanced features, please see
+<a class="reference external" href="{{%20site.root%20}}/guides/setup-standard-job.html">setting up a standard
+job</a>.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Step 1: Download DataSync</a></li>
+<li><a class="reference internal" href="#step-2-launching-datasync">Step 2: Launching DataSync</a></li>
+<li><a class="reference internal" href="#step-3-enter-authentication-details">Step 3: Enter authentication details</a></li>
+<li><a class="reference internal" href="#step-4-enter-job-details">Step 4: Enter job details</a></li>
+<li><a class="reference internal" href="#step-5-run-the-job">Step 5: Run the job</a></li>
+<li><a class="reference internal" href="#step-6-save-the-job-for-later-use">Step 6: Save the job for later use</a></li>
+<li><a class="reference internal" href="#additional-information">Additional information</a></li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/quick-start.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Socrata.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="_sources/quick-start.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
