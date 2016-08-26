@@ -1,0 +1,276 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Schedule a Job &mdash; DataSync Historical Documentation pre-1.6 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="DataSync Historical Documentation pre-1.6 documentation" href="../index.html"/>
+        <link rel="prev" title="Preferences Config" href="preferences-config.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> DataSync Historical Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                pre-1.6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quick-start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup-standard-job.html">Setup Standard Job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup-standard-job-headless.html">Setup Standard Job Headless</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup-port-job.html">Setup Port Job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup-port-job-headless.html">Setup Port Job Headless</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datasync-library-sdk.html">DataSync Library SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compiling-on-windows-eclipse.html">Compiling on Windows with Eclipse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compiling-with-maven.html">Compiling with Maven</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="checking-log.html">Checking log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditions-restrictions.html">Conditions Restrictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="control-config.html">Control Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq-common-problems.html">FAQ Common Problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="network-considerations.html">Network Considerations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preferences-config.html">Preferences Config</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Schedule a Job</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#using-the-windows-task-scheduler">Using the Windows Task Scheduler</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#step-1-copy-the-command-from-datasync">Step 1: Copy the command from DataSync</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-2-create-a-new-task-using-the-windows-task-scheduler">Step 2: Create a new task using the Windows Task Scheduler</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#using-crontab-mac-or-linux">Using Crontab (Mac or Linux)</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">DataSync Historical Documentation</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Schedule a Job</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/resources/schedule-job.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="schedule-a-job">
+<h1>Schedule a Job<a class="headerlink" href="#schedule-a-job" title="Permalink to this headline">¶</a></h1>
+<p>This guide covers how to schedule a Socrata DataSync job to run
+automatically at some specified interval (i.e. once per day) using
+either the Windows Task Scheduler or Crontab.</p>
+<div class="section" id="using-the-windows-task-scheduler">
+<h2>Using the Windows Task Scheduler<a class="headerlink" href="#using-the-windows-task-scheduler" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="step-1-copy-the-command-from-datasync">
+<h3>Step 1: Copy the command from DataSync<a class="headerlink" href="#step-1-copy-the-command-from-datasync" title="Permalink to this headline">¶</a></h3>
+<p>After you save or open a job with DataSync the text field called
+&#8220;Command to execute with scheduler&#8221; is automatically populated with the
+command to run the given job. Simply click the &#8220;Copy to clipboard&#8221;
+button to copy the command to the clipboard. You can also click on the
+text field (which will automatically highlight the entire command) and
+then press Ctrl+C to copy the command to the clipboard.</p>
+</div>
+<div class="section" id="step-2-create-a-new-task-using-the-windows-task-scheduler">
+<h3>Step 2: Create a new task using the Windows Task Scheduler<a class="headerlink" href="#step-2-create-a-new-task-using-the-windows-task-scheduler" title="Permalink to this headline">¶</a></h3>
+<p>The Windows Task Scheduler typically comes installed on any Windows
+platform. On most systems it will be located in the Control Panel in the
+Administrative Tools section or under System Tools. Follow one of the
+following guides to create a task using the scheduler:</p>
+<ul class="simple">
+<li>Windows 7:
+<a class="reference external" href="http://windows.microsoft.com/en-us/windows7/schedule-a-task">http://windows.microsoft.com/en-us/windows7/schedule-a-task</a></li>
+<li>Windows XP: <a class="reference external" href="http://support.microsoft.com/kb/308569">http://support.microsoft.com/kb/308569</a></li>
+</ul>
+<p>The task you want to perform is “Start a program”. Instead of clicking
+the “Browse” button to find a program, paste (Ctrl+V) the command you
+copied from DataSync directly into the field beside the “Browse” button.
+You will probably get a message asking you if you want to run the
+program “java” with the following arguments. Simply click “Yes”.</p>
+<p>You may want to test run the task by finding the task you just created
+in the task library and right-clicking it and selecting &#8220;Run&#8221;. Make sure
+the dataset was updated as you expect.</p>
+</div>
+</div>
+<div class="section" id="using-crontab-mac-or-linux">
+<h2>Using Crontab (Mac or Linux)<a class="headerlink" href="#using-crontab-mac-or-linux" title="Permalink to this headline">¶</a></h2>
+<p>A good introduction to using Crontab (Crontab is included with
+essentially any Linux distro) can be found here:
+<a class="reference external" href="http://kvz.io/blog/2007/07/29/schedule-tasks-on-linux-using-crontab/">http://kvz.io/blog/2007/07/29/schedule-tasks-on-linux-using-crontab/</a></p>
+<p>To schedule a DataSync job simply copy the text within the &#8220;Command to
+execute with scheduler&#8221; field (after you save or open a job in DataSync)
+and use that command in place of the <code class="docutils literal"><span class="pre">/bin/execute/this/script.sh</span></code> in
+the above guide. For example, to schedule a job to run daily at midnight
+your Crontab content might look like:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">0</span> <span class="mi">0</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="n">java</span> <span class="o">-</span><span class="n">jar</span> <span class="o">&lt;</span><span class="n">DATASYNC_JAR</span><span class="o">&gt;</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">myjob</span><span class="o">.</span><span class="n">sij</span>
+</pre></div>
+</div>
+<p>A more Mac-specific guide here:
+<a class="reference external" href="http://www.maclife.com/article/columns/terminal_101_creating_cron_jobs">http://www.maclife.com/article/columns/terminal_101_creating_cron_jobs</a></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="preferences-config.html" class="btn btn-neutral" title="Preferences Config" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Socrata.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'pre-1.6',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

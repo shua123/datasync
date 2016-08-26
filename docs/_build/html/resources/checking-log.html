@@ -1,0 +1,353 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Checking log &mdash; DataSync Historical Documentation pre-1.6 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="DataSync Historical Documentation pre-1.6 documentation" href="../index.html"/>
+        <link rel="next" title="Conditions Restrictions" href="conditions-restrictions.html"/>
+        <link rel="prev" title="Compiling with Maven" href="../compiling-with-maven.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> DataSync Historical Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                pre-1.6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quick-start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup-standard-job.html">Setup Standard Job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup-standard-job-headless.html">Setup Standard Job Headless</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup-port-job.html">Setup Port Job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup-port-job-headless.html">Setup Port Job Headless</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datasync-library-sdk.html">DataSync Library SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compiling-on-windows-eclipse.html">Compiling on Windows with Eclipse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compiling-with-maven.html">Compiling with Maven</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Checking log</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#contents">Contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#connecting-to-the-logs-via-ftp">Connecting to the logs via FTP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#connecting-to-the-ftp-server">Connecting to the FTP server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#checking-the-logs-and-downloading-csv-snapshots-when-using-ftp">Checking the logs and downloading CSV &#8220;snapshots&#8221; when using FTP</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#connecting-to-the-logs-via-http">Connecting to the logs via HTTP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#checking-the-logs">Checking the logs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#downloading-csv-snapshots-when-using-http">Downloading CSV &#8220;snapshots&#8221; when using HTTP</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="conditions-restrictions.html">Conditions Restrictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="control-config.html">Control Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq-common-problems.html">FAQ Common Problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="network-considerations.html">Network Considerations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preferences-config.html">Preferences Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schedule-job.html">Schedule a Job</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">DataSync Historical Documentation</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Checking log</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/resources/checking-log.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="checking-log">
+<h1>Checking log<a class="headerlink" href="#checking-log" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="#connecting-to-the-logs-via-ftp">Via FTP</a><ul>
+<li><a class="reference external" href="#connecting-to-the-ftp-server">Connecting to the FTP server</a></li>
+<li><a class="reference external" href="#checking-the-logs-and-downloading-csv-snapshots-when-using-ftp">Checking the logs and downloading CSV
+&#8220;snapshots&#8221;</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#connecting-to-the-logs-via-http">Via HTTP</a><ul>
+<li><a class="reference external" href="#checking-the-logs">Checking the logs</a></li>
+<li><a class="reference external" href="#downloading-csv-snapshots-when-using-http">Downloading CSV
+&#8220;snapshots&#8221;</a></li>
+</ul>
+</li>
+</ul>
+<p>Customers who are using DataSync via FTP or HTTP can get detailed
+debugging information by retrieving the logs for each job. Details of
+how to access those logs can be found below.</p>
+</div>
+<div class="section" id="connecting-to-the-logs-via-ftp">
+<h2>Connecting to the logs via FTP<a class="headerlink" href="#connecting-to-the-logs-via-ftp" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="connecting-to-the-ftp-server">
+<h3>Connecting to the FTP server<a class="headerlink" href="#connecting-to-the-ftp-server" title="Permalink to this headline">¶</a></h3>
+<p>You can use <a class="reference external" href="https://filezilla-project.org/">Filezilla</a> or any other
+FTP client that supports FTPS to connect to the FTP server.</p>
+<p>In Filezilla go to <code class="docutils literal"><span class="pre">File</span> <span class="pre">-&gt;</span> <span class="pre">Site</span> <span class="pre">Manager</span></code>.</p>
+<p>Set up a new connection with the following details:</p>
+<ul class="simple">
+<li><strong>Host:</strong> production.ftp.socrata.net</li>
+<li><strong>Port:</strong> 22222</li>
+<li><strong>Protocol:</strong> FTP</li>
+<li><strong>Encryption:</strong> Require explicitly FTP over TLS</li>
+<li><strong>User:</strong> <code class="docutils literal"><span class="pre">&lt;Your</span> <span class="pre">Socrata</span> <span class="pre">username&gt;</span></code></li>
+<li><strong>Password:</strong> <code class="docutils literal"><span class="pre">&lt;Your</span> <span class="pre">Socrata</span> <span class="pre">password&gt;</span></code></li>
+</ul>
+<p>Ensure the transfer mode is &#8216;Passive&#8217; by going to:
+<code class="docutils literal"><span class="pre">Transfer</span> <span class="pre">Settings</span> <span class="pre">-&gt;</span> <span class="pre">Transfer</span> <span class="pre">mode</span> <span class="pre">:</span> <span class="pre">Passive</span></code>.</p>
+<p>Save the connection and press &#8220;Connect&#8221;.</p>
+<p>If you only have permission to one domain, you will be dropped into the
+directory for that domain. You should see the directories named with the
+dataset ID (e.g. b2fd-cjk2) of any dataset you have updated using
+DataSync replace via FTP. If you have permission to multiple domains,
+you will see them as subdirectories.</p>
+</div>
+<div class="section" id="checking-the-logs-and-downloading-csv-snapshots-when-using-ftp">
+<h3>Checking the logs and downloading CSV &#8220;snapshots&#8221; when using FTP<a class="headerlink" href="#checking-the-logs-and-downloading-csv-snapshots-when-using-ftp" title="Permalink to this headline">¶</a></h3>
+<p>Inside each dataset identifier directory there should be the following
+files/directories: - active-control.json - log.txt - status.txt -
+completed</p>
+<p>You can download log.txt to see the logging information for the given
+dataset. Within the ‘completed’ directory you can find CSVs/TSVs and
+control.json files archived by date (there are nested folders for year,
+month, and day). After each successful update operation using DataSync
+replace via FTP, the CSV/TSV and control.json files that were used to
+perform the update are archived. Archived files will are stored for 30
+days. Contact Socrata support if you would like additonal information
+about archiving.</p>
+</div>
+</div>
+<div class="section" id="connecting-to-the-logs-via-http">
+<h2>Connecting to the logs via HTTP<a class="headerlink" href="#connecting-to-the-logs-via-http" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="checking-the-logs">
+<h3>Checking the logs<a class="headerlink" href="#checking-the-logs" title="Permalink to this headline">¶</a></h3>
+<p>You must be signed in with an account with publisher rights before you
+can view the logs. Logs are offered in a plain text form or in a json
+format by using either the first or second url in each pair below
+respectively.</p>
+<p>Logs for all DataSync over HTTP jobs run on your domain by visiting:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//&lt;</span><span class="n">Your</span> <span class="n">domain</span><span class="o">&gt;/</span><span class="n">datasync</span><span class="o">/</span><span class="n">log</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//&lt;</span><span class="n">Your</span> <span class="n">domain</span><span class="o">&gt;/</span><span class="n">datasync</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">json</span>
+</pre></div>
+</div>
+<p>DataSync logs for a specific dataset can be found by visiting:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//&lt;</span><span class="n">Your</span> <span class="n">domain</span><span class="o">&gt;/</span><span class="n">datasync</span><span class="o">/</span><span class="nb">id</span><span class="o">/&lt;</span><span class="n">Your</span> <span class="n">dataset</span> <span class="n">ID</span><span class="o">&gt;/</span><span class="n">log</span><span class="o">/</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//&lt;</span><span class="n">Your</span> <span class="n">domain</span><span class="o">&gt;/</span><span class="n">datasync</span><span class="o">/</span><span class="nb">id</span><span class="o">/&lt;</span><span class="n">Your</span> <span class="n">dataset</span> <span class="n">ID</span><span class="o">&gt;/</span><span class="n">log</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">json</span>
+</pre></div>
+</div>
+<p>The status of an in-progress job on a specific dataset can be found by
+visiting:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//&lt;</span><span class="n">Your</span> <span class="n">domain</span><span class="o">&gt;/</span><span class="n">datasync</span><span class="o">/</span><span class="nb">id</span><span class="o">/&lt;</span><span class="n">Your</span> <span class="n">dataset</span> <span class="n">ID</span><span class="o">&gt;/</span><span class="n">status</span><span class="o">/</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//&lt;</span><span class="n">Your</span> <span class="n">domain</span><span class="o">&gt;/</span><span class="n">datasync</span><span class="o">/</span><span class="nb">id</span><span class="o">/&lt;</span><span class="n">Your</span> <span class="n">dataset</span> <span class="n">ID</span><span class="o">&gt;/</span><span class="n">status</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">json</span>
+</pre></div>
+</div>
+<p>DataSync logs for a specific job can be found by visiting</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//&lt;</span><span class="n">Your</span> <span class="n">domain</span><span class="o">&gt;/</span><span class="n">datasync</span><span class="o">/</span><span class="nb">id</span><span class="o">/&lt;</span><span class="n">Your</span> <span class="n">dataset</span> <span class="n">ID</span><span class="o">&gt;/</span><span class="n">log</span><span class="o">/&lt;</span><span class="n">Your</span> <span class="n">job</span> <span class="n">ID</span><span class="o">&gt;</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//&lt;</span><span class="n">Your</span> <span class="n">domain</span><span class="o">&gt;/</span><span class="n">datasync</span><span class="o">/</span><span class="nb">id</span><span class="o">/&lt;</span><span class="n">Your</span> <span class="n">dataset</span> <span class="n">ID</span><span class="o">&gt;/</span><span class="n">log</span><span class="o">/&lt;</span><span class="n">Your</span> <span class="n">job</span> <span class="n">ID</span><span class="o">&gt;.</span><span class="n">json</span>
+</pre></div>
+</div>
+<p>Where <code class="docutils literal"><span class="pre">&lt;Your</span> <span class="pre">domain&gt;</span></code> is your domain, <code class="docutils literal"><span class="pre">&lt;Your</span> <span class="pre">dataset</span> <span class="pre">ID&gt;</span></code> is the
+<a class="reference external" href="http://socrata.github.io/datasync/resources/fac-common-problems.html#what-is-the-id-of-my-dataset">identifier</a>
+of the dataset and <code class="docutils literal"><span class="pre">&lt;Your</span> <span class="pre">job</span> <span class="pre">ID&gt;</span></code> is the identifier of the job. The
+job identifier is a 32-length character string and is included in all of
+the logs listed above.</p>
+</div>
+<div class="section" id="downloading-csv-snapshots-when-using-http">
+<h3>Downloading CSV &#8220;snapshots&#8221; when using HTTP<a class="headerlink" href="#downloading-csv-snapshots-when-using-http" title="Permalink to this headline">¶</a></h3>
+<p>Each CSV uploaded through DataSync over HTTP is available for at least
+30 days after upload. The CSV can be found by generating a URL with the
+following pattern</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//&lt;</span><span class="n">Your</span> <span class="n">domain</span><span class="o">&gt;/</span><span class="n">datasync</span><span class="o">/</span><span class="nb">id</span><span class="o">/&lt;</span><span class="n">Your</span> <span class="n">Dataset</span> <span class="n">ID</span><span class="o">&gt;/</span><span class="n">completed</span><span class="o">/</span><span class="n">yyyy</span><span class="o">/</span><span class="n">mm</span><span class="o">/</span><span class="n">dd</span><span class="o">/</span><span class="n">hh</span><span class="p">:</span><span class="n">mm</span><span class="p">:</span><span class="n">ss</span><span class="o">.</span><span class="n">xxx</span><span class="o">-&lt;</span><span class="n">Your</span> <span class="n">file</span> <span class="n">name</span><span class="o">&gt;.</span><span class="n">csv</span>
+</pre></div>
+</div>
+<p>Where <code class="docutils literal"><span class="pre">&lt;Your</span> <span class="pre">domain&gt;</span></code> is your domain, <code class="docutils literal"><span class="pre">&lt;Your</span> <span class="pre">dataset</span> <span class="pre">ID&gt;</span></code> is the
+identifier of the dataset and <code class="docutils literal"><span class="pre">&lt;Your</span> <span class="pre">file</span> <span class="pre">name&gt;</span></code> is the name of the
+CSV you uploaded.</p>
+<p>The date information within the path can be found by navigating the
+/completed/ directory. For example, to see which months still contain
+snapshots, you can use:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//&lt;</span><span class="n">Your</span> <span class="n">domain</span><span class="o">&gt;/</span><span class="n">datasync</span><span class="o">/</span><span class="nb">id</span><span class="o">/&lt;</span><span class="n">Your</span> <span class="n">Dataset</span> <span class="n">ID</span><span class="o">&gt;/</span><span class="n">completed</span><span class="o">/</span><span class="n">yyyy</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>And to determine the complete file name, including the hour, minute,
+seconds and milliseconds, you can use</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//&lt;</span><span class="n">Your</span> <span class="n">domain</span><span class="o">&gt;/</span><span class="n">datasync</span><span class="o">/</span><span class="nb">id</span><span class="o">/&lt;</span><span class="n">Your</span> <span class="n">Dataset</span> <span class="n">ID</span><span class="o">&gt;/</span><span class="n">completed</span><span class="o">/</span><span class="n">yyyy</span><span class="o">/</span><span class="n">mm</span><span class="o">/</span><span class="n">dd</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>noting that the resulting file will be url-encoded.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="conditions-restrictions.html" class="btn btn-neutral float-right" title="Conditions Restrictions" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../compiling-with-maven.html" class="btn btn-neutral" title="Compiling with Maven" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Socrata.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'pre-1.6',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

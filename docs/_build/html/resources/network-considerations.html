@@ -1,0 +1,371 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Network Considerations &mdash; DataSync Historical Documentation pre-1.6 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="DataSync Historical Documentation pre-1.6 documentation" href="../index.html"/>
+        <link rel="next" title="Preferences Config" href="preferences-config.html"/>
+        <link rel="prev" title="FAQ Common Problems" href="faq-common-problems.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> DataSync Historical Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                pre-1.6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quick-start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup-standard-job.html">Setup Standard Job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup-standard-job-headless.html">Setup Standard Job Headless</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup-port-job.html">Setup Port Job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup-port-job-headless.html">Setup Port Job Headless</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datasync-library-sdk.html">DataSync Library SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compiling-on-windows-eclipse.html">Compiling on Windows with Eclipse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compiling-with-maven.html">Compiling with Maven</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="checking-log.html">Checking log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditions-restrictions.html">Conditions Restrictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="control-config.html">Control Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq-common-problems.html">FAQ Common Problems</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Network Considerations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#behind-a-firewall">Behind a Firewall?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#behind-a-proxy-server">Behind a Proxy Server?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-an-outdated-java">Using an Outdated Java?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#certificate-validation-issues">Certificate Validation Issues?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#still-stuck">Still Stuck?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="preferences-config.html">Preferences Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schedule-job.html">Schedule a Job</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">DataSync Historical Documentation</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Network Considerations</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/resources/network-considerations.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="network-considerations">
+<h1>Network Considerations<a class="headerlink" href="#network-considerations" title="Permalink to this headline">¶</a></h1>
+<p>DataSync requires various network permissions depending on the upload
+method you choose. When using the latest upload methods (HTTP rather
+than FTP or SODA2) the standard ports 80 and 443 will be used. Although
+we strongly recommend using the HTTP methods, if you are using
+DataSync&#8217;s FTP methods, ports 22222 and 3131-3141 need to be open, in
+addition to ports 80 and 443. If you have configured <a class="reference external" href="{{%20site.root%20}}/resources/preferences-config.html#error-notification-auto-email-setup">email
+notifications</a>,
+the SMTP and SSL ports need to be open.</p>
+<p>NOTE: Because network setups can vary wildly, this does not attempt to
+be a definitive guide, but does hope to give you some guidance if
+DataSync doesn&#8217;t work out of the box because of networking issues.</p>
+<ul class="simple">
+<li><a class="reference external" href="#behind-a-firewall">Behind a Firewall?</a></li>
+<li><a class="reference external" href="#behind-a-proxy-server">Behind a Proxy Server?</a></li>
+<li><a class="reference external" href="#using-an-outdated-java">Using an Outdated Java?</a></li>
+<li><a class="reference external" href="#certificate-validation-issues">Certificate Validation Issues?</a></li>
+<li><a class="reference external" href="#still-stuck">Still Stuck?</a></li>
+</ul>
+<div class="section" id="behind-a-firewall">
+<h2>Behind a Firewall?<a class="headerlink" href="#behind-a-firewall" title="Permalink to this headline">¶</a></h2>
+<p>Firewalls can block both incoming and outgoing traffic and can be
+configured to block particular ports, domains, programs and/or types of
+traffic.</p>
+<p>Per port access, as noted above, DataSync requires usage of ports 80
+(for http) and 443 (for https). If you are using FTP methods, port 22222
+(for control connection) and ports 3131 to 3141 (for data transferral)
+are also required. If you have configured <a class="reference external" href="{{%20site.root%20}}/resources/preferences-config.html#error-notification-auto-email-setup">email
+notifications</a>,
+the SMTP and SSL ports need to be open.</p>
+<p>Per domain access, if using HTTP or Soda2 methods, DataSync communicates
+exclusively with the domain you provide in your
+<a class="reference external" href="{{%20site.root%20}}/resources/preferences-config.html">configuration</a>.
+If using FTP methods, DataSync will also need to reach Socrata&#8217;s ftp
+server. If you are using email notification, DataSync makes requests to
+the domain for the outgoing mail server. These domains should be
+white-listed according to your firewall&#8217;s rules.</p>
+<p>Per program restrictions and in particular if using the Windows
+Firewall, you will need to allow DataSync to communicate through the
+Windows Firewall. Be aware that you may need to do this for each network
+(home, work, public) that you use.</p>
+<p>Per traffic types, DataSync has different request characteristics
+depending on which upload method you&#8217;ve chosen.</p>
+<ul class="simple">
+<li>If using the HTTP method, DataSync uses an ssync algorithm to reduce
+the amount of data that needs to be sent to only the changes made
+since the last update. This data is chunked currently to 4MB blocks.</li>
+<li>If using the Soda2 method, DataSync will attempt to transfer the
+entire file to publish in one chunk. This can create a long-lived
+connection which some firewalls do not allow. <a class="reference external" href="{{%20site.root%20}}/resources/preferences-config.html#chunking-configuration">Chunking can be
+configured</a>
+using the Soda2 method though.</li>
+<li>If using the FTP method, DataSync will compress the file to publish
+and attempt to transfer it in a single chunk. This can create a
+long-lived connection which some firewalls do not allow.</li>
+</ul>
+</div>
+<div class="section" id="behind-a-proxy-server">
+<h2>Behind a Proxy Server?<a class="headerlink" href="#behind-a-proxy-server" title="Permalink to this headline">¶</a></h2>
+<p>Proxy servers intercept network traffic and can be configured in
+numerous ways to allow/block, inspect and encrypt/decrypt traffic, among
+other things. As such, everything in the <a class="reference external" href="#behind-a-firewall">&#8220;Behind a
+Firewall&#8221;</a> section may apply. Because DataSync
+sends ssl requests, the proxy server must be set up to correctly handle
+encrypted traffic, i.e. that it is a &#8220;transparent proxy&#8221; - ask your IT
+deparment to confirm this.</p>
+<p>DataSync must be configured to route its requests through the proxy. At
+minimum, <a class="reference external" href="{{%20site.root%20}}/resources/preferences-config.html">this
+configuration</a>
+requires the hostname and port and if the proxy server is authenticated,
+your proxy username and password as well.</p>
+<p><strong>NOTICE:</strong> DataSync has proxy support only for the HTTP methods; FTP
+and Soda2 methods cannot currently work behind a proxy.</p>
+</div>
+<div class="section" id="using-an-outdated-java">
+<h2>Using an Outdated Java?<a class="headerlink" href="#using-an-outdated-java" title="Permalink to this headline">¶</a></h2>
+<p>Some networks will not allow Java programs to run if the version is
+outdated, particularly if the older version presents a security risk.
+You or your IT department will need to update to the most recent Java.</p>
+</div>
+<div class="section" id="certificate-validation-issues">
+<h2>Certificate Validation Issues?<a class="headerlink" href="#certificate-validation-issues" title="Permalink to this headline">¶</a></h2>
+<p>If you receive a SunCertPathBuilderException, there are two typical
+causes:</p>
+<ol class="arabic simple">
+<li>Java is out-of-date and as a result is failing to validate the SSL
+certificate. To correct this issue you must update Java JDK or JRE on
+the machine running DataSync.</li>
+<li>Java does not approve of one of the certificates in the chain between
+your machine and the domain you&#8217;re trying to upload to. The solution
+is to add the necessary certificates into Java&#8217;s trusted certificate
+store. The steps to do this are:</li>
+</ol>
+<ul>
+<li><p class="first">Get the certificate chain.</p>
+<ul>
+<li><p class="first">Find where Java&#8217;s keytool is located.</p>
+</li>
+<li><p class="first">On Windows, this is likely at &#8220;C:Files7&#8221;)</p>
+</li>
+<li><p class="first">On Mac OS X, this is likely at
+&#8220;/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/bin/&#8221;</p>
+</li>
+<li><p class="first">Run the following, removing the proxy options if you are not
+behind a proxy server. You can remove the &#8216;-rfc&#8217; option to get
+additional information about each certificate in the chain.</p>
+<p>keytool -J-Dhttps.proxyHost= -J-Dhttps.proxyPort= -printcert -rfc
+-sslserver :443</p>
+</li>
+</ul>
+</li>
+<li><p class="first"><strong>Validate any certificates you plan to add with your IT department
+!!!!</strong>. It is a security risk to add unknown certificates.</p>
+</li>
+<li><p class="first">Copy the cert you need to add inclusively from &#8212;&#8211;BEGIN
+CERTIFICATE&#8212;&#8211; to &#8212;&#8211;END CERTIFICATE&#8212;&#8211; into a file
+<code class="docutils literal"><span class="pre">&lt;FILENAME&gt;</span></code>.cer</p>
+</li>
+<li><p class="first">Run&nbsp;the following, using your keystore password if that has been set
+up or the default password &#8216;changeit&#8217; otherwise.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">keytool</span> <span class="o">-</span><span class="kn">import</span> <span class="o">-</span><span class="n">keystore</span> <span class="n">cacerts</span> <span class="o">-</span><span class="n">file</span> <span class="o">&lt;</span><span class="n">FILENAME</span><span class="o">&gt;.</span><span class="n">cer</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="still-stuck">
+<h2>Still Stuck?<a class="headerlink" href="#still-stuck" title="Permalink to this headline">¶</a></h2>
+<p>If you are still stuck after reading this page becasue of networking
+problems, please contact Socrata support and provide the following
+information:</p>
+<ul class="simple">
+<li>Whether you can browse the internet in a browser.</li>
+<li>Whether you can browse to the domain you provided in your
+<a class="reference external" href="{{%20site.root%20}}/resources/preferences-config.html">configuration</a>
+in a browser.</li>
+<li>Whether DataSync can run at all - even if it produces errors.</li>
+<li>Assuming DataSync can run, a screenshot or text file of the errors
+that DataSync gives.</li>
+<li>If possible, a wireshark trace. You will need to download
+<a class="reference external" href="https://www.wireshark.org/">wireshark</a> and <a class="reference external" href="http://www.howtogeek.com/104278/how-to-use-wireshark-to-capture-filter-and-inspect-packets/">capture all network
+traffic</a>
+while attempting to run your DataSync job.</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="preferences-config.html" class="btn btn-neutral float-right" title="Preferences Config" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="faq-common-problems.html" class="btn btn-neutral" title="FAQ Common Problems" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Socrata.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'pre-1.6',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

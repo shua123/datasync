@@ -1,0 +1,661 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Control Config &mdash; DataSync Historical Documentation pre-1.6 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="DataSync Historical Documentation pre-1.6 documentation" href="../index.html"/>
+        <link rel="next" title="FAQ Common Problems" href="faq-common-problems.html"/>
+        <link rel="prev" title="Conditions Restrictions" href="conditions-restrictions.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> DataSync Historical Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                pre-1.6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quick-start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup-standard-job.html">Setup Standard Job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup-standard-job-headless.html">Setup Standard Job Headless</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup-port-job.html">Setup Port Job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup-port-job-headless.html">Setup Port Job Headless</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datasync-library-sdk.html">DataSync Library SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compiling-on-windows-eclipse.html">Compiling on Windows with Eclipse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compiling-with-maven.html">Compiling with Maven</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="checking-log.html">Checking log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditions-restrictions.html">Conditions Restrictions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Control Config</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#contents">Contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basic-control-file-setup">Basic control file setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#header-row-column-list">Header row/column list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#date-time-formatting">Date/time formatting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#timestamp-format-options">Timestamp Format Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#timezone-option">Timezone option</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#location-column-and-geocoding-configuration">Location column and geocoding configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ignoring-columns">Ignoring Columns</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#complete-control-file-settings">Complete control file settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#actions">Actions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#csv-or-tsv-settings">CSV or TSV Settings</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faq-common-problems.html">FAQ Common Problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="network-considerations.html">Network Considerations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preferences-config.html">Preferences Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schedule-job.html">Schedule a Job</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">DataSync Historical Documentation</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Control Config</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/resources/control-config.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="control-config">
+<h1>Control Config<a class="headerlink" href="#control-config" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="#basic-control-file-setup">Basic control file setup</a><ul>
+<li><a class="reference external" href="#header-rowcolumn-list">Header row / column list</a></li>
+<li><a class="reference external" href="#datetime-formatting">Date/time formatting</a></li>
+<li><a class="reference external" href="#location-column-and-geocoding-configuration">Location column and geocoding
+configuration</a></li>
+<li><a class="reference external" href="#ignoring-columns">Ignoring columns</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#complete-control-file-settings">Complete control file settings</a></li>
+</ul>
+<div class="well"><p>NOTICE: This guide in only applicable when using the FTP or HTTP methods
+(i.e. it is not applicable when using Soda2).</p>
+</div></div>
+<div class="section" id="basic-control-file-setup">
+<h2>Basic control file setup<a class="headerlink" href="#basic-control-file-setup" title="Permalink to this headline">¶</a></h2>
+<p>The control file is a JSON-formatted file that is used to configure a
+Standard DataSync job that uses the FTP or HTTP means of transfering
+data. Control files are specific to the dataset you are updating.</p>
+<p>An example of a typical control file:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;Replace&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;csv&quot;</span> <span class="p">:</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;useSocrataGeocoding&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+      <span class="s2">&quot;columns&quot;</span> <span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+      <span class="s2">&quot;skip&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">&quot;fixedTimestampFormat&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;ISO8601&quot;</span><span class="p">,</span><span class="s2">&quot;MM/dd/yy&quot;</span><span class="p">,</span><span class="s2">&quot;MM/dd/yyyy&quot;</span><span class="p">],</span>
+      <span class="s2">&quot;floatingTimestampFormat&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;ISO8601&quot;</span><span class="p">,</span><span class="s2">&quot;MM/dd/yy&quot;</span><span class="p">,</span><span class="s2">&quot;MM/dd/yyyy&quot;</span><span class="p">],</span>
+      <span class="s2">&quot;timezone&quot;</span> <span class="p">:</span> <span class="s2">&quot;UTC&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;separator&quot;</span> <span class="p">:</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;quote&quot;</span> <span class="p">:</span> <span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;encoding&quot;</span> <span class="p">:</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;emptyTextIsNull&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+      <span class="s2">&quot;trimWhitespace&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+      <span class="s2">&quot;trimServerWhitespace&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+      <span class="s2">&quot;overrides&quot;</span> <span class="p">:</span> <span class="p">{}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This guide will describe how to use the different options within the
+control file.</p>
+<div class="section" id="header-row-column-list">
+<h3>Header row/column list<a class="headerlink" href="#header-row-column-list" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal"><span class="pre">columns</span></code> and <code class="docutils literal"><span class="pre">skip</span></code> options enable configuration of how the
+columns within the CSV/TSV align with those of the dataset.</p>
+<p><code class="docutils literal"><span class="pre">columns</span></code>: List of column names in the following format
+<code class="docutils literal"><span class="pre">[&quot;col_id1&quot;,&quot;col_id2&quot;,..]</span></code>. If <code class="docutils literal"><span class="pre">null</span></code>, the first line of the CSV/TSV
+after any skipped records is assumed to contain the column names. If
+specified, <code class="docutils literal"><span class="pre">columns</span></code> must be an array of strings, and must not contain
+nulls.</p>
+<p><strong>IMPORTANT NOTE:</strong> the column names, whether provided in “columns” or
+in the first row of the CSV/TSV, must be the <a class="reference external" href="{{%20site.root%20}}/resources/faq-common-problems#how-do-i-find-the-api-field-names-for-my-columns.html">API field
+names</a>,
+not the display name of the columns.</p>
+<p><code class="docutils literal"><span class="pre">skip</span></code>: Specifies the number of rows to skip before reaching the
+header.</p>
+<p><strong>Common combinations of ``columns`` and ``skip``:</strong></p>
+<p>If the first line of the CSV/TSV is the list of column identifiers:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;columns&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+<span class="s2">&quot;skip&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</pre></div>
+</div>
+<p>If the first line of the CSV is the columns incorrectly formatted, for
+example with human-readable names instead of column identifiers:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;columns&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;first_name&quot;</span><span class="p">,</span><span class="s2">&quot;last_name&quot;</span><span class="p">,</span><span class="s2">&quot;age&quot;</span><span class="p">],</span>
+<span class="s2">&quot;skip&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+</pre></div>
+</div>
+<p>If the first line of the CSV/TSV is data (there is no header row):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;columns&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;first_name&quot;</span><span class="p">,</span><span class="s2">&quot;last_name&quot;</span><span class="p">,</span><span class="s2">&quot;age&quot;</span><span class="p">],</span>
+<span class="s2">&quot;skip&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="date-time-formatting">
+<h3>Date/time formatting<a class="headerlink" href="#date-time-formatting" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="timestamp-format-options">
+<h4>Timestamp Format Options<a class="headerlink" href="#timestamp-format-options" title="Permalink to this headline">¶</a></h4>
+<p>The <code class="docutils literal"><span class="pre">floatingTimestampFormat</span></code> and <code class="docutils literal"><span class="pre">fixedTimestampFormat</span></code> options
+specify how date/time data is formatted in the CSV/TSV file.
+<code class="docutils literal"><span class="pre">floatingTimestampFormat</span></code> applies to (&#8220;Date &amp; Time&#8221; datatype columns).
+<code class="docutils literal"><span class="pre">fixedTimestampFormat</span></code> functions similarly but applies (&#8220;Date &amp; Time
+(with timezone)&#8221; datatype columns). If the format does not specify a
+time zone, the zone may be given via the <code class="docutils literal"><span class="pre">timezone</span></code> option. If no zone
+information is provided, UTC is assumed.</p>
+<p>Both <code class="docutils literal"><span class="pre">floatingTimestampFormat</span></code> and <code class="docutils literal"><span class="pre">fixedTimestampFormat</span></code> accept a
+string (e.g. &#8220;ISO8601&#8221;) or a JSON-formatted list of formats including
+&#8220;ISO8601&#8221; and any date/time &#8220;Joda time&#8221; format-string. Joda time syntax
+is documented in detail here:
+<a class="reference external" href="http://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html">http://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html</a>.
+Note that time specification &#8220;z&#8221; cannot be used; it is an output only
+formatter.</p>
+<p>Example syntax to accept four of the most common date/time formats:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;fixedTimestampFormat&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;ISO8601&quot;</span><span class="p">,</span><span class="s2">&quot;MM/dd/yy&quot;</span><span class="p">,</span><span class="s2">&quot;MM/dd/yyyy&quot;</span><span class="p">,</span><span class="s2">&quot;dd-MMM-yyyy&quot;</span><span class="p">],</span>
+<span class="s2">&quot;floatingTimestampFormat&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;ISO8601&quot;</span><span class="p">,</span><span class="s2">&quot;MM/dd/yy&quot;</span><span class="p">,</span><span class="s2">&quot;MM/dd/yyyy&quot;</span><span class="p">,</span><span class="s2">&quot;dd-MMM-yyyy&quot;</span><span class="p">],</span>
+</pre></div>
+</div>
+<p>This would accept any of the following example date/time data values:
+&#8220;2014-04-22&#8221;, &#8220;2014-04-22T05:44:38&#8221;, &#8220;04/22/2014&#8221;, &#8220;4/22/2014&#8221;,
+&#8220;4/22/14&#8221;, and &#8220;22-Apr-2014&#8221;.</p>
+<p>If you want to allow a date with or without a time value (e.g. both
+&#8220;2014-04-22&#8221; and &#8220;2014-04-22 9:30:00&#8221;), you would use:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;fixedTimestampFormat&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;yyyy-MM-dd&quot;</span><span class="p">,</span> <span class="s2">&quot;yyyy-MM-dd HH:mm:ss&quot;</span><span class="p">],</span>
+<span class="s2">&quot;floatingTimestampFormat&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;yyyy-MM-dd&quot;</span><span class="p">,</span> <span class="s2">&quot;yyyy-MM-dd HH:mm:ss&quot;</span><span class="p">],</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="timezone-option">
+<h4>Timezone option<a class="headerlink" href="#timezone-option" title="Permalink to this headline">¶</a></h4>
+<p><code class="docutils literal"><span class="pre">timezone</span></code> specifies the timezones for FixedTimestamps (&#8220;Date &amp; Time
+(with timezone)&#8221; columns). This only has an effect if the timestamp
+format does not specify a time zone.</p>
+<p>You can set this to one of the following:</p>
+<ol class="arabic simple">
+<li>&#8220;UTC&#8221;</li>
+<li>A timezone name (e.g. &#8220;US/Pacific&#8221;). The list of accepted names can
+be found at <a class="reference external" href="http://joda-time.sourceforge.net/timezones.html">http://joda-time.sourceforge.net/timezones.html</a>. <em>Please
+avoid the 3-letter variants as these are ambiguous (e.g. MST is both
+Mountain Standard Time and Malaysia Standard Time).</em></li>
+</ol>
+</div>
+</div>
+<div class="section" id="location-column-and-geocoding-configuration">
+<h3>Location column and geocoding configuration<a class="headerlink" href="#location-column-and-geocoding-configuration" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal"><span class="pre">syntheticLocations</span></code> option allows configuring a Location datatype
+column to populate from address, city, state, zipcode or
+latitude/longitude data within existing columns of the CSV/TSV.</p>
+<p>For example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;syntheticLocations&quot;</span> <span class="p">:</span> <span class="p">{</span>
+  <span class="s2">&quot;location_col_id&quot;</span> <span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;address&quot;</span> <span class="p">:</span> <span class="s2">&quot;address_col_id&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;city&quot;</span> <span class="p">:</span> <span class="s2">&quot;city_col_id&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;state&quot;</span> <span class="p">:</span> <span class="s2">&quot;state_col_id&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;zip&quot;</span> <span class="p">:</span> <span class="s2">&quot;zipcode_col_id&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;latitude&quot;</span> <span class="p">:</span> <span class="s2">&quot;lat_col_id&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;longitude&quot;</span> <span class="p">:</span> <span class="s2">&quot;lng_col_id&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The following fields are optional: &#8220;address&#8221;, &#8220;city&#8221;, &#8220;state&#8221;, &#8220;zip&#8221;,
+&#8220;latitude&#8221;, and &#8220;longitude&#8221;. Those that are are not provided are omitted
+from the generated location. The column field names must exist in the
+CSV. In the above example, a Location datatype column with the
+identifier <code class="docutils literal"><span class="pre">location_col_id</span></code> would pull in the &#8220;address&#8221; from the
+column with identifier <code class="docutils literal"><span class="pre">address_col_id</span></code> and the &#8220;city&#8221; from column
+with identifier <code class="docutils literal"><span class="pre">city_col_id</span></code>.</p>
+<p>The synthetic location <code class="docutils literal"><span class="pre">location_col_id</span></code> should not be present in the
+CSV. If it is, you can ignore this column using the
+<code class="docutils literal"><span class="pre">ignoreColumns</span> <span class="pre">option</span></code>.</p>
+<p>When you provide any combination of location information but do not fill
+in latitude or longitude then Socrata geocodes the information
+automatically to generate the latitude and longitude values. For more
+information on Socrata geocoding, please see <a class="reference external" href="http://support.socrata.com/entries/27849363-Location-Information-Data-which-can-be-geocoded">this
+guide</a>.</p>
+<p>IMPORTANT: If you are providing the latitude and longitude values as
+inputs to the Location column (i.e. you are NOT using Socrata&#8217;s
+geocoding), you should set the <code class="docutils literal"><span class="pre">useSocrataGeocoding</span></code> option to
+<code class="docutils literal"><span class="pre">false</span></code>. If you are not providing the latitude and longitude, you
+should to set this to <code class="docutils literal"><span class="pre">true</span></code>. This will minimize the number of
+perceived changes to the dataset, decreasing the time it takes to
+complete your job. If you are constructing multiple Location columns and
+they require different <code class="docutils literal"><span class="pre">useSocrataGeocoding</span></code> settings, you may use the
+<code class="docutils literal"><span class="pre">overrides</span></code> option.</p>
+</div>
+<div class="section" id="ignoring-columns">
+<h3>Ignoring Columns<a class="headerlink" href="#ignoring-columns" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal"><span class="pre">ignoreColumns</span></code> option allows you to exclude columns within the
+CSV/TSV. This may be necessary if the dataset lacks a column within the
+CSV or if a synthetic location is provided in the CSV, but you would
+still like it constructed from individual address fields.</p>
+<p><code class="docutils literal"><span class="pre">ignoreColumns</span></code>: List of column names in the following format
+<code class="docutils literal"><span class="pre">[&quot;col_id1&quot;,&quot;col_id2&quot;,..]</span></code>. These must be present in <code class="docutils literal"><span class="pre">columns</span></code>.</p>
+</div>
+</div>
+<div class="section" id="complete-control-file-settings">
+<h2>Complete control file settings<a class="headerlink" href="#complete-control-file-settings" title="Permalink to this headline">¶</a></h2>
+<p>The control file is comprised of the <a class="reference external" href="#actions">Action setting</a> and
+the <a class="reference external" href="#csv-or-tsv-settings">CSV or TSV settings</a>.</p>
+<div class="section" id="actions">
+<h3>Actions<a class="headerlink" href="#actions" title="Permalink to this headline">¶</a></h3>
+<p>The action is given by one of the following strings:</p>
+<table>
+  <thead>
+    <tr>
+      <th><p>Option</p>
+</th>
+      <th><p>Explanation</p>
+</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><p>Replace</p>
+</td>
+    <td><p>Use if the the CSV/TSV represents the desired new state for the dataset.
+DataSync will calculate the minimal set of changes required, updating
+the dataset accordingly.</p>
+</td>
+  </tr>
+  <tr>
+    <td><p>Append</p>
+</td>
+    <td><p>Deprecated. See Upsert.</p>
+</td>
+  </tr>
+  <tr>
+    <td><p>Upsert</p>
+</td>
+    <td><p>Use if the CSV/TSV contains updates to the dataset, rather than the
+complete dataset. If the dataset does not have a RowID, then all rows in
+the CSV are appended, even if they duplicate existing rows. If the
+dataset does have a RowID, then matching row IDs will be updated and new
+row IDs will be appended.</p>
+</td>
+  </tr>
+  <tr>
+    <td><p>Delete</p>
+</td>
+    <td><p>Use if the CSV/TSV contains row IDs of rows to delete. This option
+requires that a <a class="reference external" href="http://dev.socrata.com/docs/row-identifiers.html">row
+indentifier</a> be set
+on the dataset.</p>
+</td>
+  </tr>
+</tbody>
+</table></div>
+<div class="section" id="csv-or-tsv-settings">
+<h3>CSV or TSV Settings<a class="headerlink" href="#csv-or-tsv-settings" title="Permalink to this headline">¶</a></h3>
+<p>The following are options available to both CSV files or TSV files
+within the <code class="docutils literal"><span class="pre">csv</span></code> or <code class="docutils literal"><span class="pre">tsv</span></code> object:</p>
+<table>
+  <thead>
+    <tr>
+      <th><p>Option</p>
+</th>
+      <th><p>Explanation</p>
+</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><p>encoding</p>
+</td>
+    <td><p>&#8220;utf-8&#8221;, or any other encoding that the JVM understands. The list is
+available at /datasync/charsets.json from your socrata domain (e.g.
+<a class="reference external" href="https://opendata.socrata.com/datasync/charsets.json">https://opendata.socrata.com/datasync/charsets.json</a>).</p>
+</td>
+  </tr>
+<tr>
+    <td><p>separator</p>
+</td>
+    <td><p>Field separator. Typically &#8221;,&#8221; or &#8220;&#8221;.</p>
+</td>
+  </tr>
+<tr>
+    <td><p>quote</p>
+</td>
+    <td><p>Used to quote values which contain the separator character. Separators
+between quotes will be treated as part of the value. Typical values are
+&#8220;&#8221;&#8221; for double-quotes, &#8220;&#8217;&#8221; for single-quotes and &#8220;000&#8221; for no quote
+character.</p>
+</td>
+  </tr>
+<tr>
+    <td><p>escape</p>
+</td>
+    <td><p>Used to specify the escape character. Typically this is &#8220;\&#8221;, a single
+backslash.</p>
+</td>
+  </tr>
+<tr>
+    <td><p>columns</p>
+</td>
+    <td><p>JSON list of column names. If null then the first line of the CSV after
+any skipped records is used. If specified, it must be an array of
+strings and must not contain nulls. Note that the column names, whether
+provided in “columns” or in the first row of the CSV, must match the
+<a class="reference external" href="{{%20site.root%20}}/resources/faq-common-problems#how-do-i-find-the-api-field-names-for-my-columns.html">API field
+names</a>,
+not the display name of the columns.</p>
+</td>
+  </tr>
+<tr>
+    <td><p>ignoreColumns</p>
+</td>
+    <td><p>Specifies any columns in the CSV/TSV file that are to be ignored. These
+must be given as an array of strings, each of which must be listed
+within <code class="docutils literal"><span class="pre">columns</span></code>.</p>
+</td>
+  </tr>
+<tr>
+    <td><p>skip</p>
+</td>
+    <td><p>Specifies the number of rows to skip. The first row that will be read is
+<code class="docutils literal"><span class="pre">skip</span></code> + 1 and will be read as a header or a data row depending on how
+<code class="docutils literal"><span class="pre">columns</span></code> is set. If <code class="docutils literal"><span class="pre">columns</span></code> is null, the first row read will be
+treated as the header; otherwise it is treated as data.</p>
+</td>
+  </tr>
+<tr>
+    <td><p>trimWhitespace</p>
+</td>
+    <td><p>Trims leading and trailing whitespace before inserting the data into the
+dataset. Also trims quoted values (e.g. &#8221; Foo&#8221; would be converted to
+&#8220;Foo&#8221;).</p>
+</td>
+  </tr>
+<tr>
+    <td><p>trimServerWhitespace</p>
+</td>
+    <td><p>Trims leading and trailing whitespace that already exists in the
+dataset. This flag is generally only necessary if data was previously
+added to the dataset with whitespace (due to trimWhitespace being
+false).</p>
+</td>
+  </tr>
+<tr>
+    <td><p>useSocrataGeocoding</p>
+</td>
+    <td><p>Relevant only to Location columns. Controls how comparisons are made
+between values in the CSV/TSV file and the data we have stored in our
+servers. If you are not providing the latitude and longitude in the
+synthetic location (e.g. Socrata will geocode the location), set this to
+&#8220;true&#8221; to minimize perceived changes to your data. If you are providing
+the latitude and longitude in the synthetic location, set this to
+&#8220;false&#8221;.</p>
+</td>
+  </tr>
+<tr>
+    <td><p>emptyTextIsNull</p>
+</td>
+    <td><p>For old backend datasets, set this to “true”. The old backend converts
+empty strings to null and if “false”, every empty string will be viewed
+as a change to your dataset, slowing down the upsert time considerably.
+For new backend datasets, this will affect how data is imported into
+text fields. If true, then empty text (not whitespace) will be treated
+as NULL. If false, it will be treated as the empty string.</p>
+</td>
+  </tr>
+<tr>
+    <td><p>floatingTimestampFormat</p>
+</td>
+    <td><p>Specifies how Floating Timestamps (“Date &amp; Time” columns) are
+interpreted. Typical values are &#8220;ISO8601&#8221; or &#8220;yyyy-MM-dd&#8221;. Any
+<a class="reference external" href="http://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html">joda-formated
+string</a>
+is acceptable. If you want to allow multiple formats to be accepted,
+then you can specify a list of values rather than a single value (e.g.
+[&#8220;ISO8601&#8221;, &#8220;MM.dd.yyyy&#8221;]).</p>
+</td>
+  </tr>
+<tr>
+    <td><p>fixedTimestampFormat</p>
+</td>
+    <td><p>Same as floatingTimestampFormat but for Fixed Timestamps (“Date &amp; Time
+(with timezone)”). If the format does not specify a time zone, the zone
+named by the <code class="docutils literal"><span class="pre">timezone</span></code> field is used.</p>
+</td>
+  </tr>
+<tr>
+    <td><p>timezone</p>
+</td>
+    <td><p>Specifies the timezones for FixedTimestamps (“Date &amp; Time (with
+timezone)” columns). This only has an effect if the timestamp format
+does not specify a time zone. Typical values are &#8220;UTC&#8221; or &#8220;US/Pacific&#8221;.
+A list of accepted names is at
+<a class="reference external" href="http://joda-time.sourceforge.net/timezones.html">http://joda-time.sourceforge.net/timezones.html</a>. <em>Please avoid the
+3-letter variants as these are ambiguous (e.g. MST is both Mountain
+Standard Time and Malaysia Standard Time)</em>.</p>
+</td>
+  </tr>
+<tr>
+    <td><p>syntheticLocations</p>
+</td>
+    <td><p>Allows transformation of multiple columns into one or more Location
+columns during insert. See See the <a class="reference external" href="#location-geocoding">Location column and geocoding
+configuration</a> section for an example.</p>
+</td>
+  </tr>
+<tr>
+    <td><p>overrides</p>
+</td>
+    <td><p>A map whose keys are field names, and whose values are objects
+containing per-column overrides for the <code class="docutils literal"><span class="pre">timestampFormat</span></code>,
+<code class="docutils literal"><span class="pre">timezone</span></code>, <code class="docutils literal"><span class="pre">emptyTextIsNull</span></code>, <code class="docutils literal"><span class="pre">trimWhitespace</span></code>,
+<code class="docutils literal"><span class="pre">trimServerWhitespace</span></code> and <code class="docutils literal"><span class="pre">useSocrataGeocoding</span></code> settings. Note that
+“timestampFormat” applies to both fixed and floating timestamps. For an
+example, see below.</p>
+</td>
+  </tr>
+</tbody>
+</table><p>Example of using column-level overrides:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;Replace&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;csv&quot;</span> <span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;useSocrataGeocoding&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+    <span class="s2">&quot;fixedTimestampFormat&quot;</span> <span class="p">:</span> <span class="s2">&quot;ISO8601&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;floatingTimestampFormat&quot;</span> <span class="p">:</span> <span class="s2">&quot;ISO8601&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;timezone&quot;</span> <span class="p">:</span> <span class="s2">&quot;UTC&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;overrides&quot;</span> <span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;my_time_column&quot;</span> <span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;timestampFormat&quot;</span> <span class="p">:</span> <span class="s2">&quot;YYYY-MM-dd HH:mm:ss&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;timezone&quot;</span> <span class="p">:</span> <span class="s2">&quot;US/Central&quot;</span>
+      <span class="p">},</span>
+      <span class="s2">&quot;my_text_column&quot;</span> <span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;emptyTextIsNull&quot;</span> <span class="p">:</span> <span class="n">true</span>
+      <span class="p">}</span>
+      <span class="s2">&quot;my_location_column&quot;</span> <span class="p">{</span>
+        <span class="s2">&quot;useSocrataGeocoding&quot;</span> <span class="p">:</span> <span class="n">false</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="faq-common-problems.html" class="btn btn-neutral float-right" title="FAQ Common Problems" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="conditions-restrictions.html" class="btn btn-neutral" title="Conditions Restrictions" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Socrata.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'pre-1.6',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

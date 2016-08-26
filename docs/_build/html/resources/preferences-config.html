@@ -1,0 +1,467 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Preferences Config &mdash; DataSync Historical Documentation pre-1.6 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="DataSync Historical Documentation pre-1.6 documentation" href="../index.html"/>
+        <link rel="next" title="Schedule a Job" href="schedule-job.html"/>
+        <link rel="prev" title="Network Considerations" href="network-considerations.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> DataSync Historical Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                pre-1.6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quick-start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup-standard-job.html">Setup Standard Job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup-standard-job-headless.html">Setup Standard Job Headless</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup-port-job.html">Setup Port Job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup-port-job-headless.html">Setup Port Job Headless</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datasync-library-sdk.html">DataSync Library SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compiling-on-windows-eclipse.html">Compiling on Windows with Eclipse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compiling-with-maven.html">Compiling with Maven</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="checking-log.html">Checking log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditions-restrictions.html">Conditions Restrictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="control-config.html">Control Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq-common-problems.html">FAQ Common Problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="network-considerations.html">Network Considerations</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Preferences Config</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#contents">Contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#available-configuration">Available configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setting-up-logging-using-a-dataset">Setting up logging (using a dataset)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#error-notification-auto-email-setup">Error Notification Auto-Email Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#chunking-configuration">Chunking Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#proxy-configuration">Proxy Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="schedule-job.html">Schedule a Job</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">DataSync Historical Documentation</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Preferences Config</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/resources/preferences-config.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="preferences-config">
+<h1>Preferences Config<a class="headerlink" href="#preferences-config" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h2>
+<p>DataSync preferences determine the global configuration to be used by
+DataSync when running your job. These preferences can be set either
+through the UI, or as part of a JSON formatted file for use when running
+your jobs headlessly. The full set of options available to you can be
+found in the table below. Later sections will detail how to take
+advantage of these settings in specific scenarios.</p>
+<ul class="simple">
+<li><a class="reference external" href="#available-configuration">Available options</a></li>
+<li><a class="reference external" href="#setting-up-logging-using-a-dataset">Set up logging (using a
+dataset)</a></li>
+<li><a class="reference external" href="#error-notification-auto-email-setup">Error Notification Auto-Email
+Setup</a></li>
+<li><a class="reference external" href="#chunking-configuration">Chunking Configuration</a></li>
+<li><a class="reference external" href="#proxy-configuration">Proxy Configuration</a></li>
+</ul>
+</div>
+<div class="section" id="available-configuration">
+<h2>Available configuration<a class="headerlink" href="#available-configuration" title="Permalink to this headline">¶</a></h2>
+<p>The following options are available to configure DataSync</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="7%" />
+<col width="16%" />
+<col width="77%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Option</th>
+<th class="head">Requirement</th>
+<th class="head">Explanation</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>domain</td>
+<td>required</td>
+<td>The scheme and root domain of your data site. (e.g. <a class="reference external" href="https://opendata.socrata.com">https://opendata.socrata.com</a>)</td>
+</tr>
+<tr class="row-odd"><td>username</td>
+<td>required</td>
+<td>Your Socrata username. This user must have a Publisher role or Owner rights to at least one dataset. We recommend creating a dedicated Socrata account (with these permissions) to use with DataSync rather than tie DataSync to a particular person’s primary account. (e.g. <a class="reference external" href="mailto:publisher&#37;&#52;&#48;opendata&#46;socrata&#46;com">publisher<span>&#64;</span>opendata<span>&#46;</span>socrata<span>&#46;</span>com</a>)</td>
+</tr>
+<tr class="row-even"><td>password</td>
+<td>required</td>
+<td>Your Socrata password. Note that this will be stored in clear-text as part of the file. We recommend taking additional precautions to protect this file, including potentially only adding it when your ETL process runs.</td>
+</tr>
+<tr class="row-odd"><td>appToken</td>
+<td>required</td>
+<td>An app token. If do not yet have an app token, please reference <a class="reference external" href="http://dev.socrata.com/docs/app-tokens.html">how to obtain an App token</a>.</td>
+</tr>
+<tr class="row-even"><td>logDatasetID</td>
+<td>optional</td>
+<td>The dataset indentifier of the log dataset. If you have not provisioned a log dataset and would like to do so, please refer to the <a class="reference external" href="{{%20site.root%20}}/resources/preferences-config.html">logging documentation</a>.</td>
+</tr>
+<tr class="row-odd"><td>adminEmail</td>
+<td>required only if <code class="docutils literal"><span class="pre">emailUponError</span></code> is &#8220;true&#8221;</td>
+<td>The email address of the administrator or user that error notifications should be sent to.</td>
+</tr>
+<tr class="row-even"><td>emailUponError</td>
+<td>optional</td>
+<td>Whether to send email notifications of errors that occurred while running jobs. Defaults to &#8220;false&#8221;.</td>
+</tr>
+<tr class="row-odd"><td>outgoingMailServer</td>
+<td>required only if <code class="docutils literal"><span class="pre">emailUponError</span></code> is &#8220;true&#8221;</td>
+<td>The address of your SMTP server</td>
+</tr>
+<tr class="row-even"><td>smtpPort</td>
+<td>required only if <code class="docutils literal"><span class="pre">emailUponError</span></code> is &#8220;true&#8221;</td>
+<td>The port of your SMTP server</td>
+</tr>
+<tr class="row-odd"><td>sslPort</td>
+<td>required only if <code class="docutils literal"><span class="pre">emailUponError</span></code> is &#8220;true&#8221;</td>
+<td>If SSL port of your SMTP server</td>
+</tr>
+<tr class="row-even"><td>smtpUsername</td>
+<td>required only if <code class="docutils literal"><span class="pre">emailUponError</span></code> is &#8220;true&#8221;</td>
+<td>Your SMTP username</td>
+</tr>
+<tr class="row-odd"><td>smtpPassword</td>
+<td>required only if <code class="docutils literal"><span class="pre">emailUponError</span></code> is &#8220;true&#8221;</td>
+<td>Your SMTP password</td>
+</tr>
+<tr class="row-even"><td>filesizeChunkingCutoffMB</td>
+<td>Used only for append, upsert, delete and Soda2-replace jobs</td>
+<td>If the CSV/TSV file size is less than this, the entire file will be sent in one chunk. Defaults to 10 MB.</td>
+</tr>
+<tr class="row-odd"><td>numRowsPerChunk</td>
+<td>Used only for append, upsert, delete and Soda2-replace jobs</td>
+<td>The number of rows to send in each chunk. If the CSV/TSV file size is less than <code class="docutils literal"><span class="pre">filesizeChunkingCutoffMB</span></code>, all rows will be sent in one chunk. Defaults to 10,000 rows.</td>
+</tr>
+<tr class="row-even"><td>proxyHost</td>
+<td>required if operating through a proxy</td>
+<td>The hostname of the proxy server.</td>
+</tr>
+<tr class="row-odd"><td>proxyPort</td>
+<td>required if operating through a proxy</td>
+<td>The port that the proxy server listens on.</td>
+</tr>
+<tr class="row-even"><td>proxyUsername</td>
+<td>optional</td>
+<td>The username to use if the proxy is authenticated. If this information is sensitive, you may instead pass it at runtime via the -pun, &#8211;proxyUsername commandline option.</td>
+</tr>
+<tr class="row-odd"><td>proxyPassword</td>
+<td>optional</td>
+<td>The password to use if the proxy is authenticated. If this information is sensitive, you may instead pass it at runtime via the -ppw, &#8211;proxyPassword commandline option.</td>
+</tr>
+</tbody>
+</table>
+<p>To access, edit and save these options into DataSync ‘memory’ using the
+GUI, navigate to Edit-&gt;Preferences.</p>
+<p>To save these options into a file, specify them within a single JSON
+formatted object. For example, the smallest possible configuration file
+would resemble:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;domain&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;YOUR DOMAIN&gt;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;YOUR USERNAME&gt;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;YOUR PASSWORD&gt;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;appToken&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;YOUR APP TOKEN&gt;&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Additional options can be added by simply adding the setting name to the
+file and setting its value accordingly.</p>
+<p>To load these options into DataSync ‘memory’ without use of the GUI, you
+can run a LoadPreferences job:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">java</span> <span class="o">-</span><span class="n">jar</span> <span class="o">&lt;</span><span class="n">DATASYNC_JAR</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">t</span> <span class="n">LoadPreferences</span> <span class="o">-</span><span class="n">c</span> <span class="o">&lt;</span><span class="n">CONFIG_FILE</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="setting-up-logging-using-a-dataset">
+<h2>Setting up logging (using a dataset)<a class="headerlink" href="#setting-up-logging-using-a-dataset" title="Permalink to this headline">¶</a></h2>
+<p>You can set up a Socrata dataset to store log information each time a
+DataSync jobs runs. This is especially useful if you will be <a class="reference external" href="{{%20site.root%20}}/resources/schedule-job.html">scheduling
+your jobs</a> to run
+automatically at some specified interval. You first need to manually
+create a log dataset. You should probably keep this dataset private
+(rather than set it as public). The easiest way to set this up is to run
+a DataSync Port Job that copies the schema from <a class="reference external" href="https://adrian.demo.socrata.com/dataset/DataSync-Log/aywp-657c">this example log
+dataset</a>.</p>
+<p>To run a Port Job in DataSync go to File -&gt; New... -&gt; Port Job and fill
+out the following fields as noted below:</p>
+<ul class="simple">
+<li><strong>Port Method:</strong> Copy schema only</li>
+<li><strong>Source Domain:</strong> <a class="reference external" href="https://adrian.demo.socrata.com">https://adrian.demo.socrata.com</a></li>
+<li><strong>Source Dataset ID:</strong> aywp-657c</li>
+<li><strong>Destination Domain:</strong> <code class="docutils literal"><span class="pre">[YOUR</span> <span class="pre">DOMAIN]</span></code></li>
+<li><strong>Publish Destination Dataset?:</strong> Yes</li>
+</ul>
+<p>Then click the &#8220;Run Job Now&#8221; button and it will automatically create an
+empty log dataset on the destination domain you entered.</p>
+<p>Alternatively to using a Port Job, if you wish to create the log dataset
+manually (unlikely, but just in case), download the following CSV file
+and upload it to your Socrata datasite using the manual upload process
+in a web browser:
+<a class="reference external" href="https://docs.google.com/file/d/0B-VEFikh3T6dX2VyWTZXZW55SFU/edit?usp=sharing">https://docs.google.com/file/d/0B-VEFikh3T6dX2VyWTZXZW55SFU/edit?usp=sharing</a></p>
+<p>Be sure that you set the column data types to match those listed below:</p>
+<ul class="simple">
+<li><strong>Date:</strong> Date &amp; Time</li>
+<li><strong>DatasetID:</strong> Plain Text</li>
+<li><strong>FileToPublish:</strong> Plain Text</li>
+<li><strong>PublishMethod:</strong> Plain Text</li>
+<li><strong>JobFile:</strong> Plain Text</li>
+<li><strong>RowsUpdated:</strong> Number</li>
+<li><strong>RowsCreated:</strong> Number</li>
+<li><strong>RowsDeleted:</strong> Number</li>
+<li><strong>Success:</strong> Checkbox</li>
+<li><strong>Errors:</strong> Plain Text</li>
+</ul>
+<p>After you have created the log dataset, In DataSync go to Edit -&gt;
+Preferences. In the popup window enter the dataset ID of the log dataset
+you just uploaded or created via DataSync Port Job.</p>
+</div>
+<div class="section" id="error-notification-auto-email-setup">
+<h2>Error Notification Auto-Email Setup<a class="headerlink" href="#error-notification-auto-email-setup" title="Permalink to this headline">¶</a></h2>
+<p>If you wish for emails to be automatically sent to an administrator if
+an error occurs when any DataSync job is run enter the administrator’s
+email address and check the box check the box labeled &#8220;Auto-email admin
+upon error&#8221;. The same log dataset and administrator email is used for
+all DataSync jobs (i.e. it is a global setting like the authentication
+details). For auto-emailing to work you must configure the SMTP settings
+to point to a server you have access to.</p>
+<p><strong>NOTICE:</strong> Just like with the the authentication details, the SMTP
+password is stored unencrypted in the Registry on Windows platforms and
+in analogous locations on Mac and Linux.</p>
+<p>If you do not know of an existing SMTP server you can use GMail with the
+following settings:</p>
+<ul class="simple">
+<li><strong>Outgoing Mail Server:</strong> smtp.gmail.com</li>
+<li><strong>SMTP Port:</strong> 587</li>
+<li><strong>SSL Port:</strong> 465 (note that you must check the use SSL box)</li>
+<li><strong>SMTP Username:</strong> <code class="docutils literal"><span class="pre">[your</span> <span class="pre">GMail</span> <span class="pre">username]</span></code></li>
+<li><strong>SMTP Password:</strong> <code class="docutils literal"><span class="pre">[your</span> <span class="pre">GMail</span> <span class="pre">password]</span></code></li>
+</ul>
+<p>Once you have entered all the SMTP settings, you should test they are
+valid by clicking “Test SMTP Settings”. If all goes well click “Save” in
+the preferences window. Finally, test running your job to make sure both
+the target dataset and the log dataset get properly updated (one new row
+will be created in the log dataset each time a job is run).</p>
+</div>
+<div class="section" id="chunking-configuration">
+<h2>Chunking Configuration<a class="headerlink" href="#chunking-configuration" title="Permalink to this headline">¶</a></h2>
+<p>Chunking is handled automatically according to the defaults set in
+Datasync, though in some cases it may be necessary or preferable to
+adjust the defaults. Two options are avaible:</p>
+<ul class="simple">
+<li><strong>Chunking filesize threshold:</strong> If the CSV/TSV file size is less
+than this, the entire file will be sent in one chunk. The default
+value is 10 MB.</li>
+<li><strong>Chunk size:</strong> The number of rows to send in each chunk. The default
+value is 10,000 rows. This is only respected if the entire file is
+not sent in a single chunk because of the
+<code class="docutils literal"><span class="pre">Chunking</span> <span class="pre">filesize</span> <span class="pre">threshold</span></code>.</li>
+</ul>
+<p>To modify the defaults go to Edit -&gt; Preferences and modify the numbers.</p>
+</div>
+<div class="section" id="proxy-configuration">
+<h2>Proxy Configuration<a class="headerlink" href="#proxy-configuration" title="Permalink to this headline">¶</a></h2>
+<p>You can configure DataSync to use an authenticated or unauthenticated
+proxy server. Please note, this option is only available if running jobs
+&#8216;via HTTP using Delta-importer-2&#8217;. At minimum, the following options
+will need to be set:</p>
+<ul class="simple">
+<li><strong>Proxy Host:</strong> The host name of the proxy server, e.g.
+myProxyServer.com.</li>
+<li><strong>Proxy Port:</strong> The port that the proxy server listens on, e.g. 8080</li>
+</ul>
+<p>If the proxy server is authenticated, you may also set:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">Proxy</span> <span class="pre">Username</span></code>: The username needed to log into the proxy server.</li>
+<li><code class="docutils literal"><span class="pre">Proxy</span> <span class="pre">Password</span></code>: The password needed to log into the proxy server.</li>
+</ul>
+<p><strong>NOTICE:</strong> DataSync stores the authentication details unencrypted in
+the Registry on Windows platforms (in the following location:
+HKEY_CURRENT_USER) and in analogous locations on Mac and Linux. If you
+are concerned about this as a potential security issue you may instead
+<a class="reference external" href="{{%20site.root%20}}/guides/setup-standard-job-headless.html">run the job
+headlessly</a>,
+in order to pass the needed credentials in via the commandline.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="schedule-job.html" class="btn btn-neutral float-right" title="Schedule a Job" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="network-considerations.html" class="btn btn-neutral" title="Network Considerations" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Socrata.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'pre-1.6',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

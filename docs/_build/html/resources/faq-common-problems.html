@@ -1,0 +1,390 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>FAQ Common Problems &mdash; DataSync Historical Documentation pre-1.6 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="DataSync Historical Documentation pre-1.6 documentation" href="../index.html"/>
+        <link rel="next" title="Network Considerations" href="network-considerations.html"/>
+        <link rel="prev" title="Control Config" href="control-config.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> DataSync Historical Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                pre-1.6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quick-start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup-standard-job.html">Setup Standard Job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup-standard-job-headless.html">Setup Standard Job Headless</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup-port-job.html">Setup Port Job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup-port-job-headless.html">Setup Port Job Headless</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datasync-library-sdk.html">DataSync Library SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compiling-on-windows-eclipse.html">Compiling on Windows with Eclipse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compiling-with-maven.html">Compiling with Maven</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="checking-log.html">Checking log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditions-restrictions.html">Conditions Restrictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="control-config.html">Control Config</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">FAQ Common Problems</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-the-id-of-my-dataset">What is the ID of my dataset?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-do-i-find-the-api-field-names-for-my-columns">How do I find the API field names for my columns?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-datatypes-does-datasync-support">What datatypes does DataSync support?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#datasync-keeps-failing-with-field-not-in-dataset-what-can-i-do-to-fix-this">DataSync keeps failing with &#8220;field-not-in-dataset.&#8221; What can I do to fix this?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#my-location-column-is-causing-my-job-to-fail-or-resulting-in-unexpected-data-in-my-address-column">My location column is causing my job to fail, or resulting in unexpected data in my address column</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-does-this-error-mean-java-lang-unsupportedclassversionerror-com-socrata-exceptions-sodaerror-unsupported-major-minor-version-51-0">What does this error mean? ‘java.lang.UnsupportedClassVersionError: com/socrata/exceptions/SodaError : Unsupported major.minor version 51.0’</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#after-running-a-soda2-job-successfully-some-or-all-of-the-columns-in-the-dataset-appear-as-blank-instead-of-the-data-in-the-uploaded-csv">After running a Soda2 job successfully some or all of the columns in the dataset appear as blank instead of the data in the uploaded CSV.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-does-this-error-mean-certificate-validation-failed">What does this error mean? &#8216;... certificate validation failed&#8217;</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntheticlocations-is-a-field-why-do-i-get-this-error-unrecognizedpropertyexception-unrecognized-field-syntheticlocations-reference-chain-com-socrata-datasync-config-controlfile-controlfile-syntheticlocations">&#8220;syntheticLocations&#8221; is a field, why do I get this error? &#8216;...UnrecognizedPropertyException: Unrecognized field &#8220;syntheticLocations&#8221; ... reference chain: com.socrata.datasync.config.controlfile.ControlFile[&#8220;syntheticLocations&#8221;]&#8217;</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#my-job-is-failing-because-of-a-corrupt-ssync-patch">My job is failing because of a &#8220;Corrupt SSync patch&#8221;</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#i-am-getting-an-invalid-corrupt-jar-file-message-when-trying-to-open-jar">I am getting an ‘invalid/corrupt JAR file’ message when trying to open JAR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-do-i-use-datasync-to-accept-any-date-time-format">How do I use DataSync to accept any date/time format?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#i-m-getting-a-connection-refused-error-i-m-having-network-problems">I&#8217;m getting a ‘Connection refused’ error / I&#8217;m having network problems.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#i-m-still-stuck-what-can-i-do">I&#8217;m still stuck. What can I do?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="network-considerations.html">Network Considerations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preferences-config.html">Preferences Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schedule-job.html">Schedule a Job</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">DataSync Historical Documentation</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>FAQ Common Problems</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/resources/faq-common-problems.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="faq-common-problems">
+<h1>FAQ Common Problems<a class="headerlink" href="#faq-common-problems" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-is-the-id-of-my-dataset">
+<h2>What is the ID of my dataset?<a class="headerlink" href="#what-is-the-id-of-my-dataset" title="Permalink to this headline">¶</a></h2>
+<p>To obtain the dataset ID navigate to the dataset in your web browser and
+inspect the address bar. The dataset ID can be found at end of the URL
+in the form (xxxx-xxxx). For example, for the following URL to a
+dataset:</p>
+<p><a class="reference external" href="https://data.seattle.gov/Public-Safety/Fire-911/m985-ywaw">https://data.seattle.gov/Public-Safety/Fire-911/m985-ywaw</a></p>
+<p>The dataset ID is: <code class="docutils literal"><span class="pre">m985-ywaw</span></code></p>
+</div>
+<div class="section" id="how-do-i-find-the-api-field-names-for-my-columns">
+<h2>How do I find the API field names for my columns?<a class="headerlink" href="#how-do-i-find-the-api-field-names-for-my-columns" title="Permalink to this headline">¶</a></h2>
+<p>Columns within a dataset have both a display name and an API field name.
+Datasync only operates using API field names. If using the DataSync GUI,
+you can get the list of API field names by clicking the &#8216;Get Column IDs&#8217;
+button after entering the Dataset ID. You may also view the API field
+names from your browser, by hovering over the information icon on any
+column.</p>
+</div>
+<div class="section" id="what-datatypes-does-datasync-support">
+<h2>What datatypes does DataSync support?<a class="headerlink" href="#what-datatypes-does-datasync-support" title="Permalink to this headline">¶</a></h2>
+<p>Datasync supports the Text, Formatted Text, Number, Money, Percent, Date
+&amp; Time (with or without timezone), Location, Website URL, Email,
+Checkbox, Flag, Star and Phone datatypes. Please refer to the
+<a class="reference external" href="{{%20site.root%20}}/resources/conditions-restrictions.html">conditions/restrictions
+resource</a>
+for formatting requirements of each.</p>
+</div>
+<div class="section" id="datasync-keeps-failing-with-field-not-in-dataset-what-can-i-do-to-fix-this">
+<h2>DataSync keeps failing with &#8220;field-not-in-dataset.&#8221; What can I do to fix this?<a class="headerlink" href="#datasync-keeps-failing-with-field-not-in-dataset-what-can-i-do-to-fix-this" title="Permalink to this headline">¶</a></h2>
+<p>Typically, this is caused for one of three reasons: - You&#8217;re referencing
+the display names in your control file - You haven&#8217;t specified all of
+the fields in the dataset. - Your CSV contains more columns than the
+dataset.</p>
+<p>To fix the first two bullets, verify that the column names in your
+control file match the field names in the dataset, and that the list is
+comprehensive.</p>
+<p>To fix the latter, either remove the column from your dataset, or use
+the ignoreColumns option found in the <a class="reference external" href="{{%20site.root%20}}/resources/control-config.html">control
+file</a> guide.</p>
+</div>
+<div class="section" id="my-location-column-is-causing-my-job-to-fail-or-resulting-in-unexpected-data-in-my-address-column">
+<h2>My location column is causing my job to fail, or resulting in unexpected data in my address column<a class="headerlink" href="#my-location-column-is-causing-my-job-to-fail-or-resulting-in-unexpected-data-in-my-address-column" title="Permalink to this headline">¶</a></h2>
+<p>When all fields are not explicitly specified for the location column,
+the system will attempt to guess at the components by parsing the
+address. While this parsing normally works there are notable places
+where it will fail. To work around this, we recommend explicitly
+breaking out your address locations into consistuent columns (e.g.
+address, city, state, zip) and then passing those directly to the
+synthetic location.</p>
+</div>
+<div class="section" id="what-does-this-error-mean-java-lang-unsupportedclassversionerror-com-socrata-exceptions-sodaerror-unsupported-major-minor-version-51-0">
+<h2>What does this error mean? ‘java.lang.UnsupportedClassVersionError: com/socrata/exceptions/SodaError : Unsupported major.minor version 51.0’<a class="headerlink" href="#what-does-this-error-mean-java-lang-unsupportedclassversionerror-com-socrata-exceptions-sodaerror-unsupported-major-minor-version-51-0" title="Permalink to this headline">¶</a></h2>
+<p>Your version of Java is too old, you should update to at least Java 7.
+Get the <a class="reference external" href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">latest version of Java
+here</a>.</p>
+</div>
+<div class="section" id="after-running-a-soda2-job-successfully-some-or-all-of-the-columns-in-the-dataset-appear-as-blank-instead-of-the-data-in-the-uploaded-csv">
+<h2>After running a Soda2 job successfully some or all of the columns in the dataset appear as blank instead of the data in the uploaded CSV.<a class="headerlink" href="#after-running-a-soda2-job-successfully-some-or-all-of-the-columns-in-the-dataset-appear-as-blank-instead-of-the-data-in-the-uploaded-csv" title="Permalink to this headline">¶</a></h2>
+<p>Your header row containing the column names in the dataset does not
+exactly match the column names in the dataset. Note that the column
+names are case sensitive. It is best to use the column identifiers
+(a.k.a. API field names) in your header row, which can be easily
+obtained for a dataset by clicking the “Get Column ID” button within
+DataSync.</p>
+</div>
+<div class="section" id="what-does-this-error-mean-certificate-validation-failed">
+<h2>What does this error mean? &#8216;... certificate validation failed&#8217;<a class="headerlink" href="#what-does-this-error-mean-certificate-validation-failed" title="Permalink to this headline">¶</a></h2>
+<p>If you receive a SunCertPathBuilderException, there are two typical
+causes:</p>
+<ol class="arabic simple">
+<li>Java is out-of-date and as a result is failing to validate the SSL
+certificate. To correct this issue you must update Java JDK or JRE on
+the machine running DataSync.</li>
+<li>Java does not approve of one of the certificates in the chain between
+your machine and the domain you&#8217;re trying to upload to. The solution
+is to add the necessary certificates into Java&#8217;s trusted certificate
+store. The steps to do this are:</li>
+</ol>
+<ul>
+<li><p class="first">Get the certificate chain.</p>
+<ul>
+<li><p class="first">Find where Java&#8217;s keytool is located.</p>
+</li>
+<li><p class="first">On Windows, this is likely at &#8220;C:Files7&#8221;)</p>
+</li>
+<li><p class="first">On Mac OS X, this is likely at
+&#8220;/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/bin/&#8221;</p>
+</li>
+<li><p class="first">Run the following, removing the proxy options if you are not
+behind a proxy server. You can remove the &#8216;-rfc&#8217; option to get
+additional information about each certificate in the chain.</p>
+<p>keytool -J-Dhttps.proxyHost= -J-Dhttps.proxyPort= -printcert -rfc
+-sslserver :443</p>
+</li>
+</ul>
+</li>
+<li><p class="first"><strong>Validate any certificates you plan to add with your IT department
+!!!!</strong>. It is a security risk to add unknown certificates.</p>
+</li>
+<li><p class="first">Copy the cert you need to add inclusively from &#8212;&#8211;BEGIN
+CERTIFICATE&#8212;&#8211; to &#8212;&#8211;END CERTIFICATE&#8212;&#8211; into a file
+<code class="docutils literal"><span class="pre">&lt;FILENAME&gt;</span></code>.cer</p>
+</li>
+<li><p class="first">Run&nbsp;the following, using your keystore password if that has been set
+up or the default password &#8216;changeit&#8217; otherwise.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">keytool</span> <span class="o">-</span><span class="kn">import</span> <span class="o">-</span><span class="n">keystore</span> <span class="n">cacerts</span> <span class="o">-</span><span class="n">file</span> <span class="o">&lt;</span><span class="n">FILENAME</span><span class="o">&gt;.</span><span class="n">cer</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="syntheticlocations-is-a-field-why-do-i-get-this-error-unrecognizedpropertyexception-unrecognized-field-syntheticlocations-reference-chain-com-socrata-datasync-config-controlfile-controlfile-syntheticlocations">
+<h2>&#8220;syntheticLocations&#8221; is a field, why do I get this error? &#8216;...UnrecognizedPropertyException: Unrecognized field &#8220;syntheticLocations&#8221; ... reference chain: com.socrata.datasync.config.controlfile.ControlFile[&#8220;syntheticLocations&#8221;]&#8217;<a class="headerlink" href="#syntheticlocations-is-a-field-why-do-i-get-this-error-unrecognizedpropertyexception-unrecognized-field-syntheticlocations-reference-chain-com-socrata-datasync-config-controlfile-controlfile-syntheticlocations" title="Permalink to this headline">¶</a></h2>
+<p>This error is because the &#8220;syntheticLocations&#8221; field is in the wrong
+level of the control file. It needs to be within the &#8220;csv&#8221; or &#8220;tsv&#8221;
+object, since it contains details about how to interpret the CSV or TSV.</p>
+</div>
+<div class="section" id="my-job-is-failing-because-of-a-corrupt-ssync-patch">
+<h2>My job is failing because of a &#8220;Corrupt SSync patch&#8221;<a class="headerlink" href="#my-job-is-failing-because-of-a-corrupt-ssync-patch" title="Permalink to this headline">¶</a></h2>
+<p>This error is most likely caused by insufficient heap space. Try
+starting up DataSync with additional heap space using one of the options
+below:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">java</span> <span class="o">-</span><span class="n">jar</span> <span class="o">-</span><span class="n">Xmx500m</span> <span class="o">&lt;</span><span class="n">DATASYNC_JAR</span><span class="o">&gt;</span>
+
+<span class="n">java</span> <span class="o">-</span><span class="n">jar</span> <span class="o">-</span><span class="n">Xmx1g</span> <span class="o">&lt;</span><span class="n">DATASYNC_JAR</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>The former allows java to use 500 MB of space and the latter 1 GB of
+space. If the problem persists please contact your Socrata representive
+for support.</p>
+</div>
+<div class="section" id="i-am-getting-an-invalid-corrupt-jar-file-message-when-trying-to-open-jar">
+<h2>I am getting an ‘invalid/corrupt JAR file’ message when trying to open JAR<a class="headerlink" href="#i-am-getting-an-invalid-corrupt-jar-file-message-when-trying-to-open-jar" title="Permalink to this headline">¶</a></h2>
+<p>Redownload the DataSync JAR from:
+<a class="reference external" href="https://github.com/socrata/datasync/releases">https://github.com/socrata/datasync/releases</a></p>
+</div>
+<div class="section" id="how-do-i-use-datasync-to-accept-any-date-time-format">
+<h2>How do I use DataSync to accept any date/time format?<a class="headerlink" href="#how-do-i-use-datasync-to-accept-any-date-time-format" title="Permalink to this headline">¶</a></h2>
+<p>This is only possible in DataSync version 1.0 and higher. Refer to <a class="reference external" href="http://socrata.github.io/datasync/resources/control-config.html#date-time">this
+documentation</a>.</p>
+</div>
+<div class="section" id="i-m-getting-a-connection-refused-error-i-m-having-network-problems">
+<h2>I&#8217;m getting a ‘Connection refused’ error / I&#8217;m having network problems.<a class="headerlink" href="#i-m-getting-a-connection-refused-error-i-m-having-network-problems" title="Permalink to this headline">¶</a></h2>
+<p>Please reference our <a class="reference external" href="{{%20site.root%20}}/resources/network-considerations.html">Network Considerations
+resource</a>.</p>
+</div>
+<div class="section" id="i-m-still-stuck-what-can-i-do">
+<h2>I&#8217;m still stuck. What can I do?<a class="headerlink" href="#i-m-still-stuck-what-can-i-do" title="Permalink to this headline">¶</a></h2>
+<p>Verify that your CSV meets all of the restrictions detailed in the
+<a class="reference external" href="{{%20site.root%20}}/resources/conditions-restrictions.html">conditions and
+restrictions</a>
+guide. If you are still having trouble, please contact your Socrata
+representive for support.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="network-considerations.html" class="btn btn-neutral float-right" title="Network Considerations" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="control-config.html" class="btn btn-neutral" title="Control Config" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Socrata.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'pre-1.6',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

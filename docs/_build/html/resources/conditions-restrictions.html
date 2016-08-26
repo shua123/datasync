@@ -1,0 +1,316 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Conditions Restrictions &mdash; DataSync Historical Documentation pre-1.6 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="DataSync Historical Documentation pre-1.6 documentation" href="../index.html"/>
+        <link rel="next" title="Control Config" href="control-config.html"/>
+        <link rel="prev" title="Checking log" href="checking-log.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> DataSync Historical Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                pre-1.6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quick-start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup-standard-job.html">Setup Standard Job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup-standard-job-headless.html">Setup Standard Job Headless</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup-port-job.html">Setup Port Job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup-port-job-headless.html">Setup Port Job Headless</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datasync-library-sdk.html">DataSync Library SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compiling-on-windows-eclipse.html">Compiling on Windows with Eclipse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compiling-with-maven.html">Compiling with Maven</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="checking-log.html">Checking log</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Conditions Restrictions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#datatype-restrictions">Datatype Restrictions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="control-config.html">Control Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq-common-problems.html">FAQ Common Problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="network-considerations.html">Network Considerations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preferences-config.html">Preferences Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schedule-job.html">Schedule a Job</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">DataSync Historical Documentation</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Conditions Restrictions</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/resources/conditions-restrictions.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="conditions-restrictions">
+<h1>Conditions Restrictions<a class="headerlink" href="#conditions-restrictions" title="Permalink to this headline">¶</a></h1>
+<p>DataSync enforces particular restrictions on both the format of the CSV,
+as well as the data types within the CSV, when updating a dataset. No
+data is added until all the following conditions are met:</p>
+<ul class="simple">
+<li>Every row in the CSV/TSV, including the header, must have the same
+number of columns. Unbalanced quotation marks almost always create
+unequal numbers of columns, so be certain to balance these.</li>
+<li>If the dataset has a row id, that field must be provided in the
+CSV/TSV.</li>
+<li>If the dataset does not have a row id, then all fields in the dataset
+must be provided in the CSV.</li>
+<li>All columns specified in the header must be present in the dataset.</li>
+<li>All values can be interpreted as the appropriate type.</li>
+<li>If <code class="docutils literal"><span class="pre">syntheticLocation</span></code> is provided in the <a class="reference external" href="{{%20site.root%20}}/resources/ftp-control-config.html">control
+file</a>, the
+name of the column that is constructed must not conflict with one
+already in the CSV. You can use the <code class="docutils literal"><span class="pre">ignoreColumns</span></code> option to
+ignore the one in the CSV.</li>
+</ul>
+<div class="section" id="datatype-restrictions">
+<h2>Datatype Restrictions<a class="headerlink" href="#datatype-restrictions" title="Permalink to this headline">¶</a></h2>
+<p>Data must be formatted as follows to pass validation:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="4%" />
+<col width="96%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Datatype</th>
+<th class="head">Restrictions/Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Text</td>
+<td>If <code class="docutils literal"><span class="pre">emptyTextIsNull</span></code> is true, an empty cell will be converted to a SoQL &#8220;null&#8221; value. Otherwise it will be stored as an empty text value.</td>
+</tr>
+<tr class="row-odd"><td>Formatted Text</td>
+<td>Due to the complexity involved in analyzing formatted text, DataSync assumes that all formatted text columns represent changes. Because of this datasets containing formatted text may take longer to ingress.</td>
+</tr>
+<tr class="row-even"><td>Number</td>
+<td>Must use only numerals plus a decimal point (period), possibly with scientific notation (e.g., 6.02e+23). There can be no commas grouping digits. This applies even if the dataset is in a locale that uses a comma as the decimal point and a period to group digits.</td>
+</tr>
+<tr class="row-odd"><td>Money</td>
+<td>The currency symbol must not be present. Follows the same rules as Number.</td>
+</tr>
+<tr class="row-even"><td>Percent</td>
+<td>The percent symbol must not be present. 45% should be represented as 45 not 0.45.</td>
+</tr>
+<tr class="row-odd"><td>Date &amp; Time</td>
+<td>If the <code class="docutils literal"><span class="pre">floatingTimestampFormat</span></code> is &#8220;ISO8601&#8221; data must be in the following format: yyyy-mm-ddTHH:mm:ss</td>
+</tr>
+<tr class="row-even"><td>Date &amp; Time (with timezone)</td>
+<td>If the <code class="docutils literal"><span class="pre">fixedTimestampFormat</span></code> is &#8220;ISO8601&#8221; data must be in the following format: yyyy-mm-ddTHH:mm:ssz, where &#8220;z&#8221; is a four-digit-plus-sign offset from UTC (e.g., &#8220;-0800&#8221;) or &#8220;Z&#8221; (which is a synonym for &#8220;+0000&#8221;).</td>
+</tr>
+<tr class="row-odd"><td>Location</td>
+<td>A human-readable US address with a (latitude, longitude) pair. Example (Note that this must be all a single CSV value, and therefore quoted appropriately): &#8220;123 Main St. Mytown, YN 12345 (-123.4324235, 33.234546324)&#8221;. The address, city, state, zip, and coordinate sub-parts are all optional. If not provided, the system will guess about how to break the field into the location’s constituent parts. Note that this parsing is often non-deterministic and may result in unexpected values in your location column. If your data does not include the coordinate pair, your control file should set <code class="docutils literal"><span class="pre">useSocrataGeocoding</span></code> to &#8220;true&#8221; for optimal performance - this prevents unnecessary replacement of rows that are viewed as changed because our servers previously geocoded the location.</td>
+</tr>
+<tr class="row-even"><td>Website URL</td>
+<td>Must be a bare URL, such as <a class="reference external" href="http://www.google.com">http://www.google.com</a>, or in the format &#8216;Google (<a class="reference external" href="http://www.google.com">http://www.google.com</a>)&#8217;.</td>
+</tr>
+<tr class="row-odd"><td>Email</td>
+<td>Must be in the format <a class="reference external" href="mailto:foo&#37;&#52;&#48;foo&#46;com">foo<span>&#64;</span>foo<span>&#46;</span>com</a>.</td>
+</tr>
+<tr class="row-even"><td>Checkbox</td>
+<td>Either &#8220;true&#8221; or &#8220;false&#8221;. For data stored in the old backend, missing values are treated as false.</td>
+</tr>
+<tr class="row-odd"><td>Flag</td>
+<td>Must be &#8220;Red&#8221;, &#8220;Blue&#8221;, &#8220;Green&#8221;, &#8220;Yellow&#8221;, &#8220;Orange&#8221; or &#8220;Purple&#8221;.</td>
+</tr>
+<tr class="row-even"><td>Star</td>
+<td>Must be an integer from 1 to 5.</td>
+</tr>
+<tr class="row-odd"><td>Phone</td>
+<td>Fully formed, this is a colon-separated pair of the phone number and phone type may be given. The phone number has no restrictions. The phone type, if provided, must be one of &#8220;Home&#8221;, &#8220;Cell&#8221;, &#8220;Work&#8221;, &#8220;Fax&#8221;, or &#8220;Other&#8221;. If only one or the other is provided, no colon is required. Examples are &#8220;(123) 456-7890&#8221;, &#8220;555-1212:Home&#8221; and &#8220;Work&#8221;.</td>
+</tr>
+<tr class="row-even"><td>Multiple Choice</td>
+<td>Not supported</td>
+</tr>
+<tr class="row-odd"><td>Photo (Image)</td>
+<td>Not supported</td>
+</tr>
+<tr class="row-even"><td>Document</td>
+<td>Not supported</td>
+</tr>
+<tr class="row-odd"><td>Nested Table</td>
+<td>Not supported</td>
+</tr>
+<tr class="row-even"><td>Dataset Link</td>
+<td>Not supported</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="control-config.html" class="btn btn-neutral float-right" title="Control Config" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="checking-log.html" class="btn btn-neutral" title="Checking log" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Socrata.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'pre-1.6',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
