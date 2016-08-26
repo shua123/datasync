@@ -24,18 +24,18 @@
 
   
   
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   
 
   
 
   
-    <link rel="top" title="DataSync Historical Documentation pre-1.6 documentation" href="index.html"/>
+    <link rel="top" title="DataSync Historical Documentation pre-1.6 documentation" href="../index.html"/>
         <link rel="next" title="Compiling on Windows with Eclipse" href="compiling-on-windows-eclipse.html"/>
         <link rel="prev" title="Setup Port Job Headless" href="setup-port-job-headless.html"/> 
 
   
-  <script src="_static/js/modernizr.min.js"></script>
+  <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -50,7 +50,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> DataSync Historical Documentation
+            <a href="../index.html" class="icon icon-home"> DataSync Historical Documentation
           
 
           
@@ -67,7 +67,7 @@
 
           
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -108,13 +108,13 @@
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="resources/checking-log.html">Checking log</a></li>
-<li class="toctree-l1"><a class="reference internal" href="resources/conditions-restrictions.html">Conditions Restrictions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="resources/control-config.html">Control Config</a></li>
-<li class="toctree-l1"><a class="reference internal" href="resources/faq-common-problems.html">FAQ Common Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="resources/network-considerations.html">Network Considerations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="resources/preferences-config.html">Preferences Config</a></li>
-<li class="toctree-l1"><a class="reference internal" href="resources/schedule-job.html">Schedule a Job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/checking-log.html">Checking log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/conditions-restrictions.html">Conditions Restrictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/control-config.html">Control Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/faq-common-problems.html">FAQ Common Problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/network-considerations.html">Network Considerations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/preferences-config.html">Preferences Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/schedule-job.html">Schedule a Job</a></li>
 </ul>
 
             
@@ -128,7 +128,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">DataSync Historical Documentation</a>
+        <a href="../index.html">DataSync Historical Documentation</a>
       </nav>
 
 
@@ -143,13 +143,13 @@
 
 <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
+    <li><a href="../index.html">Docs</a> &raquo;</li>
       
     <li>DataSync Library SDK</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/datasync-library-sdk.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/guides/datasync-library-sdk.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -163,9 +163,9 @@
 <h1>DataSync Library SDK<a class="headerlink" href="#datasync-library-sdk" title="Permalink to this headline">¶</a></h1>
 <p>DataSync 1.5.3 and higher can be used as a Java library/SDK. This guide
 documents how to do this as well as provides example code. If you are
-new to DataSync you should first read about using DataSync in <a class="reference external" href="{{%20site.root%20}}/guides/setup-standard-job.html">GUI
+new to DataSync you should first read about using DataSync in <a class="reference external" href="setup-standard-job.html">GUI
 mode</a> or
-<a class="reference external" href="{{%20site.root%20}}/guides/setup-standard-job-headless.html">command-line/headless
+<a class="reference external" href="setup-standard-job-headless.html">command-line/headless
 mode</a>.</p>
 <div class="section" id="importing-into-your-java-project">
 <h2>Importing Into Your Java Project<a class="headerlink" href="#importing-into-your-java-project" title="Permalink to this headline">¶</a></h2>
@@ -266,7 +266,7 @@ coordinates in the CSV/TSV file).</li>
 <li>If you wish to set the timezone of the dates being imported.</li>
 </ul>
 <p>For more detailed information on establishing configuration in the
-Control file refer to <a class="reference external" href="{{%20site.root%20}}/resources/control-config.html">Control file
+Control file refer to <a class="reference external" href="../resources/control-config.html">Control file
 configuration</a></p>
 <p>You can specify the control file settings in one of two ways when using
 DataSync as a library.</p>
@@ -279,7 +279,7 @@ of this are in the following section.</li>
 <h4>Building the control file object<a class="headerlink" href="#building-the-control-file-object" title="Permalink to this headline">¶</a></h4>
 <p>You can use the &#8216;setter&#8217; methods within the FileTypeControl class to
 configure the job. The setter methods reflect the configuration options
-details in <a class="reference external" href="{{%20site.root%20}}/resources/control-config.html">Control file
+details in <a class="reference external" href="../resources/control-config.html">Control file
 configuration</a>.
 For example, to ignore the header row and configure the list of columns
 use this code:</p>
@@ -296,7 +296,7 @@ use this code:</p>
 <p>Or to include a syntheticLocation, which allows a Location datatype
 column to populate from existing address, city, state, zipcode or
 latitude/longitude columns within the CSV/TSV. (The syntheticLocations
-option is discussed in more detail in the <a class="reference external" href="{{%20site.root%20}}/resources/control-config.html#location-column-and-geocoding-configuration">Control File
+option is discussed in more detail in the <a class="reference external" href="../resources/control-config.html#location-column-and-geocoding-configuration">Control File
 documentation</a>
 ), use the following code:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="nb">set</span> <span class="n">up</span> <span class="nb">any</span> <span class="n">location</span> <span class="n">columns</span> <span class="n">that</span> <span class="n">need</span> <span class="n">to</span> <span class="n">be</span> <span class="n">populated</span>
@@ -383,22 +383,22 @@ point the your saved <code class="docutils literal"><span class="pre">control.js
 
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
+            URL_ROOT:'../',
             VERSION:'pre-1.6',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
 
   
 
   
   
-    <script type="text/javascript" src="_static/js/theme.js"></script>
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
   
 
   

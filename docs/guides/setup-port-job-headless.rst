@@ -15,7 +15,7 @@ required for all DataSync jobs. Note that the user running the job must
 have publisher rights on the dataset. A number of other global settings,
 such as logging and emailing preferences can also be configured. Please
 refer to the `configuration
-guide <{{%20site.root%20}}/resources/preferences-config.html>`__ to
+guide <../resources/preferences-config.html>`__ to
 establish your credentials and preferences.
 
 Step 2: Configure job details

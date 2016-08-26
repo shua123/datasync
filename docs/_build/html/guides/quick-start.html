@@ -24,18 +24,18 @@
 
   
   
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   
 
   
 
   
-    <link rel="top" title="DataSync Historical Documentation pre-1.6 documentation" href="index.html"/>
+    <link rel="top" title="DataSync Historical Documentation pre-1.6 documentation" href="../index.html"/>
         <link rel="next" title="Setup Standard Job" href="setup-standard-job.html"/>
-        <link rel="prev" title="Welcome to (Unofficial) Socrata DataSync Historical documentation!" href="index.html"/> 
+        <link rel="prev" title="Welcome to (Unofficial) Socrata DataSync Historical documentation!" href="../index.html"/> 
 
   
-  <script src="_static/js/modernizr.min.js"></script>
+  <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -50,7 +50,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> DataSync Historical Documentation
+            <a href="../index.html" class="icon icon-home"> DataSync Historical Documentation
           
 
           
@@ -67,7 +67,7 @@
 
           
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -103,13 +103,13 @@
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="resources/checking-log.html">Checking log</a></li>
-<li class="toctree-l1"><a class="reference internal" href="resources/conditions-restrictions.html">Conditions Restrictions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="resources/control-config.html">Control Config</a></li>
-<li class="toctree-l1"><a class="reference internal" href="resources/faq-common-problems.html">FAQ Common Problems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="resources/network-considerations.html">Network Considerations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="resources/preferences-config.html">Preferences Config</a></li>
-<li class="toctree-l1"><a class="reference internal" href="resources/schedule-job.html">Schedule a Job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/checking-log.html">Checking log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/conditions-restrictions.html">Conditions Restrictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/control-config.html">Control Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/faq-common-problems.html">FAQ Common Problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/network-considerations.html">Network Considerations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/preferences-config.html">Preferences Config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/schedule-job.html">Schedule a Job</a></li>
 </ul>
 
             
@@ -123,7 +123,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">DataSync Historical Documentation</a>
+        <a href="../index.html">DataSync Historical Documentation</a>
       </nav>
 
 
@@ -138,13 +138,13 @@
 
 <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
+    <li><a href="../index.html">Docs</a> &raquo;</li>
       
     <li>Quick Start</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/quick-start.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/guides/quick-start.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -161,7 +161,7 @@ sync a local CSV with a dataset.</p>
 <p><strong>NOTICE:</strong> The steps in this guide will replace the entire contents of
 the dataset with the contents of the CSV. For a more in depth guide of
 using DataSync, including information on how to use DataSync to update
-and append information to a dataset, please see <a class="reference external" href="{{%20site.root%20}}/guides/setup-standard-job.html">setting up a standard
+and append information to a dataset, please see <a class="reference external" href="setup-standard-job.html">setting up a standard
 job</a>.</p>
 <div class="well"><p>We have a video tutorial for using DataSync available here.</p>
 </div><div class="section" id="step-1-download-datasync">
@@ -207,7 +207,7 @@ that you wish to publish by clicking the “Browse...” button and browsing
 to find the CSV or TSV file.</p>
 <p><strong>Does the CSV/TSV Have a Header Row ?</strong></p>
 <p>If the CSV contains a header row, keep &#8220;File to publish contains header
-row&#8221; checked. The header row should contain the <a class="reference external" href="{{%20site.root%20}}/resources/faq-common-problems#how-do-i-find-the-api-field-names-for-my-columns.html">API Field
+row&#8221; checked. The header row should contain the <a class="reference external" href="../resources/faq-common-problems#how-do-i-find-the-api-field-names-for-my-columns.html">API Field
 Names</a>)
 of the columns in your dataset. If the CSV does not contain a header
 row, uncheck &#8220;File to publish contains header row&#8221;. In this case, the
@@ -230,7 +230,7 @@ a dataset:</p>
 the last update, rather than the complete dataset</li>
 <li>can reliably handle very large files (1 million+ rows)</li>
 <li>allows configuration of the way the CSV/TSV file is read and
-processed through the use of a <a class="reference external" href="{{%20site.root%20}}/resources/control-config.html">control
+processed through the use of a <a class="reference external" href="../resources/control-config.html">control
 file</a></li>
 </ul>
 <p><strong>Create a control file</strong> A control file is needed to help DataSync
@@ -238,7 +238,7 @@ interpret the data within the CSV. In most cases simply clicking the
 &#8216;Generate/Edit&#8217; button to generate a control file with the default
 configuration will be sufficient for the job to run successfully.</p>
 <p>For more detailed information on establishing configuration in the
-Control file refer to <a class="reference external" href="{{%20site.root%20}}/resources/control-config.html">Control file
+Control file refer to <a class="reference external" href="../resources/control-config.html">Control file
 configuration</a>.</p>
 </div>
 <div class="section" id="step-5-run-the-job">
@@ -265,13 +265,13 @@ Failure to do so may cause issues when jobs are run using the scheduler.</p>
 <p>To automate updating a dataset you must schedule the DataSync job to run
 automatically at a specified interval (i.e once per day). This can be
 done with standard tools such as the Windows Task Scheduler or Cron.</p>
-<p><a class="reference external" href="{{%20site.root%20}}/resources/schedule-job.html">Read the documentation for how to schedule a saved
+<p><a class="reference external" href="../resources/schedule-job.html">Read the documentation for how to schedule a saved
 job</a>.</p>
 </div>
 <div class="section" id="additional-information">
 <h2>Additional information<a class="headerlink" href="#additional-information" title="Permalink to this headline">¶</a></h2>
 <p>To take advantage of DataSync&#8217;s more advanced features, please see
-<a class="reference external" href="{{%20site.root%20}}/guides/setup-standard-job.html">setting up a standard
+<a class="reference external" href="setup-standard-job.html">setting up a standard
 job</a>.</p>
 </div>
 </div>
@@ -286,7 +286,7 @@ job</a>.</p>
         <a href="setup-standard-job.html" class="btn btn-neutral float-right" title="Setup Standard Job" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="Welcome to (Unofficial) Socrata DataSync Historical documentation!" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../index.html" class="btn btn-neutral" title="Welcome to (Unofficial) Socrata DataSync Historical documentation!" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -316,22 +316,22 @@ job</a>.</p>
 
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
+            URL_ROOT:'../',
             VERSION:'pre-1.6',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
 
   
 
   
   
-    <script type="text/javascript" src="_static/js/theme.js"></script>
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
   
 
   

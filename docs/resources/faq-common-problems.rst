@@ -31,7 +31,7 @@ Datasync supports the Text, Formatted Text, Number, Money, Percent, Date
 & Time (with or without timezone), Location, Website URL, Email,
 Checkbox, Flag, Star and Phone datatypes. Please refer to the
 `conditions/restrictions
-resource <{{%20site.root%20}}/resources/conditions-restrictions.html>`__
+resource <conditions-restrictions.html>`__
 for formatting requirements of each.
 
 DataSync keeps failing with "field-not-in-dataset." What can I do to fix this?
@@ -48,7 +48,7 @@ comprehensive.
 
 To fix the latter, either remove the column from your dataset, or use
 the ignoreColumns option found in the `control
-file <{{%20site.root%20}}/resources/control-config.html>`__ guide.
+file <control-config.html>`__ guide.
 
 My location column is causing my job to fail, or resulting in unexpected data in my address column
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -157,13 +157,13 @@ I'm getting a ‘Connection refused’ error / I'm having network problems.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Please reference our `Network Considerations
-resource <{{%20site.root%20}}/resources/network-considerations.html>`__.
+resource <network-considerations.html>`__.
 
 I'm still stuck. What can I do?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Verify that your CSV meets all of the restrictions detailed in the
 `conditions and
-restrictions <{{%20site.root%20}}/resources/conditions-restrictions.html>`__
+restrictions <conditions-restrictions.html>`__
 guide. If you are still having trouble, please contact your Socrata
 representive for support.

@@ -5,9 +5,9 @@ DataSync Library SDK
 DataSync 1.5.3 and higher can be used as a Java library/SDK. This guide
 documents how to do this as well as provides example code. If you are
 new to DataSync you should first read about using DataSync in `GUI
-mode <{{%20site.root%20}}/guides/setup-standard-job.html>`__ or
+mode <setup-standard-job.html>`__ or
 `command-line/headless
-mode <{{%20site.root%20}}/guides/setup-standard-job-headless.html>`__.
+mode <setup-standard-job-headless.html>`__.
 
 Importing Into Your Java Project
 ================================
@@ -113,7 +113,7 @@ need to modify the Control file content include, but are not limited to:
 
 For more detailed information on establishing configuration in the
 Control file refer to `Control file
-configuration <{{%20site.root%20}}/resources/control-config.html>`__
+configuration <../resources/control-config.html>`__
 
 You can specify the control file settings in one of two ways when using
 DataSync as a library.
@@ -128,7 +128,7 @@ Building the control file object
 You can use the 'setter' methods within the FileTypeControl class to
 configure the job. The setter methods reflect the configuration options
 details in `Control file
-configuration <{{%20site.root%20}}/resources/control-config.html>`__.
+configuration <../resources/control-config.html>`__.
 For example, to ignore the header row and configure the list of columns
 use this code:
 
@@ -147,7 +147,7 @@ Or to include a syntheticLocation, which allows a Location datatype
 column to populate from existing address, city, state, zipcode or
 latitude/longitude columns within the CSV/TSV. (The syntheticLocations
 option is discussed in more detail in the `Control File
-documentation <{{%20site.root%20}}/resources/control-config.html#location-column-and-geocoding-configuration>`__
+documentation <../resources/control-config.html#location-column-and-geocoding-configuration>`__
 ), use the following code:
 
 ::

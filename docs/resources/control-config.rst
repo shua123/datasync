@@ -75,7 +75,7 @@ nulls.
 
 **IMPORTANT NOTE:** the column names, whether provided in “columns” or
 in the first row of the CSV/TSV, must be the `API field
-names <{{%20site.root%20}}/resources/faq-common-problems#how-do-i-find-the-api-field-names-for-my-columns.html>`__,
+names <faq-common-problems#how-do-i-find-the-api-field-names-for-my-columns.html>`__,
 not the display name of the columns.
 
 ``skip``: Specifies the number of rows to skip before reaching the
@@ -445,7 +445,7 @@ any skipped records is used. If specified, it must be an array of
 strings and must not contain nulls. Note that the column names, whether
 provided in “columns” or in the first row of the CSV, must match the
 `API field
-names <{{%20site.root%20}}/resources/faq-common-problems#how-do-i-find-the-api-field-names-for-my-columns.html>`__,
+names <faq-common-problems#how-do-i-find-the-api-field-names-for-my-columns.html>`__,
 not the display name of the columns.
 
 .. raw:: html

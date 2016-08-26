@@ -8,7 +8,7 @@ higher.
 *NOTICE*: Before using DataSync in headless mode, we recommend
 familiarizing yourself with DataSync through the UI. For information on
 using DataSync's UI please see `guide to setup a standard job
-(GUI) <{{%20site.root%20}}/guides/setup-standard-job.html>`__
+(GUI) <setup-standard-job.html>`__
 
 DataSync's command line interface, or "headless mode," enables easy
 integration of DataSync into ETL code or other software systems.
@@ -25,7 +25,7 @@ required for all DataSync jobs. Note that the user running the job must
 have publisher rights on the dataset. A number of other global settings,
 such as logging and emailing preferences can also be configured. Please
 refer to the `configuration
-guide <{{%20site.root%20}}/resources/preferences-config.html>`__ to
+guide <../resources/preferences-config.html>`__ to
 establish your credentials and preferences.
 
 Step 2: Configure job details

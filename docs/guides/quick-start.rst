@@ -9,7 +9,7 @@ sync a local CSV with a dataset.
 the dataset with the contents of the CSV. For a more in depth guide of
 using DataSync, including information on how to use DataSync to update
 and append information to a dataset, please see `setting up a standard
-job <{{%20site.root%20}}/guides/setup-standard-job.html>`__.
+job <setup-standard-job.html>`__.
 
 .. raw:: html
 
@@ -74,7 +74,7 @@ to find the CSV or TSV file.
 
 If the CSV contains a header row, keep "File to publish contains header
 row" checked. The header row should contain the `API Field
-Names <{{%20site.root%20}}/resources/faq-common-problems#how-do-i-find-the-api-field-names-for-my-columns.html>`__)
+Names <../resources/faq-common-problems#how-do-i-find-the-api-field-names-for-my-columns.html>`__)
 of the columns in your dataset. If the CSV does not contain a header
 row, uncheck "File to publish contains header row". In this case, the
 control file must contain the list of columns, in the order in which
@@ -104,7 +104,7 @@ Leave the default option "replace via HTTP" selected This option will:
 -  can reliably handle very large files (1 million+ rows)
 -  allows configuration of the way the CSV/TSV file is read and
    processed through the use of a `control
-   file <{{%20site.root%20}}/resources/control-config.html>`__
+   file <../resources/control-config.html>`__
 
 **Create a control file** A control file is needed to help DataSync
 interpret the data within the CSV. In most cases simply clicking the
@@ -113,7 +113,7 @@ configuration will be sufficient for the job to run successfully.
 
 For more detailed information on establishing configuration in the
 Control file refer to `Control file
-configuration <{{%20site.root%20}}/resources/control-config.html>`__.
+configuration <../resources/control-config.html>`__.
 
 Step 5: Run the job
 ~~~~~~~~~~~~~~~~~~~
@@ -146,11 +146,11 @@ automatically at a specified interval (i.e once per day). This can be
 done with standard tools such as the Windows Task Scheduler or Cron.
 
 `Read the documentation for how to schedule a saved
-job <{{%20site.root%20}}/resources/schedule-job.html>`__.
+job <../resources/schedule-job.html>`__.
 
 Additional information
 ~~~~~~~~~~~~~~~~~~~~~~
 
 To take advantage of DataSync's more advanced features, please see
 `setting up a standard
-job <{{%20site.root%20}}/guides/setup-standard-job.html>`__.
+job <setup-standard-job.html>`__.

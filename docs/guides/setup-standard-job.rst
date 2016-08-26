@@ -5,7 +5,7 @@ Setup Standard Job
 This guide covers how to set up a job using Socrata DataSync's UI.
 Alternatively, `DataSync can also be run from the command line in
 headless
-mode <{{%20site.root%20}}/guides/setup-standard-job-headless.html>`__.
+mode <setup-standard-job-headless.html>`__.
 
 Step 1: Download DataSync
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -67,7 +67,7 @@ uncheck "File to publish contains header row".
 -  *Header naming*
 
 Header rows should contain the `API field
-names <{{%20site.root%20}}/resources/faq-common-problems#how-do-i-find-the-api-field-names-for-my-columns.html>`__
+names <../resources/faq-common-problems#how-do-i-find-the-api-field-names-for-my-columns.html>`__
 of each column. Please note these may differ from the display names
 shown in your browser.
 
@@ -98,7 +98,7 @@ the control file.
 **Enter the Dataset ID ...**
 
 You will need the identifier of the dataset (i.e. `the dataset
-ID <{{%20site.root%20}}/resources/faq-common-problems.html#what-is-the-id-of-my-dataset>`__)
+ID <../resources/faq-common-problems.html#what-is-the-id-of-my-dataset>`__)
 that you want to update. Enter your dataset's ID into the Dataset ID
 field.
 
@@ -138,7 +138,7 @@ DataSync offers three ways to upload your data
    -  can reliably handle very large files (1 million+ rows)
    -  allows configuration of the way the CSV/TSV file is read and
       processed through the use of a `control
-      file <{{%20site.root%20}}/resources/control-config.html>`__
+      file <../resources/control-config.html>`__
 
 2. via FTP (only available for ``replace``): This functions in much the
    same way as the HTTP variant, with 2 notable differences:
@@ -176,7 +176,7 @@ include, but are not limited to:
 
 For more detailed information on establishing configuration in the
 Control file refer to `Control file
-configuration <{{%20site.root%20}}/resources/control-config.html>`__
+configuration <../resources/control-config.html>`__
 
 Step 5: Run the job and optionally save it
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -223,7 +223,7 @@ automatically at a specified interval (i.e once per day). This can be
 done with standard tools such as the Windows Task Scheduler or Cron.
 
 `Read the documentation for how to schedule a saved
-job <{{%20site.root%20}}/resources/schedule-job.html>`__.
+job <../resources/schedule-job.html>`__.
 
 Additional configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -231,4 +231,4 @@ Additional configuration
 To take advantage of job logging, automatic email error notification,
 proxy support or file chunking (for publishing large files) in DataSync
 refer to the `preferences configuration
-documentation <{{%20site.root%20}}/resources/preferences-config.html>`__.
+documentation <../resources/preferences-config.html>`__.

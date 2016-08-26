@@ -36,7 +36,7 @@ The following options are available to configure DataSync
 +----------------------------+---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | appToken                   | required                                                      | An app token. If do not yet have an app token, please reference `how to obtain an App token <http://dev.socrata.com/docs/app-tokens.html>`__.                                                                                                                                                                   |
 +----------------------------+---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| logDatasetID               | optional                                                      | The dataset indentifier of the log dataset. If you have not provisioned a log dataset and would like to do so, please refer to the `logging documentation <{{%20site.root%20}}/resources/preferences-config.html>`__.                                                                                           |
+| logDatasetID               | optional                                                      | The dataset indentifier of the log dataset. If you have not provisioned a log dataset and would like to do so, please refer to the `logging documentation <preferences-config.html>`__.                                                                                           |
 +----------------------------+---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | adminEmail                 | required only if ``emailUponError`` is "true"                 | The email address of the administrator or user that error notifications should be sent to.                                                                                                                                                                                                                      |
 +----------------------------+---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -96,7 +96,7 @@ Setting up logging (using a dataset)
 
 You can set up a Socrata dataset to store log information each time a
 DataSync jobs runs. This is especially useful if you will be `scheduling
-your jobs <{{%20site.root%20}}/resources/schedule-job.html>`__ to run
+your jobs <schedule-job.html>`__ to run
 automatically at some specified interval. You first need to manually
 create a log dataset. You should probably keep this dataset private
 (rather than set it as public). The easiest way to set this up is to run
@@ -207,5 +207,5 @@ the Registry on Windows platforms (in the following location:
 HKEY\_CURRENT\_USER) and in analogous locations on Mac and Linux. If you
 are concerned about this as a potential security issue you may instead
 `run the job
-headlessly <{{%20site.root%20}}/guides/setup-standard-job-headless.html>`__,
+headlessly <../guides/setup-standard-job-headless.html>`__,
 in order to pass the needed credentials in via the commandline.

@@ -8,7 +8,7 @@ than FTP or SODA2) the standard ports 80 and 443 will be used. Although
 we strongly recommend using the HTTP methods, if you are using
 DataSync's FTP methods, ports 22222 and 3131-3141 need to be open, in
 addition to ports 80 and 443. If you have configured `email
-notifications <{{%20site.root%20}}/resources/preferences-config.html#error-notification-auto-email-setup>`__,
+notifications <preferences-config.html#error-notification-auto-email-setup>`__,
 the SMTP and SSL ports need to be open.
 
 NOTE: Because network setups can vary wildly, this does not attempt to
@@ -32,12 +32,12 @@ Per port access, as noted above, DataSync requires usage of ports 80
 (for http) and 443 (for https). If you are using FTP methods, port 22222
 (for control connection) and ports 3131 to 3141 (for data transferral)
 are also required. If you have configured `email
-notifications <{{%20site.root%20}}/resources/preferences-config.html#error-notification-auto-email-setup>`__,
+notifications <preferences-config.html#error-notification-auto-email-setup>`__,
 the SMTP and SSL ports need to be open.
 
 Per domain access, if using HTTP or Soda2 methods, DataSync communicates
 exclusively with the domain you provide in your
-`configuration <{{%20site.root%20}}/resources/preferences-config.html>`__.
+`configuration <preferences-config.html>`__.
 If using FTP methods, DataSync will also need to reach Socrata's ftp
 server. If you are using email notification, DataSync makes requests to
 the domain for the outgoing mail server. These domains should be
@@ -57,7 +57,7 @@ depending on which upload method you've chosen.
 -  If using the Soda2 method, DataSync will attempt to transfer the
    entire file to publish in one chunk. This can create a long-lived
    connection which some firewalls do not allow. `Chunking can be
-   configured <{{%20site.root%20}}/resources/preferences-config.html#chunking-configuration>`__
+   configured <preferences-config.html#chunking-configuration>`__
    using the Soda2 method though.
 -  If using the FTP method, DataSync will compress the file to publish
    and attempt to transfer it in a single chunk. This can create a
@@ -76,7 +76,7 @@ deparment to confirm this.
 
 DataSync must be configured to route its requests through the proxy. At
 minimum, `this
-configuration <{{%20site.root%20}}/resources/preferences-config.html>`__
+configuration <preferences-config.html>`__
 requires the hostname and port and if the proxy server is authenticated,
 your proxy username and password as well.
 
@@ -138,7 +138,7 @@ information:
 
 -  Whether you can browse the internet in a browser.
 -  Whether you can browse to the domain you provided in your
-   `configuration <{{%20site.root%20}}/resources/preferences-config.html>`__
+   `configuration <preferences-config.html>`__
    in a browser.
 -  Whether DataSync can run at all - even if it produces errors.
 -  Assuming DataSync can run, a screenshot or text file of the errors

@@ -83,14 +83,14 @@
             
                 <p class="caption"><span class="caption-text">Main Documentation</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../quick-start.html">Quick Start</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../setup-standard-job.html">Setup Standard Job</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../setup-standard-job-headless.html">Setup Standard Job Headless</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../setup-port-job.html">Setup Port Job</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../setup-port-job-headless.html">Setup Port Job Headless</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../datasync-library-sdk.html">DataSync Library SDK</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../compiling-on-windows-eclipse.html">Compiling on Windows with Eclipse</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../compiling-with-maven.html">Compiling with Maven</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/quick-start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/setup-standard-job.html">Setup Standard Job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/setup-standard-job-headless.html">Setup Standard Job Headless</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/setup-port-job.html">Setup Port Job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/setup-port-job-headless.html">Setup Port Job Headless</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/datasync-library-sdk.html">DataSync Library SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/compiling-on-windows-eclipse.html">Compiling on Windows with Eclipse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/compiling-with-maven.html">Compiling with Maven</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
 <ul class="current">
@@ -176,93 +176,6 @@ Setup</a></li>
 <div class="section" id="available-configuration">
 <h2>Available configuration<a class="headerlink" href="#available-configuration" title="Permalink to this headline">¶</a></h2>
 <p>The following options are available to configure DataSync</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="7%" />
-<col width="16%" />
-<col width="77%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Option</th>
-<th class="head">Requirement</th>
-<th class="head">Explanation</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>domain</td>
-<td>required</td>
-<td>The scheme and root domain of your data site. (e.g. <a class="reference external" href="https://opendata.socrata.com">https://opendata.socrata.com</a>)</td>
-</tr>
-<tr class="row-odd"><td>username</td>
-<td>required</td>
-<td>Your Socrata username. This user must have a Publisher role or Owner rights to at least one dataset. We recommend creating a dedicated Socrata account (with these permissions) to use with DataSync rather than tie DataSync to a particular person’s primary account. (e.g. <a class="reference external" href="mailto:publisher&#37;&#52;&#48;opendata&#46;socrata&#46;com">publisher<span>&#64;</span>opendata<span>&#46;</span>socrata<span>&#46;</span>com</a>)</td>
-</tr>
-<tr class="row-even"><td>password</td>
-<td>required</td>
-<td>Your Socrata password. Note that this will be stored in clear-text as part of the file. We recommend taking additional precautions to protect this file, including potentially only adding it when your ETL process runs.</td>
-</tr>
-<tr class="row-odd"><td>appToken</td>
-<td>required</td>
-<td>An app token. If do not yet have an app token, please reference <a class="reference external" href="http://dev.socrata.com/docs/app-tokens.html">how to obtain an App token</a>.</td>
-</tr>
-<tr class="row-even"><td>logDatasetID</td>
-<td>optional</td>
-<td>The dataset indentifier of the log dataset. If you have not provisioned a log dataset and would like to do so, please refer to the <a class="reference external" href="{{%20site.root%20}}/resources/preferences-config.html">logging documentation</a>.</td>
-</tr>
-<tr class="row-odd"><td>adminEmail</td>
-<td>required only if <code class="docutils literal"><span class="pre">emailUponError</span></code> is &#8220;true&#8221;</td>
-<td>The email address of the administrator or user that error notifications should be sent to.</td>
-</tr>
-<tr class="row-even"><td>emailUponError</td>
-<td>optional</td>
-<td>Whether to send email notifications of errors that occurred while running jobs. Defaults to &#8220;false&#8221;.</td>
-</tr>
-<tr class="row-odd"><td>outgoingMailServer</td>
-<td>required only if <code class="docutils literal"><span class="pre">emailUponError</span></code> is &#8220;true&#8221;</td>
-<td>The address of your SMTP server</td>
-</tr>
-<tr class="row-even"><td>smtpPort</td>
-<td>required only if <code class="docutils literal"><span class="pre">emailUponError</span></code> is &#8220;true&#8221;</td>
-<td>The port of your SMTP server</td>
-</tr>
-<tr class="row-odd"><td>sslPort</td>
-<td>required only if <code class="docutils literal"><span class="pre">emailUponError</span></code> is &#8220;true&#8221;</td>
-<td>If SSL port of your SMTP server</td>
-</tr>
-<tr class="row-even"><td>smtpUsername</td>
-<td>required only if <code class="docutils literal"><span class="pre">emailUponError</span></code> is &#8220;true&#8221;</td>
-<td>Your SMTP username</td>
-</tr>
-<tr class="row-odd"><td>smtpPassword</td>
-<td>required only if <code class="docutils literal"><span class="pre">emailUponError</span></code> is &#8220;true&#8221;</td>
-<td>Your SMTP password</td>
-</tr>
-<tr class="row-even"><td>filesizeChunkingCutoffMB</td>
-<td>Used only for append, upsert, delete and Soda2-replace jobs</td>
-<td>If the CSV/TSV file size is less than this, the entire file will be sent in one chunk. Defaults to 10 MB.</td>
-</tr>
-<tr class="row-odd"><td>numRowsPerChunk</td>
-<td>Used only for append, upsert, delete and Soda2-replace jobs</td>
-<td>The number of rows to send in each chunk. If the CSV/TSV file size is less than <code class="docutils literal"><span class="pre">filesizeChunkingCutoffMB</span></code>, all rows will be sent in one chunk. Defaults to 10,000 rows.</td>
-</tr>
-<tr class="row-even"><td>proxyHost</td>
-<td>required if operating through a proxy</td>
-<td>The hostname of the proxy server.</td>
-</tr>
-<tr class="row-odd"><td>proxyPort</td>
-<td>required if operating through a proxy</td>
-<td>The port that the proxy server listens on.</td>
-</tr>
-<tr class="row-even"><td>proxyUsername</td>
-<td>optional</td>
-<td>The username to use if the proxy is authenticated. If this information is sensitive, you may instead pass it at runtime via the -pun, &#8211;proxyUsername commandline option.</td>
-</tr>
-<tr class="row-odd"><td>proxyPassword</td>
-<td>optional</td>
-<td>The password to use if the proxy is authenticated. If this information is sensitive, you may instead pass it at runtime via the -ppw, &#8211;proxyPassword commandline option.</td>
-</tr>
-</tbody>
-</table>
 <p>To access, edit and save these options into DataSync ‘memory’ using the
 GUI, navigate to Edit-&gt;Preferences.</p>
 <p>To save these options into a file, specify them within a single JSON
@@ -287,7 +200,7 @@ can run a LoadPreferences job:</p>
 <div class="section" id="setting-up-logging-using-a-dataset">
 <h2>Setting up logging (using a dataset)<a class="headerlink" href="#setting-up-logging-using-a-dataset" title="Permalink to this headline">¶</a></h2>
 <p>You can set up a Socrata dataset to store log information each time a
-DataSync jobs runs. This is especially useful if you will be <a class="reference external" href="{{%20site.root%20}}/resources/schedule-job.html">scheduling
+DataSync jobs runs. This is especially useful if you will be <a class="reference external" href="schedule-job.html">scheduling
 your jobs</a> to run
 automatically at some specified interval. You first need to manually
 create a log dataset. You should probably keep this dataset private
@@ -390,7 +303,7 @@ myProxyServer.com.</li>
 the Registry on Windows platforms (in the following location:
 HKEY_CURRENT_USER) and in analogous locations on Mac and Linux. If you
 are concerned about this as a potential security issue you may instead
-<a class="reference external" href="{{%20site.root%20}}/guides/setup-standard-job-headless.html">run the job
+<a class="reference external" href="../guides/setup-standard-job-headless.html">run the job
 headlessly</a>,
 in order to pass the needed credentials in via the commandline.</p>
 </div>

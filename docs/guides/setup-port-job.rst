@@ -109,4 +109,4 @@ Step 6: Run, save and schedule the Job.
 
 Once your job is setup, you can run it like any other job. For more
 details, please see steps 4 and 5 of the `Setting up a Standard Job
-(GUI) <{{%20site.root%20}}/guides/setup-standard-job.html>`__ Guide.
+(GUI) <setup-standard-job.html>`__ Guide.

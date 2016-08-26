@@ -12,14 +12,14 @@ Contents:
    :maxdepth: 1
    :caption: Main Documentation
 
-   quick-start
-   setup-standard-job
-   setup-standard-job-headless
-   setup-port-job
-   setup-port-job-headless
-   datasync-library-sdk
-   compiling-on-windows-eclipse
-   compiling-with-maven
+   guides/quick-start
+   guides/setup-standard-job
+   guides/setup-standard-job-headless
+   guides/setup-port-job
+   guides/setup-port-job-headless
+   guides/datasync-library-sdk
+   guides/compiling-on-windows-eclipse
+   guides/compiling-with-maven
 
 .. toctree::
    :maxdepth: 1
